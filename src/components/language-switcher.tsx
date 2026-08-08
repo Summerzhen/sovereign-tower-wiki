@@ -13,9 +13,9 @@ import {
 
 const LOCALE_LABELS: Record<Locale, string> = {
   en: "English",
-  "pt-br": "Português",
-  es: "Español",
-  id: "Indonesia",
+  de: "Deutsch",
+  ja: "日本語",
+  fr: "Français",
 };
 
 /**
@@ -33,17 +33,9 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
   const handleSwitch = (nextLocale: Locale) => {
     if (nextLocale === locale) return;
 
-    let newPath = pathname;
-
-    // 移除当前 locale 前缀（如果有）
-    if (locale !== routing.defaultLocale) {
-      newPath = newPath.replace(`/${locale}`, "") || "/";
-    }
-
-    // 添加新 locale 前缀（如果不是默认语言）
-    if (nextLocale !== routing.defaultLocale) {
-      newPath = `/${nextLocale}${newPath === "/" ? "" : newPath}`;
-    }
+    const localePattern = new RegExp(`^/(${routing.locales.join("|")})(?=/|$)`);
+    const pathWithoutLocale = pathname.replace(localePattern, "") || "/";
+    const newPath = `/${nextLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
 
     // 设置 NEXT_LOCALE cookie，防止 middleware 重定向回原语言
     document.cookie = `NEXT_LOCALE=${nextLocale};path=/;max-age=${60 * 60 * 24 * 365};SameSite=Lax`;

@@ -11,7 +11,6 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ClientThemeToggle } from "@/components/theme-toggle";
 
 export function localizeHref(href: string, locale: string) {
-  if (locale === "en") return href;
   return `/${locale}${href === "/" ? "" : href}`;
 }
 
