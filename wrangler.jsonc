@@ -4,12 +4,12 @@
   "compatibility_date": "2026-08-09",
   "routes": [
     {
-      "pattern": "sovereigntower.org",
-      "custom_domain": true
+      "pattern": "sovereigntower.org/*",
+      "zone_name": "sovereigntower.org"
     },
     {
-      "pattern": "www.sovereigntower.org",
-      "custom_domain": true
+      "pattern": "www.sovereigntower.org/*",
+      "zone_name": "sovereigntower.org"
     }
   ],
   "assets": {
