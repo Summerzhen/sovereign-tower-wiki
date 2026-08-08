@@ -1,0 +1,37 @@
+{
+  "name": "Murder Duels Wiki",
+  "short_name": "Murder Duels",
+  "description": "Fan-made Murder Duels Roblox wiki with codes, trading values, weapons, skills, maps, events and PvP guides.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#111318",
+  "theme_color": "#e53e54",
+  "categories": ["games", "entertainment", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/favicon-16x16.png", "sizes": "16x16", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Murder Duels Codes",
+      "short_name": "Codes",
+      "description": "Check current Murder Duels codes.",
+      "url": "/codes"
+    },
+    {
+      "name": "Murder Duels Values",
+      "short_name": "Values",
+      "description": "Open Murder Duels trading values.",
+      "url": "/values"
+    }
+  ]
+}

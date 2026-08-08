@@ -1,0 +1,489 @@
+{
+  "site": {
+    "name": "Murder Duels",
+    "shortName": "Murder Duels",
+    "tagline": "Fan-Made Murder Duels Community Wiki",
+    "description": "Murder Duels Wiki for Roblox with updated codes, trading values, weapons, skills, beginner guides, maps, events and competitive PvP tips.",
+    "legalNotice": "Independent fan-made Murder Duels wiki. Not affiliated with Roblox or Breakfast."
+  },
+  "nav": {
+    "codes": "Codes",
+    "guide": "Guide",
+    "values": "Values",
+    "tier": "Tier",
+    "skins": "Skins",
+    "weapons": "Weapons",
+    "trading": "Trading",
+    "community": "Community",
+    "home": "Home",
+    "menu": "Menu",
+    "toggleTheme": "Toggle theme"
+  },
+  "home": {
+    "meta": {
+      "title": "Murder Duels Wiki ? Codes, Values, Weapons & Guides",
+      "description": "Murder Duels Wiki for Roblox with updated codes, trading values, weapon guides, skills, maps, beginner tips, events and competitive PvP strategies."
+    },
+    "hero": {
+      "eyebrow": "Fan-Made Murder Duels Community Wiki",
+      "title": "Murder Duels Wiki",
+      "description": "Master Roblox Murder Duels with active codes, trading values, weapon guides and competitive PvP tips. Learn the knife-and-revolver combat system, track new events, and improve from your first 1v1 to high-level team duels.",
+      "stats": [
+        "Roblox PvP",
+        "Knife + Revolver",
+        "1v1-4v4 Duels",
+        "90M+ Visits",
+        "94% Rating"
+      ],
+      "primaryCta": "Start Roblox Beginner Guide",
+      "secondaryCta": "Check Trading Values",
+      "tertiaryCta": "Check Active Codes",
+      "videoLabel": "Murder Duels Gameplay"
+    },
+    "updates": {
+      "title": "动态更新",
+      "browse": "Browse All Guides",
+      "viewAll": "View All"
+    },
+    "start": {
+      "eyebrow": "Start Here",
+      "title": "Your Murder Duels Journey",
+      "cards": [
+        {
+          "number": "1",
+          "title": "Beginner Guide",
+          "description": "Learn duel pads, round rules, knife pressure, revolver aiming, movement basics, and how to survive your first matches."
+        },
+        {
+          "number": "2",
+          "title": "Weapons & Abilities",
+          "description": "Understand the knife and revolver, compare ability choices, and build a combat style that fits fast Roblox PvP duels."
+        },
+        {
+          "number": "3",
+          "title": "Trading & Values",
+          "description": "Check how trading works, compare weapon skin value, and learn why rarity, demand, and limited supply matter before accepting offers."
+        },
+        {
+          "number": "4",
+          "title": "Maps & PvP Tips",
+          "description": "Study map flow, crosshair settings, mobile controls, positioning, and round pacing for 1v1 through 4v4 matches."
+        }
+      ]
+    },
+    "popular": {
+      "eyebrow": "Popular Pages",
+      "title": "Trending Now",
+      "quickLinks": [
+        "Trading Values",
+        "Active Codes",
+        "Weapon Skins",
+        "PvP Tips"
+      ],
+      "cards": [
+        {
+          "badge": "Beginner",
+          "title": "Beginner Guide",
+          "description": "Learn duel pads, round rules, knife pressure, revolver aim, and early match fundamentals.",
+          "href": "/guide/murder-duels-guide"
+        },
+        {
+          "badge": "Updated",
+          "title": "Active Codes",
+          "description": "Check current rewards, redemption requirements, and expired code history.",
+          "href": "/codes/murder-duels-codes"
+        },
+        {
+          "badge": "Popular",
+          "title": "Trading Values",
+          "description": "Compare weapon skin value, demand, rarity, and limited collectible supply before trading.",
+          "href": "/values/murder-duels-values"
+        },
+        {
+          "badge": "Popular",
+          "title": "Weapons & Abilities",
+          "description": "Understand knife and revolver roles, ability choices, and how each weapon changes PvP pressure.",
+          "href": "/weapons/murder-duels-weapons"
+        },
+        {
+          "badge": "New",
+          "title": "Skins & Collectibles",
+          "description": "Explore cases, limited items, numbered collectibles, bundles, and cosmetic progression.",
+          "href": "/skins/murder-duels-skins"
+        },
+        {
+          "badge": "Guide",
+          "title": "Maps & Settings",
+          "description": "Improve crosshair setup, mobile controls, map awareness, and positioning for round-based duels.",
+          "href": "/community/murder-duels-maps"
+        },
+        {
+          "badge": "Updated",
+          "title": "Updates & Events",
+          "description": "Track Summer content, trading changes, map additions, clan features, and event rewards.",
+          "href": "/guide/murder-duels-event"
+        },
+        {
+          "badge": "Community",
+          "title": "Discord & Community",
+          "description": "Find official community destinations for announcements, codes, trading, and player discussion.",
+          "href": "/community/murder-duels-discord-server"
+        }
+      ]
+    },
+    "aboutGame": {
+      "title": "What is Murder Duels?",
+      "paragraphs": [
+        "Murder Duels is a fast-paced first-person PvP game on Roblox developed by Breakfast. Players step onto duel pads, enter solo or team match formats from 1v1 through 4v4, and fight round by round with a knife and revolver until one side reaches five wins.",
+        "Beyond aim and movement, Murder Duels includes weapon abilities, cosmetic skins, cases, trading, limited collectibles, seasonal events, map updates, clans, and quality-of-life settings. The game rewards precise combat while giving players long-term goals through collecting, trading, and progression."
+      ],
+      "stats": [
+        {
+          "label": "Developer",
+          "value": "Breakfast"
+        },
+        {
+          "label": "Platform",
+          "value": "Roblox"
+        },
+        {
+          "label": "Genre",
+          "value": "Deathmatch Shooter"
+        },
+        {
+          "label": "Visits",
+          "value": "90M+"
+        },
+        {
+          "label": "Rating",
+          "value": "94%+"
+        },
+        {
+          "label": "Max Players",
+          "value": "50"
+        },
+        {
+          "label": "Duel Modes",
+          "value": "1v1-4v4"
+        }
+      ],
+      "cta": "Explore All Guides"
+    },
+    "explore": {
+      "title": "Murder Duels Homepage Modules",
+      "description": "Jump into the main Murder Duels guide sections for codes, trading, weapons, maps, events, and PvP fundamentals.",
+      "modules": [
+        {
+          "order": 1,
+          "name": "Murder Duels Codes",
+          "description": "Find the latest Murder Duels codes for free cases and other in-game rewards. Check working codes first and learn the requirements for redeeming rewards.",
+          "href": "/codes",
+          "displayType": "code-cards",
+          "highlights": [
+            {
+              "label": "130KLIKES",
+              "detail": "Free weapon skin case",
+              "badge": "Active"
+            },
+            {
+              "label": "100MOG",
+              "detail": "Exclusive OG Knife",
+              "badge": "Active"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Murder Duels Trading Guide",
+          "description": "Learn how Murder Duels trading works before exchanging valuable weapon skins and collectibles. Understand what can be traded and why rarity, demand, and limited supply matter when evaluating an offer.",
+          "href": "/trading",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Unlock weapon skins and collectibles that can be exchanged with other players."
+            },
+            {
+              "label": "2",
+              "detail": "Compare the items offered by both players before accepting a trade."
+            },
+            {
+              "label": "3",
+              "detail": "Check rarity, availability, and limited-item supply before deciding whether an offer is fair."
+            },
+            {
+              "label": "4",
+              "detail": "Use the Trading Plaza to meet players and look for additional trading opportunities."
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Murder Duels Beginner Guide",
+          "description": "Learn the fundamentals of Murder Duels from your first duel pad to winning full matches. This beginner guide covers the round objective, basic weapons, abilities, and progression systems new players encounter.",
+          "href": "/beginner-guide",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Step onto a duel pad and choose a supported match format from 1v1 through 4v4."
+            },
+            {
+              "label": "2",
+              "detail": "Use both your knife and revolver during combat and learn when each weapon is most useful."
+            },
+            {
+              "label": "3",
+              "detail": "Experiment with the unique abilities available for your knife and revolver."
+            },
+            {
+              "label": "4",
+              "detail": "Win rounds consistently; the first side to reach 5 round wins takes the duel."
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "name": "Murder Duels Weapons & Abilities",
+          "description": "Understand the two core weapon types used in every Murder Duels match and the abilities that modify combat. Learn how knife pressure and revolver accuracy fit into the game's fast first-person dueling system.",
+          "href": "/weapons",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Knife",
+              "detail": "One of the two weapons provided in every duel, with its own set of unique abilities."
+            },
+            {
+              "label": "Revolver",
+              "detail": "The ranged weapon provided alongside the knife in every duel, also supporting unique abilities."
+            },
+            {
+              "label": "Skins",
+              "detail": "Unlockable cosmetic skins are available for both knife and revolver weapons and can be traded with other players."
+            },
+            {
+              "label": "Abilities",
+              "detail": "Both core weapons have sets of unique abilities designed to make players stronger in combat."
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "name": "Murder Duels Game Modes",
+          "description": "Compare every supported Murder Duels team size before entering a match. The game supports solo and team duels from 1v1 through 4v4 while keeping the same first-to-five round objective.",
+          "href": "/game-modes",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "1v1",
+              "detail": "Head-to-head duel between two individual players."
+            },
+            {
+              "label": "2v2",
+              "detail": "Two-player teams compete against each other."
+            },
+            {
+              "label": "3v3",
+              "detail": "Three-player teams fight across the same round-based duel system."
+            },
+            {
+              "label": "4v4",
+              "detail": "The largest officially supported duel format, with four players on each side."
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "name": "Murder Duels Skins & Collectibles",
+          "description": "Explore Murder Duels weapon skins, limited collectibles, and special event items. Recent updates expanded collecting with individually numbered limited drops and new cosmetic weapons.",
+          "href": "/skins-collectibles",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Sniper",
+              "detail": "The first collectible and first full sniper, released with a limited stock of 1,000.",
+              "badge": "Limited"
+            },
+            {
+              "label": "Ninja",
+              "detail": "Limited-time bundle introduced during the Summer Event Part 1.",
+              "badge": "Summer"
+            },
+            {
+              "label": "Midnight",
+              "detail": "Limited-time Summer bundle with a 10% chance to unlock a rare Negative variant.",
+              "badge": "Summer"
+            },
+            {
+              "label": "Collectibles",
+              "detail": "Limited drops can feature unique VFX and individually numbered serials."
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "name": "Murder Duels Maps & Settings",
+          "description": "Learn the latest Murder Duels maps and customize settings that affect how combat feels. The Summer update added new arenas, reworked an existing map, and introduced additional crosshair and mobile-control customization.",
+          "href": "/maps-settings",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Facility",
+              "detail": "New map introduced in Summer Event Part 1.",
+              "badge": "New"
+            },
+            {
+              "label": "House",
+              "detail": "New map introduced alongside Facility in the Summer update.",
+              "badge": "New"
+            },
+            {
+              "label": "Lumber",
+              "detail": "Existing map reworked during Summer Event Part 1."
+            },
+            {
+              "label": "Crosshair",
+              "detail": "Customization feature that lets players adjust their crosshair."
+            },
+            {
+              "label": "Mobile",
+              "detail": "Mobile quality-of-life feature allowing players to resize control buttons."
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "name": "Murder Duels Updates & Events",
+          "description": "Track major Murder Duels updates, limited events, and newly added gameplay systems. Follow changes such as matchmaking, trading, seasonal content, maps, collectibles, and economy adjustments.",
+          "href": "/updates",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Trading",
+              "detail": "Trading was added so players can exchange weapon skins with other players."
+            },
+            {
+              "label": "Matchmaking",
+              "detail": "Global matchmaking allows players to jump into games with friends more easily."
+            },
+            {
+              "label": "Summer",
+              "detail": "Summer Event Part 1 introduced a redesigned lobby, Facility and House maps, collectibles, bundles, and quality-of-life changes."
+            },
+            {
+              "label": "Plaza",
+              "detail": "The Summer update finalized the Trading Plaza with a shooting range, additional visuals, and further polish."
+            },
+            {
+              "label": "Clans",
+              "detail": "Top Clan podiums were added to the lobby to showcase the current top five clans."
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Quick answers to the most common questions about Murder Duels.",
+      "items": [
+        {
+          "question": "What is Murder Duels?",
+          "answer": "Murder Duels is a Roblox first-person PvP dueling game by Breakfast where players fight with a knife and revolver in round-based 1v1 through 4v4 matches."
+        },
+        {
+          "question": "How do Murder Duels matches work?",
+          "answer": "Murder Duels matches are played in short rounds. Players choose a duel format, use knife and revolver combat, and the first side to reach five round wins takes the match."
+        },
+        {
+          "question": "Does Murder Duels have codes?",
+          "answer": "Murder Duels codes can reward free cases or special items. Players usually need to meet in-game requirements such as joining the developer group, liking the game, and reaching the required level before redeeming."
+        },
+        {
+          "question": "Can you trade in Murder Duels?",
+          "answer": "Murder Duels includes trading for weapon skins and collectibles. Players should compare rarity, demand, limited supply, and item availability before accepting a trade."
+        },
+        {
+          "question": "What weapons are used in Murder Duels?",
+          "answer": "Murder Duels centers on two core weapons: a knife for close pressure and a revolver for ranged accuracy. Both weapon types can have unique abilities and cosmetic skins."
+        },
+        {
+          "question": "Is Murder Duels on Roblox?",
+          "answer": "Murder Duels is available on Roblox and is built around fast competitive duels, collectible weapon skins, maps, events, clans, and player trading."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Ready to Master Murder Duels?",
+      "description": "From landing your first revolver shot to mastering knife abilities and trading rare skins, our Murder Duels guides help Roblox players improve PvP skills and make smarter progression decisions.",
+      "primary": "Read the Roblox Beginner Guide",
+      "secondary": "Play Murder Duels on Roblox"
+    }
+  },
+  "shared": {
+    "wikiNavigation": "Wiki Navigation",
+    "activeCodes": "Active Codes",
+    "updated": "Updated",
+    "viewAllCodes": "View all codes",
+    "playOnRoblox": "Play on Roblox",
+    "inThisSection": "In this section",
+    "tableOfContents": "Table of Contents",
+    "nextSteps": "Next Steps",
+    "needHelp": "Need Help?",
+    "relatedReading": "Related Reading",
+    "relatedGuides": "Related Guides",
+    "readMore": "Read more",
+    "officialMedia": "Official media",
+    "home": "Home",
+    "noGuidesAvailable": "No guides available yet. Check back soon!"
+  },
+  "footer": {
+    "aboutTitle": "Murder Duels Wiki",
+    "about": "Murder Duels Wiki is an independent fan-made guide site for the Roblox game Murder Duels. We cover codes, trading values, weapons, skills, maps, updates and competitive PvP strategies. This site is not affiliated with Roblox or Breakfast.",
+    "description": "Fast-paced Roblox PvP with knife and revolver combat, 1v1-4v4 duels, weapon skills, skins and trading.",
+    "quickLinks": "Quick Links",
+    "guides": "Guides",
+    "copyright": "2026 Murder Duels Wiki. Not affiliated with Roblox or Breakfast.",
+    "playGame": "Play Murder Duels on Roblox",
+    "officialDiscord": "Official Discord",
+    "officialYoutube": "Murder Duels Gameplay Videos",
+    "vvBuilder": "Murder Duels Trading Values",
+    "beginnerGuide": "Beginner Guide",
+    "raceGuides": "Trading Values",
+    "bossGuides": "Weapons Guides",
+    "buildGuide": "Tier Lists",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "codes": {
+    "overviewTitle": "Murder Duels Codes",
+    "overviewDescription": "Browse Murder Duels code guides, active rewards, redemption steps, and update notes for free cases and special items."
+  },
+  "guide": {
+    "overviewTitle": "Murder Duels Guide",
+    "overviewDescription": "Browse Murder Duels guides for beginners, settings, events, release updates, and practical PvP tips."
+  },
+  "values": {
+    "overviewTitle": "Murder Duels Values",
+    "overviewDescription": "Browse Murder Duels value guides covering trading values, value lists, weapon values, and item comparison basics."
+  },
+  "tier": {
+    "overviewTitle": "Murder Duels Tier",
+    "overviewDescription": "Browse Murder Duels tier list guides for skills, abilities, best loadouts, and competitive ranking decisions."
+  },
+  "skins": {
+    "overviewTitle": "Murder Duels Skins",
+    "overviewDescription": "Browse Murder Duels skin guides covering all skins, secret skins, collectible cosmetics, and visual rewards."
+  },
+  "weapons": {
+    "overviewTitle": "Murder Duels Weapons",
+    "overviewDescription": "Browse Murder Duels weapon guides for knives, revolvers, guns, secret weapons, and combat roles."
+  },
+  "trading": {
+    "overviewTitle": "Murder Duels Trading",
+    "overviewDescription": "Browse Murder Duels trading guides for trades, trading servers, trading Discord communities, and offer evaluation."
+  },
+  "community": {
+    "overviewTitle": "Murder Duels Community",
+    "overviewDescription": "Browse Murder Duels community guides for Discord, Roblox pages, maps, shop information, and official destinations."
+  }
+}
