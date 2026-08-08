@@ -34,3 +34,6 @@ next-env.d.ts
 
 # same app
 .same/
+
+# cloudflare wrangler
+.wrangler/

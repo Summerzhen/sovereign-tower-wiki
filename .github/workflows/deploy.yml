@@ -27,7 +27,7 @@ jobs:
       - name: Build static export
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_SITE_URL: https://sovereigntower.org
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
           NEXT_PUBLIC_MICROSOFT_CLARITY_ID: ${{ secrets.NEXT_PUBLIC_MICROSOFT_CLARITY_ID }}
           NEXT_PUBLIC_GOOGLE_ADSENSE_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ADSENSE_ID }}
@@ -39,6 +39,9 @@ jobs:
           NEXT_PUBLIC_AD_SIDEBAR_160X600: ${{ secrets.NEXT_PUBLIC_AD_SIDEBAR_160X600 }}
           NEXT_PUBLIC_AD_SIDEBAR_160X300: ${{ secrets.NEXT_PUBLIC_AD_SIDEBAR_160X300 }}
           NEXT_PUBLIC_AD_MOBILE_320X50: ${{ secrets.NEXT_PUBLIC_AD_MOBILE_320X50 }}
+
+      - name: Verify static output
+        run: test -f out/index.html && test -f out/sitemap.xml && test -f out/robots.txt
 
       - name: Deploy static assets to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3

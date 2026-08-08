@@ -3,8 +3,8 @@ import { LegalPage } from "@/components/legal-page";
 export default function AboutPage() {
   return (
     <LegalPage title="About">
-      <p>Murder Duels Wiki is an independent fan-built guide hub covering Roblox codes, trading values, weapons, skills, maps, updates, and PvP knowledge for new and veteran players alike.</p>
-      <p>The site is designed around Murder Duels' fast first-person dueling format, including knife and revolver combat, 1v1 through 4v4 modes, weapon skins, events, and community trading needs.</p>
+      <p>Sovereign Tower Wiki is an independent fan-built guide hub covering knight management, quests, kingdom choices, characters, endings, romance routes, platforms, updates, and time rewind strategy.</p>
+      <p>The site is designed around Sovereign Tower's story-rich medieval management RPG format, including Round Table decisions, faction balance, knight assignments, tower upgrades, and alternate outcomes.</p>
     </LegalPage>
   );
 }

@@ -1,0 +1,446 @@
+{
+  "site": {
+    "name": "Sovereign Tower",
+    "shortName": "Sovereign Tower",
+    "tagline": "ファン制作 Sovereign Tower コミュニティ Wiki",
+    "description": "Sovereign Tower Wiki covering knight 管理, quests, 王国 選択, 時間巻き戻し mechanics, characters, endings and beginner strategies.",
+    "legalNotice": "Independent fan-made Sovereign Tower wiki. Not affiliated with WILD WITS GAMES or Curve Games."
+  },
+  "nav": {
+    "guide": "ガイド",
+    "characters": "キャラクター",
+    "romance": "ロマンス",
+    "systems": "システム",
+    "platforms": "プラットフォーム",
+    "release": "リリース",
+    "community": "コミュニティ",
+    "media": "メディア"
+  },
+  "home": {
+    "meta": {
+      "title": "Sovereign Tower Wiki - ガイド, 騎士, クエスト",
+      "description": "Complete Sovereign Tower Wiki covering knight 管理, quests, 王国 選択, 時間巻き戻し mechanics, characters, endings and beginner strategies."
+    },
+    "hero": {
+      "eyebrow": "ファン制作 コミュニティ Wiki",
+      "title": "Sovereign Tower Wiki",
+      "description": "Master Sovereign Tower, a 物語-rich medieval 管理 RPG on Steam. Recruit eccentric knights, manage your Round Table, balance 王国 factions, explore romance routes, and use 時間巻き戻し 選択 to rewrite fate.",
+      "stats": [
+        "Steam PC",
+        "開発: WILD WITS GAMES",
+        "6 Supported 言語",
+        "Story Rich RPG",
+        "Time Rewind System"
+      ],
+      "primaryCta": "Start 初心者 ガイド",
+      "secondaryCta": "探索 騎士",
+      "tertiaryCta": "Steamでプレイ",
+      "videoLabel": "Sovereign Tower ゲームプレイ"
+    },
+    "updates": {
+      "title": "Recent 更新",
+      "browse": "見る All ガイド",
+      "viewAll": "View All"
+    },
+    "start": {
+      "eyebrow": "ここから開始",
+      "title": "あなたの Sovereign Tower 攻略",
+      "cards": [
+        {
+          "number": "1",
+          "title": "初心者 ガイド",
+          "description": "Learn core gameplay, 王国 resources, knight assignments, and the first decisions that shape your reign."
+        },
+        {
+          "number": "2",
+          "title": "騎士 Management",
+          "description": "Understand knight recruitment, attributes, quest assignments, and relationship 管理 around your Round Table."
+        },
+        {
+          "number": "3",
+          "title": "クエスト & Kingdom ガイド",
+          "description": "Learn how quest 選択, 王国 decisions, and route planning affect your rule."
+        },
+        {
+          "number": "4",
+          "title": "Time Rewind Secrets",
+          "description": "探索 時間巻き戻し mechanics, hidden events, and special 物語 outcomes across multiple timelines."
+        }
+      ]
+    },
+    "popular": {
+      "eyebrow": "Popular Pages",
+      "title": "Trending Now",
+      "quickLinks": [
+        "初心者 ガイド",
+        "騎士 Management",
+        "クエスト Choices",
+        "Time Rewind"
+      ],
+      "cards": [
+        {
+          "badge": "初心者",
+          "title": "初心者 ガイド",
+          "description": "Learn 王国 resources, first assignments, Round Table basics, and the early decisions that shape your reign.",
+          "href": "/beginner-guide"
+        },
+        {
+          "badge": "ガイド",
+          "title": "騎士 Management",
+          "description": "Understand knight recruitment, roles, relationships, and quest assignments before expanding your court.",
+          "href": "/knights"
+        },
+        {
+          "badge": "ガイド",
+          "title": "クエスト Choices",
+          "description": "Plan 王国 quests, evaluate 物語 decisions, and track how outcomes change across your rule.",
+          "href": "/quests"
+        },
+        {
+          "badge": "System",
+          "title": "Time Rewind",
+          "description": "Use timeline knowledge to revise decisions, reveal secrets, and unlock stronger long-term outcomes.",
+          "href": "/time-rewind"
+        },
+        {
+          "badge": "Feature",
+          "title": "ゲームプレイ Features",
+          "description": "Review the 管理 RPG systems, fantasy setting, character focus, and branching 選択.",
+          "href": "/features"
+        },
+        {
+          "badge": "キャラクター",
+          "title": "キャラクター ガイド",
+          "description": "Follow important figures, knight interactions, relationship paths, and 物語 events.",
+          "href": "/characters"
+        },
+        {
+          "badge": "Steam",
+          "title": "System Requirements",
+          "description": "Check the Steam PC platform details, genre, release window, and practical setup notes.",
+          "href": "/system-requirements"
+        },
+        {
+          "badge": "ニュース",
+          "title": "更新 & ニュース",
+          "description": "Follow official announcements, developer updates, and community information for Sovereign Tower.",
+          "href": "/news"
+        }
+      ]
+    },
+    "aboutGame": {
+      "title": "とは Sovereign Tower?",
+      "paragraphs": [
+        "Sovereign Tower is a 物語-rich medieval 管理 RPG where プレイヤー become the ruler of a magical 塔. You recruit unique knights, assign quests, and make 選択 that shape your 王国.",
+        "The game combines 王国 管理, character relationships, and time manipulation mechanics. Players can rewrite decisions, discover secrets, and create different outcomes through multiple timelines."
+      ],
+      "stats": [
+        {
+          "label": "開発",
+          "value": "WILD WITS GAMES"
+        },
+        {
+          "label": "プラットフォーム",
+          "value": "Steam PC"
+        },
+        {
+          "label": "ジャンル",
+          "value": "Management RPG"
+        },
+        {
+          "label": "リリース",
+          "value": "Aug 2026"
+        },
+        {
+          "label": "言語",
+          "value": "6 Supported 言語"
+        },
+        {
+          "label": "Core System",
+          "value": "騎士 クエスト Management"
+        },
+        {
+          "label": "ゲームプレイ",
+          "value": "Time Rewind Choices"
+        }
+      ],
+      "cta": "探索 All ガイド"
+    },
+    "explore": {
+      "title": "Sovereign Tower ホームpage Modules",
+      "description": "Jump into the main Sovereign Tower ガイド sections for beginner basics, knights, quests, 時間巻き戻し 選択, characters, system requirements, and official news.",
+      "modules": [
+        {
+          "order": 1,
+          "name": "Sovereign Tower 初心者 ガイド",
+          "description": "A complete beginner ガイド covering the first steps in Sovereign Tower, including 王国 管理, knight recruitment, and core gameplay decisions. Help new プレイヤー understand the main systems before progressing further.",
+          "href": "/guide/sovereign-tower-beginner-guide",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Learn the role of the Sovereign and understand the magical 塔 管理 gameplay."
+            },
+            {
+              "label": "2",
+              "detail": "Recruit knights and assign them to quests while managing 王国 decisions."
+            },
+            {
+              "label": "3",
+              "detail": "探索 物語 選択 and use time manipulation mechanics to change outcomes."
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Sovereign Tower 騎士 ガイド",
+          "description": "探索 knight-related gameplay information including recruitment, character roles, and quest 管理. This ガイド helps プレイヤー understand how to build an effective Round Table.",
+          "href": "/characters/sovereign-tower-knights",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "騎士",
+              "detail": "Recruit unique knights and manage their involvement in 王国 quests."
+            },
+            {
+              "label": "Round Table",
+              "detail": "Build relationships and make decisions that affect your 王国."
+            },
+            {
+              "label": "クエスト",
+              "detail": "Send characters on missions and discover 物語 events."
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Sovereign Tower クエスト ガイド",
+          "description": "A quest ガイド covering 物語 progression, important 選択, and 王国 events. Find information about how decisions influence different outcomes.",
+          "href": "/guide/sovereign-tower-walkthrough",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Story Choices",
+              "detail": "Make decisions that shape the direction of your 王国."
+            },
+            {
+              "label": "Missions",
+              "detail": "Manage quests through your recruited knights."
+            },
+            {
+              "label": "Outcomes",
+              "detail": "Discover different possibilities through changing 選択."
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "name": "Sovereign Tower Time Rewind ガイド",
+          "description": "Learn how the 時間巻き戻し system works and how it changes the way プレイヤー approach decisions. This section explains the unique timeline mechanic of Sovereign Tower.",
+          "href": "/guide/sovereign-tower-sovereign-mode",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Understand when and why timeline changes can affect your progress."
+            },
+            {
+              "label": "2",
+              "detail": "Review previous decisions and explore alternative 物語 paths."
+            },
+            {
+              "label": "3",
+              "detail": "Use discovered information to improve future 王国 選択."
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "name": "Sovereign Tower ゲームプレイ Features",
+          "description": "A feature overview covering the main systems プレイヤー search for when learning about Sovereign Tower. Discover the game 管理, RPG, and fantasy elements.",
+          "href": "/systems",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Management RPG",
+              "detail": "Manage a magical 塔 and lead your 王国."
+            },
+            {
+              "label": "Fantasy World",
+              "detail": "Experience a medieval fantasy setting with knights and quests."
+            },
+            {
+              "label": "Multiple Choices",
+              "detail": "Create different outcomes through player decisions."
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "name": "Sovereign Tower キャラクター ガイド",
+          "description": "A character ガイド section focused on important figures, knight interactions, and 物語-related information. Designed for プレイヤー searching character details and relationships.",
+          "href": "/characters",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "キャラクター",
+              "detail": "Discover important characters appearing throughout the 王国 物語."
+            },
+            {
+              "label": "Relationships",
+              "detail": "Understand character connections and decision impacts."
+            },
+            {
+              "label": "Stories",
+              "detail": "Follow character events and narrative developments."
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "name": "Sovereign Tower System Requirements",
+          "description": "A practical reference page covering supported platforms and PC requirements. Help プレイヤー check whether their system can run Sovereign Tower.",
+          "href": "/platforms/sovereign-tower-steam",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "プラットフォーム",
+              "detail": "Available on Steam for PC."
+            },
+            {
+              "label": "ジャンル",
+              "detail": "Story-driven medieval 管理 RPG."
+            },
+            {
+              "label": "リリース",
+              "detail": "リリースd on Steam in August 2026."
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "name": "Sovereign Tower 更新 & ニュース",
+          "description": "Follow official announcements, development updates, and community news for Sovereign Tower. Keep track of new information directly from official sources.",
+          "href": "/media/sovereign-tower-trailer",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Steam ニュース",
+              "detail": "Check official game announcements and updates."
+            },
+            {
+              "label": "開発",
+              "detail": "Follow WILD WITS GAMES development information."
+            },
+            {
+              "label": "コミュニティ",
+              "detail": "Connect with プレイヤー through official channels."
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked クエストions",
+      "description": "クイック回答 to the most common questions about Sovereign Tower.",
+      "items": [
+        {
+          "question": "とは Sovereign Tower?",
+          "answer": "Sovereign Tower is a medieval 管理 RPG about ruling a magical 塔, recruiting knights, assigning quests, and shaping 王国 outcomes through 物語 選択."
+        },
+        {
+          "question": "What should beginners do first in Sovereign Tower?",
+          "answer": "Sovereign Tower beginners should learn how the Sovereign role works, recruit early knights, understand quest assignments, and watch how each decision changes 王国 progress."
+        },
+        {
+          "question": "How do knights work in Sovereign Tower?",
+          "answer": "Sovereign Tower knights are recruited characters who support 王国 quests, 物語 events, and Round Table decisions. Managing their roles and relationships is central to progression."
+        },
+        {
+          "question": "How do quests affect Sovereign Tower?",
+          "answer": "Sovereign Tower quests drive 物語 progression, 王国 管理, and character outcomes. Choices made during quests can open different paths and reveal new events."
+        },
+        {
+          "question": "Does Sovereign Tower have 時間巻き戻し mechanics?",
+          "answer": "Sovereign Tower uses 時間巻き戻し 選択 so プレイヤー can revisit decisions, use knowledge from previous outcomes, and pursue stronger 王国 results across timelines."
+        },
+        {
+          "question": "Where can プレイヤー get Sovereign Tower?",
+          "answer": "Sovereign Tower is 利用可能 on Steam for PC, with official game information and updates published through the Steam page and WILD WITS GAMES channels."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "攻略の準備 Sovereign Tower?",
+      "description": "From your first knight recruitment to legendary 王国 decisions, our Sovereign Tower ガイドs help you understand every choice, manage your court, and discover hidden paths.",
+      "primary": "Read the 初心者 ガイド",
+      "secondary": "Play Sovereign Tower on Steam"
+    }
+  },
+  "shared": {
+    "wikiNavigation": "Wiki Navigation",
+    "activeCodes": "Active Codes",
+    "updated": "Updated",
+    "viewAllCodes": "View all codes",
+    "inThisSection": "In this section",
+    "tableOfContents": "目次",
+    "nextSteps": "Next Steps",
+    "needHelp": "Need Help?",
+    "relatedReading": "Related Reading",
+    "relatedGuides": "Related ガイド",
+    "readMore": "続きを読む",
+    "officialMedia": "公式 media",
+    "home": "ホーム",
+    "noGuidesAvailable": "No ガイドs 利用可能 yet. Check back soon!"
+  },
+  "footer": {
+    "aboutTitle": "Sovereign Tower Wiki",
+    "about": "Sovereign Tower Wiki is an independent fan-made ガイド site for the medieval 管理 RPG Sovereign Tower. We cover knights, quests, 王国 管理, character information, endings, romance routes and gameplay strategies. This site is not affiliated with WILD WITS GAMES or Curve Games.",
+    "description": "A 物語-rich medieval 管理 RPG featuring knights, quests, 王国 選択 and time manipulation.",
+    "quickLinks": "Quick Links",
+    "guides": "ガイド",
+    "copyright": "2026 Sovereign Tower Wiki. Not affiliated with WILD WITS GAMES or Curve Games.",
+    "playGame": "Play Sovereign Tower on Steam",
+    "officialDiscord": "公式 Discord",
+    "officialYoutube": "Sovereign Tower ゲームプレイ Videos",
+    "vvBuilder": "開発 Page",
+    "beginnerGuide": "初心者 ガイド",
+    "raceGuides": "騎士 ガイド",
+    "bossGuides": "システム ガイド",
+    "buildGuide": "Game Tips",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約"
+  },
+  "guide": {
+    "overviewTitle": "Sovereign Tower ガイド",
+    "overviewDescription": "見る Sovereign Tower ガイドs for beginner tips, walkthroughs, endings, sovereign mode, demo help, and practical strategy."
+  },
+  "community": {
+    "overviewTitle": "Sovereign Tower コミュニティ",
+    "overviewDescription": "見る Sovereign Tower community ガイドs for Discord, social channels, fan spaces, discussion hubs, and official destinations."
+  },
+  "characters": {
+    "overviewTitle": "Sovereign Tower キャラクター",
+    "overviewDescription": "見る Sovereign Tower character ガイドs for knights, allies, romance interests, 物語 figures, and important 王国 relationships."
+  },
+  "romance": {
+    "overviewTitle": "Sovereign Tower ロマンス",
+    "overviewDescription": "見る Sovereign Tower romance ガイドs covering partners, romance options, relationship paths, and character-focused 選択."
+  },
+  "systems": {
+    "overviewTitle": "Sovereign Tower システム",
+    "overviewDescription": "見る Sovereign Tower system ガイドs for blacksmithing, fame, meals, map use, demon power, dragon heart, and major mechanics."
+  },
+  "platforms": {
+    "overviewTitle": "Sovereign Tower プラットフォーム",
+    "overviewDescription": "見る Sovereign Tower platform ガイドs for Steam, PC, Mac, Switch, PS5, Xbox, mobile, itch, and where to play."
+  },
+  "release": {
+    "overviewTitle": "Sovereign Tower リリース",
+    "overviewDescription": "見る Sovereign Tower release ガイドs for launch date, price, demo details, full game information, and platform release notes."
+  },
+  "media": {
+    "overviewTitle": "Sovereign Tower メディア",
+    "overviewDescription": "見る Sovereign Tower media ガイドs for trailers, gameplay, reviews, previews, art, logo information, and coverage."
+  }
+}

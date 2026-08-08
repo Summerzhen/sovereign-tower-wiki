@@ -12,11 +12,19 @@ import { CONTENT_TYPES } from "@/config/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import en from "@/locales/en.json";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://murderduels.org";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org";
 type Messages = typeof en;
 
 function languageAlternates(pathname: string) {
   return Object.fromEntries(routing.locales.map((locale) => [locale, locale === "en" ? pathname : `/${locale}${pathname}`]));
+}
+
+function localizedPath(pathname: string, locale: string) {
+  return locale === "en" ? pathname : `/${locale}${pathname}`;
+}
+
+function absoluteLocalizedUrl(pathname: string, locale: string) {
+  return `${siteUrl}${localizedPath(pathname, locale)}`;
 }
 
 export async function generateStaticParams() {
@@ -32,16 +40,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
     const ct = slug[0];
     const ctTitle = ct.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const ctMessages = (messages as unknown as Record<string, Record<string, string>>)[ct];
-    const title = ctMessages?.overviewTitle || `${ctTitle} — Murder Duels Wiki`;
-    const description = ctMessages?.overviewDescription || `Browse all ${ctTitle.toLowerCase()} guides and resources for Murder Duels.`;
-    return { title, description, alternates: { canonical: `/${ct}`, languages: languageAlternates(`/${ct}`) }, openGraph: { title, description, url: `${siteUrl}/${ct}`, images: [`${siteUrl}/images/hero.webp`] }, twitter: { card: "summary_large_image", images: [`${siteUrl}/images/hero.webp`] } };
+    const title = ctMessages?.overviewTitle || `${ctTitle} - Sovereign Tower Wiki`;
+    const description = ctMessages?.overviewDescription || `Browse all ${ctTitle.toLowerCase()} guides and resources for Sovereign Tower.`;
+    return { title, description, alternates: { canonical: localizedPath(`/${ct}`, locale), languages: languageAlternates(`/${ct}`) }, openGraph: { title, description, url: absoluteLocalizedUrl(`/${ct}`, locale), images: [`${siteUrl}/images/hero.webp`] }, twitter: { card: "summary_large_image", images: [`${siteUrl}/images/hero.webp`] } };
   }
   const [contentType, ...articleSlug] = slug;
   const item = await getContent(contentType, articleSlug, locale);
   if (!item) return { title: "Not Found" };
   const pathname = `/${contentType}/${articleSlug.join("/")}`;
   const image = item.metadata.image?.startsWith("http") ? item.metadata.image : `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`;
-  return { title: `${item.metadata.title} — Murder Duels Wiki`, description: item.metadata.description, alternates: { canonical: pathname, languages: languageAlternates(pathname) }, openGraph: { type: "article", title: item.metadata.title, description: item.metadata.description, url: `${siteUrl}${pathname}`, images: [image] }, twitter: { card: "summary_large_image", images: [image] } };
+  return { title: `${item.metadata.title} - Sovereign Tower Wiki`, description: item.metadata.description, alternates: { canonical: localizedPath(pathname, locale), languages: languageAlternates(pathname) }, openGraph: { type: "article", title: item.metadata.title, description: item.metadata.description, url: absoluteLocalizedUrl(pathname, locale), images: [image] }, twitter: { card: "summary_large_image", images: [image] } };
 }
 
 export default async function SlugPage({ params }: { params: Promise<{ locale: Locale; slug: string[] }> }) {
@@ -55,9 +63,8 @@ async function NavigationPage({ locale, contentType, navGroups }: { locale: Loca
   if (!CONTENT_TYPES.includes(contentType)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const items = await getAllContent(contentType, locale);
-  const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — Murder Duels Wiki`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/${contentType}/${item.slug}`, name: item.metadata.title })) };
+  const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} - Sovereign Tower Wiki`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: absoluteLocalizedUrl(`/${contentType}/${item.slug}`, locale), name: item.metadata.title })) };
 
-  // 读取分类标题（优先用 locale JSON 里的，没有就转 slug）
   const sectionTitle = (messages as unknown as Record<string, Record<string, string>>)[contentType]?.overviewTitle
     || contentType.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const sectionDesc = (messages as unknown as Record<string, Record<string, string>>)[contentType]?.overviewDescription || "";
@@ -71,10 +78,11 @@ async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Lo
   const item = await getContent(contentType, slug, locale);
   if (!item) notFound();
   const pathname = `/${contentType}/${slug.join("/")}`;
+  const image = item.metadata.image?.startsWith("http") ? item.metadata.image : `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`;
   const tocLabel = messages.shared.tableOfContents || messages.shared.inThisSection || "Table of Contents";
   const sectionLabel = contentType.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-  const articleData = { "@context": "https://schema.org", "@type": "Article", headline: item.metadata.title, description: item.metadata.description, image: `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`, datePublished: item.metadata.date, dateModified: item.metadata.lastModified ?? item.metadata.date, mainEntityOfPage: `${siteUrl}${pathname}`, author: { "@type": "Organization", name: "Murder Duels Wiki" }, publisher: { "@type": "Organization", name: "Murder Duels Wiki", logo: { "@type": "ImageObject", url: `${siteUrl}/android-chrome-512x512.png` } } };
-  const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: sectionLabel, item: `${siteUrl}/${contentType}` }, { "@type": "ListItem", position: 3, name: item.metadata.title, item: `${siteUrl}${pathname}` }] };
+  const articleData = { "@context": "https://schema.org", "@type": "Article", headline: item.metadata.title, description: item.metadata.description, image, datePublished: item.metadata.date, dateModified: item.metadata.lastModified ?? item.metadata.date, mainEntityOfPage: absoluteLocalizedUrl(pathname, locale), author: { "@type": "Organization", name: "Sovereign Tower Wiki" }, publisher: { "@type": "Organization", name: "Sovereign Tower Wiki", logo: { "@type": "ImageObject", url: `${siteUrl}/android-chrome-512x512.png` } } };
+  const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: absoluteLocalizedUrl("/", locale) }, { "@type": "ListItem", position: 2, name: sectionLabel, item: absoluteLocalizedUrl(`/${contentType}`, locale) }, { "@type": "ListItem", position: 3, name: item.metadata.title, item: absoluteLocalizedUrl(pathname, locale) }] };
 
   const relatedLabel = messages.shared.relatedGuides || "Related Guides";
 
@@ -82,7 +90,7 @@ async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Lo
 }
 
 async function ArticleCards({ locale, contentType, currentSlug, relatedLabel }: { locale: string; contentType: string; currentSlug: string; relatedLabel: string }) {
-  // 动态获取同分类其他文章（排除当前文章）
+  // 鍔ㄦ€佽幏鍙栧悓鍒嗙被鍏朵粬鏂囩珷锛堟帓闄ゅ綋鍓嶆枃绔狅級
   const allItems = await getAllContent(contentType, locale as Locale);
   const related = allItems.filter((item) => item.slug !== currentSlug).slice(0, 4);
 
@@ -92,3 +100,5 @@ async function ArticleCards({ locale, contentType, currentSlug, relatedLabel }: 
 }
 
 function SmallCard({ title, description, href, icon }: { title: string; description: string; href: string; icon?: React.ReactNode }) { return <Link href={href} className="block rounded-2xl border border-border bg-card/70 p-5 transition hover:border-[hsl(var(--nav-theme-light))]">{icon && <div className="mb-3 text-[hsl(var(--nav-theme))]">{icon}</div>}<h4 className="font-bold text-foreground">{title}</h4><p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p></Link>; }
+
+

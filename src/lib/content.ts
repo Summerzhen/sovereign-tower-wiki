@@ -237,14 +237,14 @@ export interface NavGroup {
 
 // 分组标题映射：slug → 人类可读标题（默认英文）
 const GROUP_TITLES: Record<string, string> = {
-  codes: "Codes",
   guide: "Guide",
-  values: "Values",
-  tier: "Tier",
-  skins: "Skins",
-  weapons: "Weapons",
-  trading: "Trading",
+  characters: "Characters",
+  romance: "Romance",
+  systems: "Systems",
+  platforms: "Platforms",
+  release: "Release",
   community: "Community",
+  media: "Media",
 };
 
 // locale → 分组标题映射
@@ -257,7 +257,7 @@ const OVERVIEW_LABEL_BY_LOCALE: Record<string, string> = {
 
 // 分组排序顺序
 const GROUP_ORDER: string[] = [
-  "codes", "guide", "values", "tier", "skins", "weapons", "trading", "community",
+  "guide", "characters", "romance", "systems", "platforms", "release", "community", "media",
 ];
 
 /**

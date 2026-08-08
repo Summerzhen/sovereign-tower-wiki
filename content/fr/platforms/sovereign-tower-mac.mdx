@@ -1,0 +1,165 @@
+export const metadata = {
+  title: "Sovereign Tower sur Mac : Guide de compatibilité et comment y jouer",
+  description: "Pouvez-vous jouer à Sovereign Tower sur Mac ? Découvrez le support natif, les alternatives, la configuration requise et les meilleures façons de faire tourner ce RPG sur macOS.",
+  category: "platforms",
+  date: "2026-08-08",
+}
+
+## Pouvez-vous jouer à Sovereign Tower sur Mac ?
+
+Sovereign Tower a captivé les joueurs depuis sa sortie le 6 août 2026, obtenant une évaluation "Très positif" sur Steam avec 91 % des 455 critiques louant son gameplay riche en histoire de gestion de la Table Ronde. Mais si vous êtes propriétaire d'un Mac et que vous vous posez la question concernant **Sovereign Tower sur Mac**, la réponse n'est pas simple. Le jeu ne dispose actuellement pas d'un support natif pour macOS, ce qui pousse les utilisateurs d'Apple à chercher des alternatives viables.
+
+Ce guide détaille la situation officielle des plateformes, explore des solutions de contournement pratiques et vous aide à décider de la meilleure voie pour régner sur votre tour magique depuis un Mac.
+
+## Support officiel des plateformes pour Sovereign Tower
+
+D'après la page Steam, WILD WITS GAMES et l'éditeur Curve Games ont publié Sovereign Tower avec une configuration requise pour deux plateformes uniquement : Windows et SteamOS + Linux. Il n'y a pas de section macOS, pas de spécifications pour Mac Apple Silicon ou Intel, et aucune mention d'un portage natif sur Mac dans les annonces officielles.
+
+### Ce que confirme la page Steam
+
+Les plateformes prises en charge et leur configuration minimale sont clairement documentées :
+
+| Plateforme | OS minimum | Processeur | RAM | GPU | Stockage |
+|----------|-----------|-----------|-----|-----|---------|
+| Windows | Windows 10 | Intel Core i5-4670K | 4 Go | GeForce GT 1030 (2048 Mo) | 3 Go |
+| SteamOS + Linux | SteamOS 3.8.10 | Zen 2 4c/8t, 2.4-3.5GHz | 4 Go | 8 CU RDNA 2, 1.6GHz | 3 Go |
+
+La configuration recommandée augmente la RAM à 8 Go et met à niveau le GPU vers une GTX 1060 avec 6 Go de VRAM sur Windows, tandis que la configuration recommandée pour Linux reste la même que la minimale avec 8 Go de RAM.
+
+La bonne nouvelle est que les exigences matérielles sont modestes. La mauvaise nouvelle pour les joueurs sur Mac est qu'aucune colonne ne mentionne macOS. De plus, le badge de compatibilité du Steam Deck indique "Vérifié", confirmant une expérience fluide sur le matériel portable de Valve — mais celui-ci fonctionne sous SteamOS, pas sous macOS.
+
+### Un support natif sur Mac arrivera-t-il ?
+
+En août 2026, ni WILD WITS GAMES ni Curve Games n'ont annoncé de plans pour une version macOS. Les tags du jeu — Visual Novel, Point & Click, 2D, Histoire riche — suggèrent qu'il n'est pas très exigeant graphiquement, ce qui rend généralement les portages sur Mac plus réalisables. Cependant, aucune déclaration du développeur ne confirme que c'est en cours. Toute future sortie sur Mac reste spéculative, les joueurs ne devraient donc pas attendre et explorer des méthodes alternatives.
+
+## Options de contournement pour jouer à Sovereign Tower sur Mac
+
+Puisqu'il n'y a pas de client natif pour Mac, vous aurez besoin d'une couche de compatibilité ou d'un outil de virtualisation. Voici les principales approches disponibles pour les utilisateurs de Mac, classées par ordre de praticité.
+
+### Option 1 : CrossOver (Recommandé pour les Mac Apple Silicon)
+
+CrossOver traduit les appels d'API Windows pour que les applications Windows fonctionnent sur macOS sans avoir besoin d'une licence Windows complète. Il est basé sur le projet Wine et optimisé par CodeWeavers.
+
+- **Avantages** : Pas besoin de licence Windows, bonnes performances sur les Mac M1/M2/M3, moins de ressources nécessaires qu'une virtualisation complète
+- **Inconvénients** : La compatibilité n'est pas garantie pour tous les jeux, peut nécessiter des dépannages
+- **Probabilité** : Étant donné que Sovereign Tower utilise des visuels 2D modestes et n'est pas un titre 3D exigeant, CrossOver a des chances raisonnables de le faire tourner correctement. Les rapports de la communauté pour des RPG indépendants similaires et des jeux de type visual novel sur CrossOver ont tendance à être positifs.
+
+### Option 2 : Parallels Desktop
+
+Parallels crée une machine virtuelle Windows à l'intérieur de macOS. Vous aurez besoin d'une licence Windows et de suffisamment de RAM.
+
+- **Avantages** : Environnement Windows complet, haute compatibilité, prend en charge DirectX 12
+- **Inconvénients** : Nécessite une licence Windows, plus gourmand en ressources, surcoût de performance dû à la virtualisation
+- **Probabilité** : Très probable de fonctionner puisque vous exécutez essentiellement Windows. La configuration modeste du jeu (GT 1030 minimum) devrait être atteignable via Parallels sur les Mac modernes avec 16 Go de RAM ou plus.
+
+### Option 3 : Boot Camp (Mac Intel uniquement)
+
+Si vous avez un Mac basé sur Intel, Boot Camp vous permet d'installer Windows nativement sur une partition distincte.
+
+- **Avantages** : Performances Windows natives, compatibilité totale, aucun surcoût de virtualisation
+- **Inconvénients** : Non disponible sur les Mac Apple Silicon, nécessite un redémarrage pour changer de système d'exploitation, nécessite une licence Windows et suffisamment d'espace disque
+- **Probabilité** : Meilleure expérience possible sur les Mac Intel, mais cette option n'est pas disponible pour les propriétaires de puces de la série M.
+
+### Comparaison des méthodes de contournement sur Mac
+
+| Méthode | Support Apple Silicon | Licence Windows requise | Performances | Difficulté d'installation |
+|--------|----------------------|----------------------|-------------|-----------------|
+| CrossOver | Oui | Non | Bonne à Excellente | Modérée |
+| Parallels Desktop | Oui | Oui | Bonne | Facile |
+| Boot Camp | Mac Intel uniquement | Oui | Excellente | Modérée |
+
+Pour la plupart des utilisateurs modernes de Mac sur Apple Silicon, CrossOver offre le meilleur équilibre entre commodité et performances. Parallels est le choix le plus sûr pour une compatibilité garantie, au prix d'une licence Windows.
+
+## Ce qu'il faut savoir avant d'acheter
+
+Avant d'acheter Sovereign Tower dans l'intention d'y jouer sur Mac, gardez ces considérations à l'esprit.
+
+### Vérifiez la politique de remboursement de Steam
+
+Steam offre des remboursements pour les jeux joués moins de deux heures dans les 14 jours suivant l'achat. Si vous achetez Sovereign Tower et que la solution de contournement choisie ne fonctionne pas bien, vous pouvez demander un remboursement — à condition de rester sous la barre des deux heures pendant les tests. Cela vous offre un filet de sécurité pour expérimenter avec CrossOver ou Parallels.
+
+### Considérations matérielles pour les joueurs sur Mac
+
+La configuration minimale du jeu sur Windows exige 4 Go de RAM et une GT 1030. Voici comment cela se traduit pour le matériel Mac :
+
+- **Mac Apple Silicon (M1/M2/M3)** : Le GPU intégré dans ces puces surpasse de loin une GT 1030, la puissance du GPU ne sera donc pas le goulot d'étranglement. Visez au moins 8 Go de mémoire unifiée puisque la configuration recommandée est de 8 Go de RAM.
+- **Mac Intel** : Les modèles avec des GPU AMD dédiés de 2018 ou plus récents devraient faire tourner le jeu confortablement via Boot Camp. Les graphismes intégrés Intel pourraient avoir des difficultés.
+
+### Stockage et taille du jeu
+
+Sovereign Tower ne nécessite que 3 Go d'espace disponible, ce qui est minime selon les normes actuelles. Même les Mac avec de petits SSD ne devraient avoir aucun mal à l'accueillir.
+
+## Steam Deck : Une alternative intéressante pour les foyers équipés de Mac
+
+Si faire tourner le jeu sur votre Mac s'avère trop fastidieux, le Steam Deck mérite une sérieuse considération. Valve a décerné à Sovereign Tower son badge "Vérifié", ce qui signifie que le jeu est entièrement fonctionnel sur la console portable sans aucun avertissement de compatibilité.
+
+### Pourquoi le Steam Deck fonctionne bien pour ce jeu
+
+Le design de Sovereign Tower s'aligne parfaitement avec le jeu portable :
+
+- **Gameplay Point & Click et 2D** qui convient aux contrôles du Deck
+- **Jouable à votre propre rythme** sans événements en temps réel, comme indiqué dans les fonctionnalités d'accessibilité
+- **Sauvegarde à tout moment** ce qui signifie que vous pouvez reprendre et arrêter sans perdre votre progression
+- **Contenu riche en dialogues et en histoire** idéal pour les sessions sur le canapé ou au lit
+- **Prise en charge de la manette** pour les configurations de manette Xbox et PlayStation
+
+Le Steam Deck fonctionne nativement sous SteamOS, et puisque le jeu a une configuration système officielle pour SteamOS et une compatibilité vérifiée, c'est essentiellement une expérience prête à l'emploi (plug-and-play).
+
+### Steam Deck vs. alternatives sur Mac
+
+| Facteur | Steam Deck | Mac (CrossOver/Parallels) |
+|--------|-----------|--------------------------|
+| Installation requise | Aucune — vérifié dès la sortie | Variable — peut nécessiter des dépannages |
+| Performances | Fluidité garantie | Dépend de la méthode et du matériel |
+| Portabilité | Entièrement portable | Limité au bureau |
+| Coût supplémentaire | Achat de matériel (~399 $+) | Licences logicielles (60-100 $) |
+| Taille de l'écran | Écran intégré de 7 pouces | L'écran de votre Mac |
+
+Si vous possédez déjà un Steam Deck, c'est clairement la voie de la moindre résistance. Si ce n'est pas le cas, le coût d'entrée est plus élevé que les solutions logicielles de contournement, mais l'expérience est garantie.
+
+## Les fonctionnalités du jeu qui valent l'effort
+
+Vous hésitez encore à savoir si Sovereign Tower vaut les étapes supplémentaires sur Mac ? Voici ce que vous manqueriez.
+
+### Boucle de gameplay de base
+
+Vous incarnez le Souverain d'une tour magique, gérant une cour de Chevaliers excentriques aux grandes personnalités et à la morale discutable. Votre routine quotidienne consiste à :
+
+- **Vous occuper de vos sujets** chaque matin, en gérant des requêtes allant de banales tâches de jardinage à des exorcismes dramatiques
+- **Équilibrer l'affinité des factions** entre les Marchands, les Mystiques, les Érudits, les Nobles et le Peuple, tout en gérant le Trésor
+- **Assigner des Chevaliers aux quêtes** en fonction de leurs statistiques — Force, Agilité, Charisme, Magie et Astuce — où envoyer le mauvais Chevalier peut entraîner un Échec Critique
+- **Gérer les drames des Chevaliers**, y compris les demandes de conseil, les griefs et même les options de romance (oui, vous pouvez avoir une romance avec une statue de pierre — plus précisément la Dame de la Tour)
+
+### La mécanique de retour dans le temps
+
+L'une des caractéristiques marquantes du jeu est le Démon des Cryptes de la Tour qui peut remonter le temps. Si une quête tourne mal de manière catastrophique ou qu'une relation s'effondre, vous pouvez revenir en arrière avec vos connaissances intactes et faire des choix différents. Cela rend Sovereign Tower incroyablement rejouable et indulgent — un ajustement parfait pour les joueurs qui expérimentent différentes stratégies sur une configuration Mac où les performances pourraient nécessiter des redémarrages occasionnels.
+
+### Contenu et valeur
+
+À 19,99 $ (actuellement 16,99 $ lors de la vente de lancement se terminant le 20 août), le jeu comprend :
+
+- 75 Succès Steam à poursuivre
+- Prise en charge des sauvegardes Steam Cloud
+- Partage familial
+- Plusieurs options de langue (Anglais, Français, Allemand, Japonais, Coréen, Chinois simplifié)
+- Options de DLC incluant une bande originale (7,99 $) et un artbook (3,99 $), également en solde
+
+Le pack comprenant la bande originale et l'artbook permet d'économiser 16 %, portant le total à 21,81 $ au lieu de 26,85 $.
+
+## Foire aux questions
+
+### Sovereign Tower est-il disponible nativement sur Mac ?
+
+Non. Depuis sa sortie en août 2026, Sovereign Tower ne bénéficie pas d'un support natif pour macOS. La page Steam ne fournit la configuration requise que pour Windows et SteamOS + Linux. Les utilisateurs de Mac devront s'appuyer sur des outils de compatibilité comme CrossOver, des logiciels de virtualisation comme Parallels, ou du matériel alternatif tel que le Steam Deck pour y jouer.
+
+### Puis-je jouer à Sovereign Tower sur Mac en utilisant CrossOver ?
+
+Les rapports de la communauté suggèrent que des RPG indépendants similaires avec des graphismes 2D modestes et des mécaniques de pointer-cliquer ont tendance à bien fonctionner via CrossOver sur les Mac Apple Silicon. Cependant, puisque Sovereign Tower est une nouvelle sortie, les tests officiels de CrossOver peuvent encore être en cours. Utilisez la fenêtre de remboursement de deux heures de Steam pour tester les performances avant de vous engager.
+
+### Quelle est la configuration Mac minimale dont j'aurais besoin pour faire tourner Sovereign Tower via une solution de contournement ?
+
+Bien qu'il n'y ait pas de configuration officielle pour Mac, la configuration minimale Windows exige un Intel Core i5-4670K, 4 Go de RAM et une GeForce GT 1030 avec 3 Go de stockage. Pour les joueurs sur Mac, cela se traduit approximativement par n'importe quel Mac Apple Silicon (M1 ou ultérieur) avec au moins 8 Go de mémoire unifiée pour jouer confortablement via CrossOver ou Parallels. Les Mac Intel à partir de 2018 avec des GPU dédiés devraient également fonctionner via Boot Camp.
+
+### Le Steam Deck est-il une meilleure option que d'essayer de jouer à Sovereign Tower sur Mac ?
+
+Pour les joueurs qui veulent une expérience garantie et sans tracas, le Steam Deck est le choix le plus solide. Sovereign Tower porte le badge "Vérifié" de Valve pour le Steam Deck, ce qui signifie qu'il fonctionne parfaitement sans aucun ajustement. Le gameplay de gestion au tour par tour, l'interface de pointer-cliquer et la conception de sauvegarde à tout moment du jeu en font un excellent candidat pour le jeu portable. Si vous possédez déjà un Steam Deck, ignorez complètement les alternatives pour Mac.

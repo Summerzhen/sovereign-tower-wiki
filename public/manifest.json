@@ -1,15 +1,15 @@
 {
-  "name": "Murder Duels Wiki",
-  "short_name": "Murder Duels",
-  "description": "Fan-made Murder Duels Roblox wiki with codes, trading values, weapons, skills, maps, events and PvP guides.",
+  "name": "Sovereign Tower Wiki",
+  "short_name": "Sovereign Tower",
+  "description": "Fan-made Sovereign Tower wiki with guides for knights, quests, kingdom choices, characters, endings and time rewind strategies.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone", "browser"],
   "orientation": "portrait-primary",
-  "background_color": "#111318",
-  "theme_color": "#e53e54",
+  "background_color": "#0D1117",
+  "theme_color": "#D4AF37",
   "categories": ["games", "entertainment", "utilities"],
   "lang": "en",
   "dir": "ltr",
@@ -22,16 +22,16 @@
   ],
   "shortcuts": [
     {
-      "name": "Murder Duels Codes",
-      "short_name": "Codes",
-      "description": "Check current Murder Duels codes.",
-      "url": "/codes"
+      "name": "Sovereign Tower Beginner Guide",
+      "short_name": "Guide",
+      "description": "Start with core Sovereign Tower systems, knights and kingdom decisions.",
+      "url": "/guide"
     },
     {
-      "name": "Murder Duels Values",
-      "short_name": "Values",
-      "description": "Open Murder Duels trading values.",
-      "url": "/values"
+      "name": "Sovereign Tower Knights",
+      "short_name": "Knights",
+      "description": "Explore Sovereign Tower knight and character guides.",
+      "url": "/characters"
     }
   ]
 }

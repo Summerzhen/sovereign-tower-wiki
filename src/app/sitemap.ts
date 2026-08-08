@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { getAllContentPaths } from "@/lib/content";
 import { routing } from "@/i18n/routing";
 import { CONTENT_TYPES } from "@/config/navigation";
@@ -6,10 +6,24 @@ import { CONTENT_TYPES } from "@/config/navigation";
 export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://murderduels.org";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org";
 
   // Static paths that always exist
-  const staticPaths = ["/", "/codes", "/guide", "/values", "/tier", "/skins", "/weapons", "/trading", "/community", "/privacy-policy", "/terms-of-service", "/copyright", "/about"];
+  const staticPaths = [
+    "/",
+    "/guide",
+    "/characters",
+    "/romance",
+    "/systems",
+    "/platforms",
+    "/release",
+    "/community",
+    "/media",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/copyright",
+    "/about",
+  ];
 
   // Dynamic paths: scan actual MDX content files
   const contentPaths = await getAllContentPaths("en");
@@ -26,3 +40,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   );
 }
+

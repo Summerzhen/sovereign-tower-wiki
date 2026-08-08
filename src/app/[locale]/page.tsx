@@ -6,9 +6,17 @@ import { routing, type Locale } from "@/i18n/routing";
 import en from "@/locales/en.json";
 import HomePageClient from "./HomePageClient";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://murderduels.org";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org";
 
 type Messages = typeof en;
+
+function localizedPath(pathname: string, locale: string) {
+  return locale === "en" ? pathname : `/${locale}${pathname === "/" ? "" : pathname}`;
+}
+
+function languageAlternates(pathname: string) {
+  return Object.fromEntries(routing.locales.map((locale) => [locale, localizedPath(pathname, locale)]));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -16,8 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: messages.home.meta.title,
     description: messages.home.meta.description,
-    alternates: { canonical: locale === "en" ? "/" : `/${locale}`, languages: { en: "/" } },
-    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: siteUrl, images: [{ url: `${siteUrl}/images/hero.webp`, width: 768, height: 432, alt: "Murder Duels Wiki" }] },
+    alternates: { canonical: localizedPath("/", locale), languages: languageAlternates("/") },
+    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: `${siteUrl}${localizedPath("/", locale) === "/" ? "" : localizedPath("/", locale)}`, images: [{ url: `${siteUrl}/images/hero.webp`, width: 768, height: 432, alt: "Sovereign Tower Wiki" }] },
     twitter: { card: "summary_large_image", images: [`${siteUrl}/images/hero.webp`] },
   };
 }
@@ -27,16 +35,15 @@ export default async function LocaleHomePage({ params }: { params: Promise<{ loc
   const loc = locale as Locale;
   const messages = (await getMessages({ locale })) as Messages;
   const navGroups = getDynamicNavigation(loc);
-  const webSite = { "@context": "https://schema.org", "@type": "WebSite", name: "Murder Duels Wiki", url: siteUrl, description: messages.home.meta.description, inLanguage: locale };
+  const webSite = { "@context": "https://schema.org", "@type": "WebSite", name: "Sovereign Tower Wiki", url: `${siteUrl}${localizedPath("/", locale) === "/" ? "" : localizedPath("/", locale)}`, description: messages.home.meta.description, inLanguage: locale };
 
-  // 动态加载所有 content 目录下的文章
+  // 鍔ㄦ€佸姞杞芥墍鏈?content 鐩綍涓嬬殑鏂囩珷
   const allArticles: ContentItem[] = [];
   for (const contentType of CONTENT_TYPES) {
     const items = await getAllContent(contentType, loc);
     allArticles.push(...items);
   }
 
-  // 取最近更新的 8 篇文章（按 date 倒序）
   const recentArticles = [...allArticles]
     .sort((a, b) => {
       const dateA = a.metadata.lastModified || a.metadata.date;
@@ -55,3 +62,4 @@ export default async function LocaleHomePage({ params }: { params: Promise<{ loc
     </main>
   );
 }
+
