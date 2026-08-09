@@ -22,7 +22,13 @@ const unprefixedContentPaths = [
 
 function redirect(url: URL, pathname: string) {
   url.pathname = pathname;
-  return Response.redirect(url.toString(), 301);
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: url.toString(),
+      "Cache-Control": "no-store",
+    },
+  });
 }
 
 export default {
