@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -11,6 +12,7 @@ import { routing } from "@/i18n/routing";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org";
+const googleAnalyticsId = "G-2PXYLFXVDB";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -45,6 +47,15 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} className={`${inter.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <NextIntlClientProvider messages={messages}>
             <JsonLd data={organization} />
