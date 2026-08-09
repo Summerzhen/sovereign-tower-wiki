@@ -32,7 +32,7 @@ function redirect(url: URL, pathname: string) {
 }
 
 export default {
-  fetch(request: Request, env: Env) {
+  async fetch(request: Request, env: Env) {
     const url = new URL(request.url);
     const pathname = url.pathname.replace(/\/+$/, "") || "/";
 
@@ -47,6 +47,24 @@ export default {
       }
     }
 
-    return env.ASSETS.fetch(request);
+    const assetRequest = new Request(request, {
+      headers: new Headers(request.headers),
+    });
+    assetRequest.headers.set("Cache-Control", "no-cache");
+
+    const response = await env.ASSETS.fetch(assetRequest);
+    const contentType = response.headers.get("content-type") ?? "";
+
+    if (contentType.includes("text/html")) {
+      const headers = new Headers(response.headers);
+      headers.set("Cache-Control", "no-store");
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      });
+    }
+
+    return response;
   },
 };
