@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const path = `/${locale}/terms-of-service`;
+  return {
+    title: "Terms of Service - Sovereign Tower Wiki",
+    description: "Terms of service for the independent fan-made Sovereign Tower Wiki.",
+    alternates: { canonical: path },
+    openGraph: { title: "Terms of Service - Sovereign Tower Wiki", description: "Terms of service for the independent fan-made Sovereign Tower Wiki.", url: `${siteUrl}${path}`, images: [`${siteUrl}/images/hero.webp`] },
+    twitter: { card: "summary_large_image", images: [`${siteUrl}/images/hero.webp`] },
+  };
+}
 
 export default function TermsOfServicePage() {
   return (

@@ -11,7 +11,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org"
 type Messages = typeof en;
 
 function localizedPath(pathname: string, locale: string) {
-  return locale === "en" ? pathname : `/${locale}${pathname === "/" ? "" : pathname}`;
+  return `/${locale}${pathname === "/" ? "" : pathname}`;
 }
 
 function languageAlternates(pathname: string) {
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: messages.home.meta.title,
     description: messages.home.meta.description,
     alternates: { canonical: localizedPath("/", locale), languages: languageAlternates("/") },
-    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: `${siteUrl}${localizedPath("/", locale) === "/" ? "" : localizedPath("/", locale)}`, images: [{ url: `${siteUrl}/images/hero.webp`, width: 768, height: 432, alt: "Sovereign Tower Wiki" }] },
+    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: `${siteUrl}${localizedPath("/", locale)}`, images: [{ url: `${siteUrl}/images/hero.webp`, width: 768, height: 432, alt: "Sovereign Tower Wiki" }] },
     twitter: { card: "summary_large_image", images: [`${siteUrl}/images/hero.webp`] },
   };
 }
@@ -35,7 +35,7 @@ export default async function LocaleHomePage({ params }: { params: Promise<{ loc
   const loc = locale as Locale;
   const messages = (await getMessages({ locale })) as Messages;
   const navGroups = getDynamicNavigation(loc);
-  const webSite = { "@context": "https://schema.org", "@type": "WebSite", name: "Sovereign Tower Wiki", url: `${siteUrl}${localizedPath("/", locale) === "/" ? "" : localizedPath("/", locale)}`, description: messages.home.meta.description, inLanguage: locale };
+  const webSite = { "@context": "https://schema.org", "@type": "WebSite", name: "Sovereign Tower Wiki", url: `${siteUrl}${localizedPath("/", locale)}`, description: messages.home.meta.description, inLanguage: locale };
 
   // 鍔ㄦ€佸姞杞芥墍鏈?content 鐩綍涓嬬殑鏂囩珷
   const allArticles: ContentItem[] = [];

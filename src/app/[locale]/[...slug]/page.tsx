@@ -16,11 +16,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org"
 type Messages = typeof en;
 
 function languageAlternates(pathname: string) {
-  return Object.fromEntries(routing.locales.map((locale) => [locale, locale === "en" ? pathname : `/${locale}${pathname}`]));
+  return Object.fromEntries(routing.locales.map((locale) => [locale, `/${locale}${pathname}`]));
 }
 
 function localizedPath(pathname: string, locale: string) {
-  return locale === "en" ? pathname : `/${locale}${pathname}`;
+  return `/${locale}${pathname}`;
 }
 
 function absoluteLocalizedUrl(pathname: string, locale: string) {
