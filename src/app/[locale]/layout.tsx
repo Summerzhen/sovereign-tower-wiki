@@ -6,6 +6,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "next-themes";
+import { ResponsiveStickyBannerAd } from "@/components/ad-units";
 import { JsonLd, SiteFooter, SiteHeader } from "@/components/site";
 import { routing } from "@/i18n/routing";
 
@@ -46,7 +47,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
 
   return (
     <html lang={locale} className={`${inter.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+      <body className="min-h-screen bg-background pb-16 pt-0 font-sans text-foreground antialiased md:pt-16">
         <Script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -62,6 +63,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
             <SiteHeader locale={locale} />
             {children}
             <SiteFooter locale={locale} />
+            <ResponsiveStickyBannerAd />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
