@@ -104,7 +104,7 @@ export function ResponsiveStickyBannerAd() {
       <aside className="fixed inset-x-0 bottom-0 z-40 flex justify-center border-t border-border/60 bg-background/80 py-1.5 backdrop-blur md:hidden">
         <AdUnitBox unit="stickyBanner" />
       </aside>
-      <aside className="fixed inset-x-0 top-[65px] z-40 hidden justify-center border-b border-border/60 bg-background/80 py-1.5 backdrop-blur md:flex">
+      <aside className="fixed left-1/2 top-[65px] z-40 hidden w-[320px] -translate-x-1/2 overflow-hidden rounded-b-lg border-x border-b border-border/60 bg-background/80 py-1.5 shadow-sm backdrop-blur md:flex">
         <AdUnitBox unit="stickyBanner" />
       </aside>
     </>
