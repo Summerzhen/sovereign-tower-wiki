@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { KnightRecord, QuestRecord, StatBlock, StatKey } from "@/data/sovereignTower";
 import { STAT_LABELS } from "@/data/sovereignTower";
-import { Search, SlidersHorizontal, X } from "lucide-react";
+import { Search, SlidersHorizontal, Star, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -16,6 +16,7 @@ type Props = {
 };
 
 const allValue = "all";
+const questFavoritesStorageKey = "sovereign-tower.favorite-quests";
 const questSorts = ["name", "difficulty", "type"] as const;
 type QuestSort = (typeof questSorts)[number];
 
@@ -113,8 +114,24 @@ function compareText(a: string, b: string) {
   return a.localeCompare(b, undefined, { sensitivity: "base" });
 }
 
+function readFavorites(storageKey: string) {
+  try {
+    const raw = window.localStorage.getItem(storageKey);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter((value): value is string => typeof value === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
 export function QuestHubExplorer({ locale, quests, knights }: Props) {
   const labels = getLabels(locale);
+  const favoriteLabels = {
+    favorites: "Favorites",
+    showFavorites: "Show favorites",
+    favoriteQuest: "Favorite quest",
+    unfavoriteQuest: "Remove favorite",
+  };
   const router = useRouter();
   const pathname = usePathname();
   const [isQueryReady, setIsQueryReady] = useState(false);
@@ -122,10 +139,14 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
   const [type, setType] = useState(allValue);
   const [difficulty, setDifficulty] = useState(allValue);
   const [sort, setSort] = useState<QuestSort>("name");
+  const [favoriteSlugs, setFavoriteSlugs] = useState<string[]>([]);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const knightNames = useMemo(() => new Map(knights.map((knight) => [knight.slug, knight.name])), [knights]);
+  const favoriteSet = useMemo(() => new Set(favoriteSlugs), [favoriteSlugs]);
   const questTypes = useMemo(() => uniqueSorted(quests.map((quest) => quest.type)), [quests]);
   const difficulties = useMemo(() => uniqueSorted(quests.map((quest) => quest.difficulty)), [quests]);
   useEffect(() => {
+    setFavoriteSlugs(readFavorites(questFavoritesStorageKey));
     const syncFromUrl = () => {
       const params = new URLSearchParams(window.location.search);
       setQuery(getParam(params, "q"));
@@ -139,7 +160,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
     return () => window.removeEventListener("popstate", syncFromUrl);
   }, []);
   useEffect(() => {
-    if (!isQueryReady) return;
+    if (!isQueryReady || !pathname) return;
     const nextParams = new URLSearchParams(window.location.search);
     const setOrDelete = (key: string, value: string, defaultValue = "") => {
       if (value && value !== defaultValue) nextParams.set(key, value);
@@ -158,23 +179,42 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
   const normalizedQuery = query.trim().toLowerCase();
   const filteredQuests = useMemo(() => {
     const filtered = quests.filter((quest) => {
+      const searchableText = [
+        quest.name,
+        quest.title,
+        quest.description,
+        quest.type,
+        quest.region ?? "",
+        quest.bestTraits.join(" "),
+        quest.steps.join(" "),
+        quest.outcomes.map((outcome) => `${outcome.label} ${outcome.description}`).join(" "),
+        quest.relatedGuideHrefs.map((guide) => guide.label).join(" "),
+      ].join(" ");
       const matchesQuery =
         normalizedQuery.length === 0 ||
-        `${quest.name} ${quest.title} ${quest.description}`.toLowerCase().includes(normalizedQuery);
-      return matchesQuery && (type === allValue || quest.type === type) && (difficulty === allValue || quest.difficulty === difficulty);
+        searchableText.toLowerCase().includes(normalizedQuery);
+      const matchesFavorites = !showFavoritesOnly || favoriteSet.has(quest.slug);
+      return matchesQuery && matchesFavorites && (type === allValue || quest.type === type) && (difficulty === allValue || quest.difficulty === difficulty);
     });
     return [...filtered].sort((a, b) => {
       if (sort === "difficulty") return compareText(a.difficulty, b.difficulty) || compareText(a.name, b.name);
       if (sort === "type") return compareText(a.type, b.type) || compareText(a.name, b.name);
       return compareText(a.name, b.name);
     });
-  }, [difficulty, normalizedQuery, quests, sort, type]);
-  const hasFilters = query || type !== allValue || difficulty !== allValue || sort !== "name";
+  }, [difficulty, favoriteSet, normalizedQuery, quests, showFavoritesOnly, sort, type]);
+  const hasFilters = query || type !== allValue || difficulty !== allValue || sort !== "name" || showFavoritesOnly;
+  const toggleFavorite = (slug: string) => {
+    setFavoriteSlugs((current) => {
+      const next = current.includes(slug) ? current.filter((favoriteSlug) => favoriteSlug !== slug) : [...current, slug];
+      window.localStorage.setItem(questFavoritesStorageKey, JSON.stringify(next));
+      return next;
+    });
+  };
 
   return (
     <section className="mt-10 space-y-5">
       <div className="rounded-lg border border-border bg-card p-4">
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_180px_180px_160px_auto]">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_180px_180px_160px_auto_auto]">
           <label className="relative block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <span className="sr-only">{labels.searchSr}</span>
@@ -183,7 +223,11 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
           <FilterSelect label={labels.filterType} value={type} onChange={setType} options={questTypes} placeholder={labels.allTypes} />
           <FilterSelect label={labels.filterDifficulty} value={difficulty} onChange={setDifficulty} options={difficulties} placeholder={labels.allDifficulties} />
           <FilterSelect label={labels.sort} value={sort} onChange={(value) => setSort(value as QuestSort)} options={["difficulty", "type"]} placeholder={labels.sortByName} />
-          <Button type="button" variant="outline" onClick={() => { setQuery(""); setType(allValue); setDifficulty(allValue); setSort("name"); }} disabled={!hasFilters} className="h-10">
+          <Button type="button" variant={showFavoritesOnly ? "default" : "outline"} onClick={() => setShowFavoritesOnly((value) => !value)} className="h-10 whitespace-nowrap">
+            <Star className={showFavoritesOnly ? "h-4 w-4 fill-current" : "h-4 w-4"} />
+            {favoriteLabels.favorites}
+          </Button>
+          <Button type="button" variant="outline" onClick={() => { setQuery(""); setType(allValue); setDifficulty(allValue); setSort("name"); setShowFavoritesOnly(false); }} disabled={!hasFilters} className="h-10">
             <X className="h-4 w-4" />
             {labels.clear}
           </Button>
@@ -191,6 +235,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
         <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
           <SlidersHorizontal className="h-4 w-4" />
           {labels.showingPrefix} <span className="font-semibold text-foreground">{filteredQuests.length}</span> {labels.showingMiddle} {quests.length} {labels.showingSuffix}
+          {showFavoritesOnly && <span className="font-medium text-foreground">- {favoriteLabels.showFavorites}</span>}
         </div>
       </div>
 
@@ -209,7 +254,13 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
                 </h2>
                 <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">{quest.description}</p>
               </div>
-              <div className="w-full rounded-md border border-border bg-background p-3 text-sm font-semibold text-foreground sm:w-auto sm:min-w-[220px]">{formatStats(quest.requiredStats, labels.unknown)}</div>
+              <div className="flex w-full flex-col gap-2 sm:w-auto sm:min-w-[220px]">
+                <Button type="button" variant="outline" onClick={() => toggleFavorite(quest.slug)} aria-label={favoriteSet.has(quest.slug) ? favoriteLabels.unfavoriteQuest : favoriteLabels.favoriteQuest} className="h-10 justify-center">
+                  <Star className={favoriteSet.has(quest.slug) ? "h-4 w-4 fill-current" : "h-4 w-4"} />
+                  {favoriteSet.has(quest.slug) ? favoriteLabels.unfavoriteQuest : favoriteLabels.favoriteQuest}
+                </Button>
+                <div className="rounded-md border border-border bg-background p-3 text-sm font-semibold text-foreground">{formatStats(quest.requiredStats, labels.unknown)}</div>
+              </div>
             </div>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               <InfoList title={labels.requiredStats} items={[formatStats(quest.requiredStats, labels.unknown)]} />

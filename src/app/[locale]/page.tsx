@@ -16,7 +16,10 @@ function localizedPath(pathname: string, locale: string) {
 }
 
 function languageAlternates(pathname: string) {
-  return Object.fromEntries(routing.locales.map((locale) => [locale, localizedPath(pathname, locale)]));
+  return {
+    ...Object.fromEntries(routing.locales.map((locale) => [locale, localizedPath(pathname, locale)])),
+    "x-default": localizedPath(pathname, routing.defaultLocale),
+  };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

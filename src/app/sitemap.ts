@@ -8,6 +8,11 @@ export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org";
+  const localizedUrl = (path: string, locale: string) => `${siteUrl}/${locale}${path === "/" ? "" : path}`;
+  const languageAlternates = (path: string) => ({
+    ...Object.fromEntries(routing.locales.map((locale) => [locale, localizedUrl(path, locale)])),
+    "x-default": localizedUrl(path, routing.defaultLocale),
+  });
 
   // Static paths that always exist
   const staticPaths = [
@@ -31,10 +36,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return routing.locales.flatMap((locale) =>
     paths.map((path) => ({
-      url: `${siteUrl}/${locale}${path === "/" ? "" : path}`,
+      url: localizedUrl(path, locale),
       lastModified: new Date(),
       changeFrequency: path === "/" ? ("daily" as const) : ("weekly" as const),
       priority: path === "/" ? 1 : CONTENT_TYPES.includes(path.replace(/^\//, "")) ? 0.8 : 0.6,
+      alternates: {
+        languages: languageAlternates(path),
+      },
     })),
   );
 }

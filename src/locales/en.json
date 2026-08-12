@@ -71,71 +71,67 @@
       ]
     },
     "popular": {
-      "eyebrow": "Popular Pages",
-      "title": "Trending Now",
+      "eyebrow": "Popular Sovereign Tower Searches",
+      "title": "Trending Wiki Entries",
       "quickLinks": [
-        "All Quests",
-        "Dragon Knight",
+        "Meals",
+        "Dragon Heart",
+        "Epicrates",
+        "Roberto",
+        "Platforms",
+        "Discord",
         "Best Knights",
-        "Knight Affinity",
-        "Unexpected Outcomes",
-        "All Endings",
-        "Romance Guide"
+        "All Quests",
+        "Sovereign Tower Wiki"
       ],
       "cards": [
         {
-          "badge": "Beginner",
-          "title": "All Quests",
-          "description": "Search Sovereign Tower quests by region, requirement, recommended knight, outcome, and follow-up strategy.",
-          "href": "/quests"
-        },
-        {
-          "badge": "Guide",
-          "title": "Best Knights",
-          "description": "Compare knight roles, stats, affinity, preferences, and the quests where each recruit performs best.",
-          "href": "/knights"
-        },
-        {
-          "badge": "Guide",
-          "title": "Dragon Knight Guide",
-          "description": "Prepare for the Dragon Knight quest with stat planning, knight picks, outcome notes, and common mistakes.",
-          "href": "/quests/sovereign-tower-dragon-knight"
+          "badge": "Meals",
+          "title": "Sovereign Tower Meals",
+          "description": "Meal effects, favorite foods, affinity notes, and knight bonuses for cooking decisions.",
+          "href": "/systems/sovereign-tower-meals"
         },
         {
           "badge": "System",
-          "title": "Unexpected Outcomes",
-          "description": "Learn how critical success, failure, hidden traits, and unusual quest results shape later cycles.",
-          "href": "/guide/sovereign-tower-unexpected-outcomes"
+          "title": "Dragon Heart",
+          "description": "Dragon Heart mechanics, build planning, survival checks, and route notes.",
+          "href": "/systems/sovereign-tower-dragon-heart"
+        },
+        {
+          "badge": "Character",
+          "title": "Epicrates",
+          "description": "Epicrates character notes, route context, knight links, and story references.",
+          "href": "/characters/sovereign-tower-epicrates"
+        },
+        {
+          "badge": "Character",
+          "title": "Roberto",
+          "description": "Roberto profile details, quest context, character role, and related knight pages.",
+          "href": "/characters/sovereign-tower-roberto"
+        },
+        {
+          "badge": "Platform",
+          "title": "Where to Play",
+          "description": "Steam, PC, console, mobile, Switch, Xbox, PS5, Mac, and itch platform pages.",
+          "href": "/platforms"
+        },
+        {
+          "badge": "Community",
+          "title": "Sovereign Tower Discord",
+          "description": "Official Discord, community channels, update sources, and player discussion hubs.",
+          "href": "/community/sovereign-tower-discord"
         },
         {
           "badge": "Knights",
-          "title": "Knight Affinity",
-          "description": "Understand why quest preference affects satisfaction, while stats and traits decide whether an assignment succeeds.",
-          "href": "/guide/sovereign-tower-knight-affinity"
+          "title": "Best Knights Tier List",
+          "description": "Compare the strongest knight picks by role, traits, stats, affinity, and quest value.",
+          "href": "/guide/sovereign-tower-best-knights-tier-list"
         },
         {
-          "badge": "Endings",
-          "title": "All Endings",
-          "description": "Track ending routes, choice branches, timeline knowledge, and the decisions most likely to change your final outcome.",
-          "href": "/guide/sovereign-tower-endings"
-        },
-        {
-          "badge": "Romance",
-          "title": "Romance Guide",
-          "description": "Browse romance options, partner notes, relationship paths, and character choices tied to your Round Table.",
-          "href": "/romance/sovereign-tower-romance"
-        },
-        {
-          "badge": "Steam",
-          "title": "System Requirements",
-          "description": "Check the Steam PC platform details, genre, release window, and practical setup notes.",
-          "href": "/system-requirements"
-        },
-        {
-          "badge": "News",
-          "title": "Updates & News",
-          "description": "Follow official announcements, developer updates, and community information for Sovereign Tower.",
-          "href": "/news"
+          "badge": "Quests",
+          "title": "All Quests",
+          "description": "Search quests by region, requirement, recommended knight, outcome, and follow-up strategy.",
+          "href": "/quests"
         }
       ]
     },

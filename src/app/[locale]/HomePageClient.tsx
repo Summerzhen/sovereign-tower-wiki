@@ -38,6 +38,37 @@ export default function HomePageClient({ home, locale, articles, recentArticles 
         <TrailerButton videoId={YOUTUBE_VIDEO_ID} />
       </section>
 
+      {home.popular.cards && home.popular.cards.length > 0 && (
+        <section>
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold text-[hsl(var(--nav-theme))]">{home.popular.eyebrow}</p>
+              <h2 className="mt-1 text-3xl font-bold tracking-tight text-foreground">{home.popular.title}</h2>
+            </div>
+            {home.popular.quickLinks && home.popular.quickLinks.length > 0 && (
+              <div className="hidden max-w-2xl flex-wrap justify-end gap-2 lg:flex">
+                {home.popular.quickLinks.map((link) => <Badge key={link} variant="outline" className="border-border px-3 py-1 text-muted-foreground">{link}</Badge>)}
+              </div>
+            )}
+          </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            {home.popular.cards.map((card, index) => {
+              const Icon = icons[index % icons.length];
+              return (
+                <Link key={card.href} href={localizeHref(card.href, locale)} className="group rounded-2xl border border-border bg-card/70 p-5 transition hover:border-[hsl(var(--nav-theme-light))]">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-muted text-[hsl(var(--nav-theme))]"><Icon className="h-5 w-5" /></span>
+                    <Badge variant="secondary">{card.badge}</Badge>
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold leading-6 text-foreground group-hover:text-[hsl(var(--nav-theme))]">{card.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{card.description}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* 最近更新 + 新手教程 两栏布局 */}
       <section className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         {/* 左侧：动态更新 — 最近 8 篇 MDX 文章，支持滚动 */}
@@ -84,12 +115,9 @@ export default function HomePageClient({ home, locale, articles, recentArticles 
         <section>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-semibold text-[hsl(var(--nav-theme))]">{home.popular.eyebrow}</p>
-              <h2 className="mt-1 text-3xl font-bold tracking-tight text-foreground">{home.popular.title}</h2>
+              <p className="text-sm font-semibold text-[hsl(var(--nav-theme))]">{home.updates.title}</p>
+              <h2 className="mt-1 text-3xl font-bold tracking-tight text-foreground">{home.updates.browse}</h2>
             </div>
-            {home.popular.quickLinks && home.popular.quickLinks.length > 0 && (
-              <div className="hidden gap-2 sm:flex">{home.popular.quickLinks.map((link) => <Badge key={link} variant="outline" className="border-border px-3 py-1 text-muted-foreground">{link}</Badge>)}</div>
-            )}
           </div>
           <div className="relative mt-6 overflow-hidden">
             {/* Gradient fade edges */}

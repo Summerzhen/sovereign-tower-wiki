@@ -36,7 +36,7 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
     if (nextLocale === locale) return;
 
     const localePattern = new RegExp(`^/(${routing.locales.join("|")})(?=/|$)`);
-    const pathWithoutLocale = pathname.replace(localePattern, "") || "/";
+    const pathWithoutLocale = (pathname ?? `/${locale}`).replace(localePattern, "") || "/";
     const newPath = `/${nextLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
 
     // 设置 NEXT_LOCALE cookie，防止 middleware 重定向回原语言

@@ -11,8 +11,9 @@ import { defineRouting } from "next-intl/routing";
 export const routing = defineRouting({
   locales: ["en", "de", "ja", "fr", "it", "ko"] as string[],
   defaultLocale: "en",
-  // English is served without a `/en` prefix (e.g. `/bosses`, `/bosses/gelum`).
-  localePrefix: "as-needed",
+  // Keep every indexable locale on an explicit prefix so `/` can cleanly
+  // redirect to the English canonical at `/en` instead of competing with it.
+  localePrefix: "always",
   localeDetection: true,
 });
 

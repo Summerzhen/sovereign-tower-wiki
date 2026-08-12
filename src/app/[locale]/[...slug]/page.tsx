@@ -51,9 +51,12 @@ const siteUrl =
 type Messages = typeof en;
 
 function languageAlternates(pathname: string) {
-  return Object.fromEntries(
-    routing.locales.map((locale) => [locale, `/${locale}${pathname}`]),
-  );
+  return {
+    ...Object.fromEntries(
+      routing.locales.map((locale) => [locale, `/${locale}${pathname}`]),
+    ),
+    "x-default": `/${routing.defaultLocale}${pathname}`,
+  };
 }
 
 function localizedPath(pathname: string, locale: string) {
@@ -327,14 +330,14 @@ async function NavigationPage({
           )}
         </article>
         <aside className="space-y-6">
-          <div className="hidden lg:block">
-            <AdUnitBox unit="tower" className="lg:sticky lg:top-24" />
-          </div>
           <WikiSidebar
             locale={locale}
             navGroups={navGroups}
             currentPath={`/${contentType}`}
           />
+          <div className="hidden lg:block">
+            <AdUnitBox unit="tower" />
+          </div>
         </aside>
       </div>
     </main>
@@ -413,10 +416,10 @@ function QuestHubPage({
           </section>
         </article>
         <aside className="space-y-6">
-          <div className="hidden lg:block">
-            <AdUnitBox unit="tower" className="lg:sticky lg:top-24" />
-          </div>
           <WikiSidebar locale={locale} navGroups={navGroups} currentPath="/quests" />
+          <div className="hidden lg:block">
+            <AdUnitBox unit="tower" />
+          </div>
         </aside>
       </div>
     </main>
@@ -471,10 +474,10 @@ function KnightHubPage({
           <KnightHubExplorer locale={locale} knights={localizedKnights} quests={localizedQuests} />
         </article>
         <aside className="space-y-6">
-          <div className="hidden lg:block">
-            <AdUnitBox unit="tower" className="lg:sticky lg:top-24" />
-          </div>
           <WikiSidebar locale={locale} navGroups={navGroups} currentPath="/knights" />
+          <div className="hidden lg:block">
+            <AdUnitBox unit="tower" />
+          </div>
         </aside>
       </div>
     </main>
@@ -597,10 +600,10 @@ function QuestDetailPage({
           <RelatedGuideButtons locale={locale} links={quest.relatedGuideHrefs} label={messages.shared.relatedGuides} />
         </article>
         <aside className="space-y-6">
-          <div className="hidden lg:block">
-            <AdUnitBox unit="tower" className="lg:sticky lg:top-24" />
-          </div>
           <WikiSidebar locale={locale} navGroups={navGroups} currentPath={`/quests/${quest.slug}`} />
+          <div className="hidden lg:block">
+            <AdUnitBox unit="tower" />
+          </div>
         </aside>
       </div>
     </main>
@@ -712,10 +715,10 @@ function KnightDetailPage({
           <RelatedGuideButtons locale={locale} links={knight.relatedGuideHrefs} label={messages.shared.relatedGuides} />
         </article>
         <aside className="space-y-6">
-          <div className="hidden lg:block">
-            <AdUnitBox unit="tower" className="lg:sticky lg:top-24" />
-          </div>
           <WikiSidebar locale={locale} navGroups={navGroups} currentPath={`/knights/${knight.slug}`} />
+          <div className="hidden lg:block">
+            <AdUnitBox unit="tower" />
+          </div>
         </aside>
       </div>
     </main>
@@ -914,21 +917,21 @@ async function DetailPage({
             relatedLabel={relatedLabel}
           />
         </article>
-        <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+        <aside className="space-y-5 lg:sticky lg:top-20 lg:self-start">
           <SidebarTOC
             headings={item.headings}
             label={tocLabel}
             currentPathname={pathname}
           />
-          <ArticleSideInfo item={item} sectionLabel={sectionLabel} />
-          <div className="hidden lg:block">
-            <AdUnitBox unit="tower" />
-          </div>
           <WikiSidebar
             locale={locale}
             navGroups={navGroups}
             currentPath={pathname}
           />
+          <ArticleSideInfo item={item} sectionLabel={sectionLabel} />
+          <div className="hidden lg:block">
+            <AdUnitBox unit="tower" />
+          </div>
         </aside>
       </div>
     </main>

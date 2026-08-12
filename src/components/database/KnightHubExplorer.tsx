@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { KnightRecord, QuestRecord, StatBlock, StatKey } from "@/data/sovereignTower";
 import { STAT_LABELS } from "@/data/sovereignTower";
-import { Search, SlidersHorizontal, X } from "lucide-react";
+import { Search, SlidersHorizontal, Star, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -16,6 +16,7 @@ type Props = {
 };
 
 const allValue = "all";
+const knightFavoritesStorageKey = "sovereign-tower.favorite-knights";
 const knightSorts = ["name", "role"] as const;
 type KnightSort = (typeof knightSorts)[number];
 
@@ -113,8 +114,24 @@ function compareText(a: string, b: string) {
   return a.localeCompare(b, undefined, { sensitivity: "base" });
 }
 
+function readFavorites(storageKey: string) {
+  try {
+    const raw = window.localStorage.getItem(storageKey);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter((value): value is string => typeof value === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
 export function KnightHubExplorer({ locale, knights, quests }: Props) {
   const labels = getLabels(locale);
+  const favoriteLabels = {
+    favorites: "Favorites",
+    showFavorites: "Show favorites",
+    favoriteKnight: "Favorite knight",
+    unfavoriteKnight: "Remove favorite",
+  };
   const router = useRouter();
   const pathname = usePathname();
   const [isQueryReady, setIsQueryReady] = useState(false);
@@ -122,10 +139,14 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
   const [role, setRole] = useState(allValue);
   const [trait, setTrait] = useState(allValue);
   const [sort, setSort] = useState<KnightSort>("name");
+  const [favoriteSlugs, setFavoriteSlugs] = useState<string[]>([]);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const questNames = useMemo(() => new Map(quests.map((quest) => [quest.slug, quest.name])), [quests]);
+  const favoriteSet = useMemo(() => new Set(favoriteSlugs), [favoriteSlugs]);
   const roles = useMemo(() => uniqueSorted(knights.map((knight) => knight.role)), [knights]);
   const traits = useMemo(() => uniqueSorted(knights.flatMap((knight) => [...knight.traits, ...knight.hiddenTraits])), [knights]);
   useEffect(() => {
+    setFavoriteSlugs(readFavorites(knightFavoritesStorageKey));
     const syncFromUrl = () => {
       const params = new URLSearchParams(window.location.search);
       setQuery(getParam(params, "q"));
@@ -139,7 +160,7 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
     return () => window.removeEventListener("popstate", syncFromUrl);
   }, []);
   useEffect(() => {
-    if (!isQueryReady) return;
+    if (!isQueryReady || !pathname) return;
     const nextParams = new URLSearchParams(window.location.search);
     const setOrDelete = (key: string, value: string, defaultValue = "") => {
       if (value && value !== defaultValue) nextParams.set(key, value);
@@ -159,22 +180,41 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
   const filteredKnights = useMemo(() => {
     const filtered = knights.filter((knight) => {
       const allTraits = [...knight.traits, ...knight.hiddenTraits];
+      const searchableText = [
+        knight.name,
+        knight.title,
+        knight.description,
+        knight.role,
+        allTraits.join(" "),
+        knight.preferences.join(" "),
+        knight.recruitment,
+        knight.notes.join(" "),
+        knight.relatedGuideHrefs.map((guide) => guide.label).join(" "),
+      ].join(" ");
       const matchesQuery =
         normalizedQuery.length === 0 ||
-        `${knight.name} ${knight.title} ${knight.description}`.toLowerCase().includes(normalizedQuery);
-      return matchesQuery && (role === allValue || knight.role === role) && (trait === allValue || allTraits.includes(trait));
+        searchableText.toLowerCase().includes(normalizedQuery);
+      const matchesFavorites = !showFavoritesOnly || favoriteSet.has(knight.slug);
+      return matchesQuery && matchesFavorites && (role === allValue || knight.role === role) && (trait === allValue || allTraits.includes(trait));
     });
     return [...filtered].sort((a, b) => {
       if (sort === "role") return compareText(a.role, b.role) || compareText(a.name, b.name);
       return compareText(a.name, b.name);
     });
-  }, [knights, normalizedQuery, role, sort, trait]);
-  const hasFilters = query || role !== allValue || trait !== allValue || sort !== "name";
+  }, [favoriteSet, knights, normalizedQuery, role, showFavoritesOnly, sort, trait]);
+  const hasFilters = query || role !== allValue || trait !== allValue || sort !== "name" || showFavoritesOnly;
+  const toggleFavorite = (slug: string) => {
+    setFavoriteSlugs((current) => {
+      const next = current.includes(slug) ? current.filter((favoriteSlug) => favoriteSlug !== slug) : [...current, slug];
+      window.localStorage.setItem(knightFavoritesStorageKey, JSON.stringify(next));
+      return next;
+    });
+  };
 
   return (
     <section className="mt-10 space-y-5">
       <div className="rounded-lg border border-border bg-card p-4">
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_190px_220px_160px_auto]">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_190px_220px_160px_auto_auto]">
           <label className="relative block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <span className="sr-only">{labels.searchSr}</span>
@@ -183,7 +223,11 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
           <FilterSelect label={labels.filterRole} value={role} onChange={setRole} options={roles} placeholder={labels.allRoles} />
           <FilterSelect label={labels.filterTrait} value={trait} onChange={setTrait} options={traits} placeholder={labels.allTraits} />
           <FilterSelect label={labels.sort} value={sort} onChange={(value) => setSort(value as KnightSort)} options={["role"]} placeholder={labels.sortByName} />
-          <Button type="button" variant="outline" onClick={() => { setQuery(""); setRole(allValue); setTrait(allValue); setSort("name"); }} disabled={!hasFilters} className="h-10">
+          <Button type="button" variant={showFavoritesOnly ? "default" : "outline"} onClick={() => setShowFavoritesOnly((value) => !value)} className="h-10 whitespace-nowrap">
+            <Star className={showFavoritesOnly ? "h-4 w-4 fill-current" : "h-4 w-4"} />
+            {favoriteLabels.favorites}
+          </Button>
+          <Button type="button" variant="outline" onClick={() => { setQuery(""); setRole(allValue); setTrait(allValue); setSort("name"); setShowFavoritesOnly(false); }} disabled={!hasFilters} className="h-10">
             <X className="h-4 w-4" />
             {labels.clear}
           </Button>
@@ -191,6 +235,7 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
         <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
           <SlidersHorizontal className="h-4 w-4" />
           {labels.showingPrefix} <span className="font-semibold text-foreground">{filteredKnights.length}</span> {labels.showingMiddle} {knights.length} {labels.showingSuffix}
+          {showFavoritesOnly && <span className="font-medium text-foreground">- {favoriteLabels.showFavorites}</span>}
         </div>
       </div>
 
@@ -205,7 +250,13 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
                 </h2>
                 <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">{knight.description}</p>
               </div>
-              <div className="w-full rounded-md border border-border bg-background p-3 text-sm font-semibold text-foreground sm:w-auto sm:min-w-[220px]">{formatStats(knight.stats, labels.unknown)}</div>
+              <div className="flex w-full flex-col gap-2 sm:w-auto sm:min-w-[220px]">
+                <Button type="button" variant="outline" onClick={() => toggleFavorite(knight.slug)} aria-label={favoriteSet.has(knight.slug) ? favoriteLabels.unfavoriteKnight : favoriteLabels.favoriteKnight} className="h-10 justify-center">
+                  <Star className={favoriteSet.has(knight.slug) ? "h-4 w-4 fill-current" : "h-4 w-4"} />
+                  {favoriteSet.has(knight.slug) ? favoriteLabels.unfavoriteKnight : favoriteLabels.favoriteKnight}
+                </Button>
+                <div className="rounded-md border border-border bg-background p-3 text-sm font-semibold text-foreground">{formatStats(knight.stats, labels.unknown)}</div>
+              </div>
             </div>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               <InfoList title={labels.stats} items={[formatStats(knight.stats, labels.unknown)]} />
