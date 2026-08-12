@@ -11,7 +11,15 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ClientThemeToggle } from "@/components/theme-toggle";
 
 export function localizeHref(href: string, locale: string) {
-  return `/${locale}${href === "/" ? "" : href}`;
+  const legacyHrefMap: Record<string, string> = {
+    "/beginner-guide": "/guide/sovereign-tower-beginner-guide",
+    "/time-rewind": "/systems/sovereign-tower-demon-power",
+    "/features": "/guide/sovereign-tower-guide",
+    "/system-requirements": "/platforms/sovereign-tower-steam",
+    "/news": "/release/sovereign-tower-release-date",
+  };
+  const normalizedHref = legacyHrefMap[href] ?? href;
+  return `/${locale}${normalizedHref === "/" ? "" : normalizedHref}`;
 }
 
 export async function SiteHeader({ locale }: { locale: string }) {

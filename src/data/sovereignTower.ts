@@ -452,7 +452,7 @@ export const KNIGHTS: KnightRecord[] = [
   {
     slug: "brunhilda",
     name: "Brunhilda",
-    title: "How to Get Brunhilda in Sovereign Tower",
+    title: "Brunhilda Knight Profile - Sovereign Tower",
     description: "Brunhilda's profile page covers her stats, traits, best quests, and database notes; use the recruitment guide for route conditions and how-to-get intent.",
     image: "/images/brunhilda-profile.jpg",
     role: "Recruitable Knight",
@@ -600,7 +600,7 @@ export const KNIGHTS: KnightRecord[] = [
   {
     slug: "lady-of-the-tower",
     name: "Lady of the Tower",
-    title: "Sovereign Tower Lady of the Tower Character Guide",
+    title: "Lady of the Tower Knight Profile - Sovereign Tower",
     description: "The Lady of the Tower is a major tower presence and advisor-style character whose advice, romance route, and hidden agenda should be tracked separately from standard knights.",
     role: "Route Knight",
     stats: { charisma: 6, magic: 5, wit: 5 },
@@ -1501,7 +1501,30 @@ function localizeKnight(knight: KnightRecord, locale: string): KnightRecord {
   const baseOverlay = LOCALIZED_KNIGHT_OVERLAYS[locale][knight.slug];
   const supplementalOverlay = SUPPLEMENTAL_KNIGHT_OVERLAYS[locale][knight.slug];
   if (!baseOverlay && !supplementalOverlay) return knight;
-  return { ...knight, ...baseOverlay, ...supplementalOverlay };
+  const localized = { ...knight, ...baseOverlay, ...supplementalOverlay };
+  if (knight.slug === "brunhilda") {
+    return {
+      ...localized,
+      title:
+        locale === "it"
+          ? "Profilo Cavaliere Brunhilda - Sovereign Tower"
+          : locale === "ko"
+            ? "Sovereign Tower Brunhilda Knight Profile"
+            : localized.title,
+    };
+  }
+  if (knight.slug === "lady-of-the-tower") {
+    return {
+      ...localized,
+      title:
+        locale === "it"
+          ? "Profilo Lady of the Tower - Sovereign Tower"
+          : locale === "ko"
+            ? "Sovereign Tower Lady of the Tower Knight Profile"
+            : localized.title,
+    };
+  }
+  return localized;
 }
 
 export function getLocalizedQuests(locale: string) {

@@ -67,9 +67,35 @@ function absoluteLocalizedUrl(pathname: string, locale: string) {
   return `${siteUrl}${localizedPath(pathname, locale)}`;
 }
 
+function truncateAtWord(value: string, maxLength: number) {
+  if (value.length <= maxLength) return value;
+  const trimmed = value.slice(0, maxLength - 1);
+  const lastSpace = trimmed.lastIndexOf(" ");
+  const boundary = lastSpace > 40 ? lastSpace : maxLength - 1;
+  return `${trimmed.slice(0, boundary).trim()}...`;
+}
+
+function seoTitle(title: string) {
+  const fullTitle = title.includes("Sovereign Tower")
+    ? title
+    : `${title} - Sovereign Tower Wiki`;
+  return truncateAtWord(fullTitle, 65);
+}
+
+function seoDescription(description: string) {
+  return truncateAtWord(description, 150);
+}
+
+function localizeMdxHref(href: string, locale: Locale) {
+  if (!href.startsWith("/") || href.startsWith(`/${locale}`)) return href;
+  if (href.startsWith("/images/") || href.startsWith("/_next/")) return href;
+  if (routing.locales.some((candidate) => href === `/${candidate}` || href.startsWith(`/${candidate}/`))) return href;
+  return localizeHref(href, locale);
+}
+
 function officialScreenshotCaption(locale: Locale) {
   if (locale === "it") return "Screenshot ufficiale dalla pagina Steam del gioco.";
-  if (locale === "ko") return "Steam 상점 페이지의 공식 게임 스크린샷입니다.";
+  if (locale === "ko") return "Official game screenshot from the Steam store page.";
   return "Official game screenshot from the Steam store page.";
 }
 
@@ -107,11 +133,13 @@ export async function generateMetadata({
     const ctMessages = (
       messages as unknown as Record<string, Record<string, string>>
     )[ct];
-    const title =
-      ctMessages?.overviewTitle || `${ctTitle} - Sovereign Tower Wiki`;
-    const description =
+    const title = seoTitle(
+      ctMessages?.overviewTitle || `${ctTitle} - Sovereign Tower Wiki`,
+    );
+    const description = seoDescription(
       ctMessages?.overviewDescription ||
-      `Browse all ${ctTitle.toLowerCase()} guides and resources for Sovereign Tower.`;
+        `Browse all ${ctTitle.toLowerCase()} guides and resources for Sovereign Tower.`,
+    );
     return {
       title,
       description,
@@ -139,16 +167,16 @@ export async function generateMetadata({
       const pathname = `/quests/${quest.slug}`;
       const image = quest.image ? `${siteUrl}${quest.image}` : `${siteUrl}/images/hero.webp`;
       return {
-        title: `${quest.title} - Sovereign Tower Wiki`,
-        description: quest.description,
+        title: seoTitle(quest.title),
+        description: seoDescription(quest.description),
         alternates: {
           canonical: localizedPath(pathname, locale),
           languages: languageAlternates(pathname),
         },
         openGraph: {
           type: "article",
-          title: quest.title,
-          description: quest.description,
+          title: seoTitle(quest.title),
+          description: seoDescription(quest.description),
           url: absoluteLocalizedUrl(pathname, locale),
           images: [image],
         },
@@ -162,16 +190,16 @@ export async function generateMetadata({
       const pathname = `/knights/${knight.slug}`;
       const image = knight.image ? `${siteUrl}${knight.image}` : `${siteUrl}/images/hero.webp`;
       return {
-        title: `${knight.title} - Sovereign Tower Wiki`,
-        description: knight.description,
+        title: seoTitle(knight.title),
+        description: seoDescription(knight.description),
         alternates: {
           canonical: localizedPath(pathname, locale),
           languages: languageAlternates(pathname),
         },
         openGraph: {
           type: "article",
-          title: knight.title,
-          description: knight.description,
+          title: seoTitle(knight.title),
+          description: seoDescription(knight.description),
           url: absoluteLocalizedUrl(pathname, locale),
           images: [image],
         },
@@ -186,16 +214,16 @@ export async function generateMetadata({
     ? item.metadata.image
     : `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`;
   return {
-    title: `${item.metadata.title} - Sovereign Tower Wiki`,
-    description: item.metadata.description,
+    title: seoTitle(item.metadata.title),
+    description: seoDescription(item.metadata.description),
     alternates: {
       canonical: localizedPath(pathname, locale),
       languages: languageAlternates(pathname),
     },
     openGraph: {
       type: "article",
-      title: item.metadata.title,
-      description: item.metadata.description,
+      title: seoTitle(item.metadata.title),
+      description: seoDescription(item.metadata.description),
       url: absoluteLocalizedUrl(pathname, locale),
       images: [image],
     },
@@ -852,6 +880,21 @@ async function DetailPage({
   };
 
   const relatedLabel = messages.shared.relatedGuides || "Related Guides";
+  const MDXContent = item.MDXContent as React.ComponentType<{
+    components?: {
+      a?: (props: { href?: string; children?: React.ReactNode }) => React.ReactNode;
+    };
+  }>;
+  const mdxComponents = {
+    a: ({ href = "", children }: { href?: string; children?: React.ReactNode }) => (
+      <Link
+        className="font-medium text-[hsl(var(--nav-theme))] underline-offset-4 hover:underline"
+        href={localizeMdxHref(href, locale)}
+      >
+        {children}
+      </Link>
+    ),
+  };
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -908,7 +951,7 @@ async function DetailPage({
           <MobileTOC headings={item.headings} label={tocLabel} />
           <AdUnitBox unit="rectangle" className="mt-6" />
           <div className="prose-invert mt-8 max-w-none">
-            <item.MDXContent />
+            <MDXContent components={mdxComponents} />
           </div>
           <ArticleCards
             locale={locale}
@@ -982,7 +1025,6 @@ async function ArticleCards({
   currentSlug: string;
   relatedLabel: string;
 }) {
-  // 鍔ㄦ€佽幏鍙栧悓鍒嗙被鍏朵粬鏂囩珷锛堟帓闄ゅ綋鍓嶆枃绔狅級
   const allItems = await getAllContent(contentType, locale as Locale);
   const related = allItems
     .filter((item) => item.slug !== currentSlug)
