@@ -4,28 +4,28 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 12%;
-    --card: 0 0% 100%;
+    --background: 42 35% 96%;
+    --foreground: 28 24% 14%;
+    --card: 38 32% 98%;
     --card-foreground: 0 0% 12%;
-    --popover: 0 0% 100%;
+    --popover: 38 32% 98%;
     --popover-foreground: 0 0% 12%;
-    --primary: 18 65% 42%;
+    --primary: 18 56% 35%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 95%;
+    --secondary: 39 24% 90%;
     --secondary-foreground: 0 0% 20%;
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 0 0% 93%;
+    --muted: 39 22% 91%;
+    --muted-foreground: 28 13% 38%;
+    --accent: 38 26% 88%;
     --accent-foreground: 0 0% 12%;
     --destructive: 8 70% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
+    --border: 33 22% 82%;
+    --input: 33 22% 82%;
     --ring: 18 65% 42%;
-    --radius: 0.75rem;
-    --nav-theme: 38 80% 50%;
-    --nav-theme-light: 38 90% 65%;
+    --radius: 0.5rem;
+    --nav-theme: 41 70% 45%;
+    --nav-theme-light: 41 78% 60%;
     --chart-1: 18 65% 42%;
     --chart-2: 175 32% 42%;
     --chart-3: 221 30% 42%;
@@ -68,8 +68,9 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(circle at 18% 12%, hsl(var(--nav-theme) / 0.12), transparent 32rem),
-      radial-gradient(circle at 85% 8%, hsl(175 32% 47% / 0.08), transparent 28rem);
+      linear-gradient(90deg, hsl(32 25% 78% / 0.18) 1px, transparent 1px),
+      linear-gradient(180deg, hsl(32 25% 78% / 0.14) 1px, transparent 1px);
+    background-size: 44px 44px;
     z-index: -1;
   }
 }

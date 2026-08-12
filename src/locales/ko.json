@@ -1,0 +1,167 @@
+{
+  "site": {
+    "tagline": "팬 제작 Sovereign Tower 커뮤니티 위키",
+    "description": "기사 관리, 퀘스트, 왕국 선택, 시간 되감기, 캐릭터, 엔딩, 초보자 전략을 다루는 Sovereign Tower 위키입니다.",
+    "legalNotice": "팬이 만든 독립 Sovereign Tower 위키입니다. WILD WITS GAMES 또는 Curve Games와 제휴되어 있지 않습니다."
+  },
+  "nav": {
+    "guide": "가이드",
+    "quests": "퀘스트",
+    "knights": "기사",
+    "characters": "캐릭터",
+    "romance": "로맨스",
+    "systems": "시스템",
+    "platforms": "플랫폼",
+    "release": "출시",
+    "community": "커뮤니티",
+    "media": "미디어"
+  },
+  "home": {
+    "meta": {
+      "title": "Sovereign Tower 위키 - 가이드, 기사, 퀘스트",
+      "description": "기사 관리, 퀘스트, 왕국 선택, 시간 되감기, 캐릭터, 엔딩, 초보자 전략을 다루는 Sovereign Tower 종합 위키입니다."
+    },
+    "hero": {
+      "eyebrow": "팬 제작 커뮤니티 위키",
+      "description": "Steam의 스토리 중심 중세 경영 RPG Sovereign Tower를 마스터하세요. 개성 강한 기사들을 모집하고, 원탁을 관리하며, 왕국 세력의 균형을 맞추고, 로맨스 루트를 탐색하고, 시간 되감기 선택으로 운명을 다시 쓰세요.",
+      "stats": [
+        "Steam PC",
+        "개발사: WILD WITS GAMES",
+        "6개 언어 지원",
+        "스토리 중심 RPG",
+        "시간 되감기 시스템"
+      ],
+      "primaryCta": "초보자 가이드 시작",
+      "secondaryCta": "기사 살펴보기",
+      "tertiaryCta": "Steam에서 플레이"
+    },
+    "updates": {
+      "title": "최근 업데이트",
+      "browse": "모든 가이드 보기",
+      "viewAll": "전체 보기"
+    },
+    "start": {
+      "eyebrow": "여기서 시작",
+      "title": "Sovereign Tower 여정"
+    },
+    "popular": {
+      "eyebrow": "인기 페이지",
+      "title": "지금 주목받는 글"
+    },
+    "aboutGame": {
+      "title": "Sovereign Tower란?",
+      "cta": "모든 가이드 살펴보기"
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "description": "Sovereign Tower에 대한 가장 흔한 질문의 빠른 답변입니다."
+    },
+    "finalCta": {
+      "title": "Sovereign Tower를 마스터할 준비가 되셨나요?",
+      "description": "첫 기사 모집부터 전설적인 왕국 결정까지, Sovereign Tower 가이드는 모든 선택을 이해하고 궁정을 관리하며 숨겨진 길을 발견하도록 돕습니다.",
+      "primary": "초보자 가이드 읽기",
+      "secondary": "Steam에서 Sovereign Tower 플레이"
+    }
+  },
+  "shared": {
+    "wikiNavigation": "위키 탐색",
+    "updated": "업데이트",
+    "inThisSection": "이 섹션",
+    "tableOfContents": "목차",
+    "nextSteps": "다음 단계",
+    "needHelp": "도움이 필요하신가요?",
+    "relatedReading": "관련 읽을거리",
+    "relatedGuides": "관련 가이드",
+    "readMore": "더 읽기",
+    "officialMedia": "공식 미디어",
+    "home": "홈",
+    "noGuidesAvailable": "아직 제공되는 가이드가 없습니다. 곧 다시 확인해 주세요!"
+  },
+  "footer": {
+    "about": "Sovereign Tower 위키는 중세 경영 RPG Sovereign Tower를 위한 팬 제작 독립 가이드 사이트입니다. 기사, 퀘스트, 왕국 관리, 캐릭터 정보, 엔딩, 로맨스 루트, 게임플레이 전략을 다룹니다.",
+    "description": "기사, 퀘스트, 왕국 선택, 시간 조작이 있는 스토리 중심 중세 경영 RPG.",
+    "quickLinks": "빠른 링크",
+    "guides": "가이드",
+    "playGame": "Steam에서 Sovereign Tower 플레이",
+    "officialDiscord": "공식 Discord",
+    "officialYoutube": "Sovereign Tower 게임플레이 영상",
+    "vvBuilder": "개발자 페이지",
+    "beginnerGuide": "초보자 가이드",
+    "raceGuides": "기사 가이드",
+    "bossGuides": "시스템 가이드",
+    "buildGuide": "게임 팁",
+    "privacyPolicy": "개인정보 처리방침",
+    "termsOfService": "서비스 약관"
+  },
+  "guide": {
+    "overviewTitle": "Sovereign Tower 가이드",
+    "overviewDescription": "초보자 팁, 워크스루, 엔딩, 소버린 모드, 데모 도움말, 실전 전략을 위한 Sovereign Tower 가이드를 둘러보세요."
+  },
+  "community": {
+    "overviewTitle": "Sovereign Tower 커뮤니티",
+    "overviewDescription": "Discord, 소셜 채널, 팬 공간, 토론 허브, 공식 목적지에 대한 커뮤니티 가이드를 둘러보세요."
+  },
+  "characters": {
+    "overviewTitle": "Sovereign Tower 캐릭터",
+    "overviewDescription": "기사, 동료, 로맨스 대상, 이야기 속 인물, 중요한 왕국 관계를 위한 캐릭터 가이드를 둘러보세요."
+  },
+  "romance": {
+    "overviewTitle": "Sovereign Tower 로맨스",
+    "overviewDescription": "파트너, 로맨스 옵션, 관계 루트, 캐릭터 중심 선택을 다루는 로맨스 가이드를 둘러보세요."
+  },
+  "systems": {
+    "overviewTitle": "Sovereign Tower 시스템",
+    "overviewDescription": "대장간, 명성, 식사, 지도, 악마의 힘, 드래곤 하트와 주요 메커니즘 가이드를 둘러보세요."
+  },
+  "platforms": {
+    "overviewTitle": "Sovereign Tower 플랫폼",
+    "overviewDescription": "Steam, PC, Mac, Switch, PS5, Xbox, 모바일, itch 및 플레이 위치에 대한 플랫폼 가이드를 둘러보세요."
+  },
+  "release": {
+    "overviewTitle": "Sovereign Tower 출시",
+    "overviewDescription": "출시일, 가격, 데모 정보, 정식 게임 정보, 플랫폼 출시 노트를 다루는 가이드를 둘러보세요."
+  },
+  "media": {
+    "overviewTitle": "Sovereign Tower 미디어",
+    "overviewDescription": "트레일러, 게임플레이, 리뷰, 프리뷰, 아트, 로고 정보와 보도를 다루는 미디어 가이드를 둘러보세요."
+  },
+  "database": {
+    "questHubTitle": "Sovereign Tower 퀘스트 데이터베이스",
+    "questHubDescription": "Sovereign Tower의 초기 구조화 퀘스트 기록을 유형, 지역, 필요 능력치, 추천 기사, 특성, 결과별로 검색하세요. 이 허브는 초기 항목을 얇은 페이지로 만들지 않으면서 전체 퀘스트 데이터베이스로 확장되도록 설계되었습니다.",
+    "knightHubTitle": "Sovereign Tower 기사 데이터베이스",
+    "knightHubDescription": "역할, 능력치, 특성, 선호도, 영입 메모, 최고의 퀘스트 배정으로 기사를 비교하세요. 이 허브는 게임플레이용 기사 데이터를 더 넓은 캐릭터 설정과 분리합니다.",
+    "quests": "퀘스트",
+    "knights": "기사",
+    "quest": "퀘스트",
+    "type": "유형",
+    "types": "유형",
+    "requiredStats": "필요 능력치",
+    "recommendedKnights": "추천 기사",
+    "outcomes": "결과",
+    "trackedOutcomes": "추적된 결과",
+    "trackedOutcomesLower": "개의 추적된 결과",
+    "allQuestRecords": "전체 퀘스트 기록",
+    "browseByQuestType": "퀘스트 유형별 보기",
+    "knightLinks": "기사 링크",
+    "questLinks": "퀘스트 링크",
+    "focus": "초점",
+    "traits": "특성",
+    "bestQuests": "최고 퀘스트",
+    "questInfo": "퀘스트 정보",
+    "knightInfo": "기사 정보",
+    "region": "지역",
+    "difficulty": "난이도",
+    "unknown": "알 수 없음",
+    "knightDataPending": "기사 데이터 준비 중",
+    "knight": "기사",
+    "steps": "단계",
+    "stats": "능력치",
+    "role": "역할",
+    "recruitment": "영입",
+    "preferences": "선호도",
+    "knownTraits": "알려진 특성",
+    "hiddenRouteTraits": "숨겨진 / 루트 특성",
+    "notes": "메모",
+    "knightProfile": "기사 프로필"
+  }
+}

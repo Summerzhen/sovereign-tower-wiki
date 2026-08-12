@@ -4,9 +4,11 @@ interface Env {
   };
 }
 
-const locales = ["en", "de", "ja", "fr"];
+const locales = ["en", "de", "ja", "fr", "it", "ko"];
 const unprefixedContentPaths = [
   "/guide",
+  "/quests",
+  "/knights",
   "/characters",
   "/romance",
   "/systems",
@@ -31,7 +33,7 @@ function redirect(url: URL, pathname: string) {
   });
 }
 
-export default {
+const worker = {
   async fetch(request: Request, env: Env) {
     const url = new URL(request.url);
     const pathname = url.pathname.replace(/\/+$/, "") || "/";
@@ -68,3 +70,5 @@ export default {
     return response;
   },
 };
+
+export default worker;

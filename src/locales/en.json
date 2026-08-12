@@ -8,6 +8,8 @@
   },
   "nav": {
     "guide": "Guide",
+    "quests": "Quests",
+    "knights": "Knights",
     "characters": "Characters",
     "romance": "Romance",
     "systems": "Systems",
@@ -29,10 +31,10 @@
         "Steam PC",
         "Developer: WILD WITS GAMES",
         "6 Supported Languages",
-        "Story Rich RPG",
-        "Time Rewind System"
+        "Quest Database",
+        "Knight Strategy"
       ],
-      "primaryCta": "Start Beginner Guide",
+      "primaryCta": "Browse All Quests",
       "secondaryCta": "Explore Knights",
       "tertiaryCta": "Play on Steam",
       "videoLabel": "Sovereign Tower Gameplay"
@@ -72,47 +74,56 @@
       "eyebrow": "Popular Pages",
       "title": "Trending Now",
       "quickLinks": [
-        "Beginner Guide",
-        "Knight Management",
-        "Quest Choices",
-        "Time Rewind"
+        "All Quests",
+        "Dragon Knight",
+        "Best Knights",
+        "Knight Affinity",
+        "Unexpected Outcomes",
+        "All Endings",
+        "Romance Guide"
       ],
       "cards": [
         {
           "badge": "Beginner",
-          "title": "Beginner Guide",
-          "description": "Learn kingdom resources, first assignments, Round Table basics, and the early decisions that shape your reign.",
-          "href": "/beginner-guide"
+          "title": "All Quests",
+          "description": "Search Sovereign Tower quests by region, requirement, recommended knight, outcome, and follow-up strategy.",
+          "href": "/quests"
         },
         {
           "badge": "Guide",
-          "title": "Knight Management",
-          "description": "Understand knight recruitment, roles, relationships, and quest assignments before expanding your court.",
+          "title": "Best Knights",
+          "description": "Compare knight roles, stats, affinity, preferences, and the quests where each recruit performs best.",
           "href": "/knights"
         },
         {
           "badge": "Guide",
-          "title": "Quest Choices",
-          "description": "Plan kingdom quests, evaluate story decisions, and track how outcomes change across your rule.",
-          "href": "/quests"
+          "title": "Dragon Knight Guide",
+          "description": "Prepare for the Dragon Knight quest with stat planning, knight picks, outcome notes, and common mistakes.",
+          "href": "/quests/sovereign-tower-dragon-knight"
         },
         {
           "badge": "System",
-          "title": "Time Rewind",
-          "description": "Use timeline knowledge to revise decisions, reveal secrets, and unlock stronger long-term outcomes.",
-          "href": "/time-rewind"
+          "title": "Unexpected Outcomes",
+          "description": "Learn how critical success, failure, hidden traits, and unusual quest results shape later cycles.",
+          "href": "/guide/sovereign-tower-unexpected-outcomes"
         },
         {
-          "badge": "Feature",
-          "title": "Gameplay Features",
-          "description": "Review the management RPG systems, fantasy setting, character focus, and branching choices.",
-          "href": "/features"
+          "badge": "Knights",
+          "title": "Knight Affinity",
+          "description": "Understand why quest preference affects satisfaction, while stats and traits decide whether an assignment succeeds.",
+          "href": "/guide/sovereign-tower-knight-affinity"
         },
         {
-          "badge": "Characters",
-          "title": "Character Guide",
-          "description": "Follow important figures, knight interactions, relationship paths, and story events.",
-          "href": "/characters"
+          "badge": "Endings",
+          "title": "All Endings",
+          "description": "Track ending routes, choice branches, timeline knowledge, and the decisions most likely to change your final outcome.",
+          "href": "/guide/sovereign-tower-endings"
+        },
+        {
+          "badge": "Romance",
+          "title": "Romance Guide",
+          "description": "Browse romance options, partner notes, relationship paths, and character choices tied to your Round Table.",
+          "href": "/romance/sovereign-tower-romance"
         },
         {
           "badge": "Steam",
@@ -167,27 +178,27 @@
       "cta": "Explore All Guides"
     },
     "explore": {
-      "title": "Sovereign Tower Homepage Modules",
-      "description": "Jump into the main Sovereign Tower guide sections for beginner basics, knights, quests, time rewind choices, characters, system requirements, and official news.",
+      "title": "Sovereign Tower Guides & Walkthroughs",
+      "description": "Jump into the highest-value Sovereign Tower guide sections for quests, knights, outcomes, stats, time rewind choices, and core player questions.",
       "modules": [
         {
           "order": 1,
-          "name": "Sovereign Tower Beginner Guide",
-          "description": "A complete beginner guide covering the first steps in Sovereign Tower, including kingdom management, knight recruitment, and core gameplay decisions. Help new players understand the main systems before progressing further.",
-          "href": "/guide/sovereign-tower-beginner-guide",
+          "name": "Sovereign Tower All Quests",
+          "description": "A searchable quest hub for Sovereign Tower covering main quests, regional walkthroughs, required stats, recommended knights, and outcomes.",
+          "href": "/quests",
           "displayType": "step-by-step",
           "highlights": [
             {
               "label": "1",
-              "detail": "Learn the role of the Sovereign and understand the magical tower management gameplay."
+              "detail": "Find key quests by region, type, stat requirement, and outcome."
             },
             {
               "label": "2",
-              "detail": "Recruit knights and assign them to quests while managing kingdom decisions."
+              "detail": "Use quest pages to compare required stats and likely risks before assigning knights."
             },
             {
               "label": "3",
-              "detail": "Explore story choices and use time manipulation mechanics to change outcomes."
+              "detail": "Follow internal links from quest pages to knights, stats, traits, and outcome guides."
             }
           ]
         },
@@ -195,7 +206,7 @@
           "order": 2,
           "name": "Sovereign Tower Knights Guide",
           "description": "Explore knight-related gameplay information including recruitment, character roles, and quest management. This guide helps players understand how to build an effective Round Table.",
-          "href": "/characters/sovereign-tower-knights",
+          "href": "/knights",
           "displayType": "card-list",
           "highlights": [
             {
@@ -214,22 +225,22 @@
         },
         {
           "order": 3,
-          "name": "Sovereign Tower Quest Guide",
-          "description": "A quest guide covering story progression, important choices, and kingdom events. Find information about how decisions influence different outcomes.",
-          "href": "/guide/sovereign-tower-walkthrough",
+          "name": "Sovereign Tower Dragon Knight Guide",
+          "description": "A focused walkthrough for one of the most important early challenge searches: how to prepare for and beat the Dragon Knight quest.",
+          "href": "/quests/sovereign-tower-dragon-knight",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Story Choices",
-              "detail": "Make decisions that shape the direction of your kingdom."
+              "label": "Stats",
+              "detail": "Plan around Strength, Agility, Magic, Wit, Charisma, and Luck requirements."
             },
             {
-              "label": "Missions",
-              "detail": "Manage quests through your recruited knights."
+              "label": "Knights",
+              "detail": "Pick knights by ability first, then repair affinity through dialogue."
             },
             {
               "label": "Outcomes",
-              "detail": "Discover different possibilities through changing choices."
+              "detail": "Track success, failure, and unexpected result branches."
             }
           ]
         },
@@ -415,6 +426,14 @@
     "overviewTitle": "Sovereign Tower Guide",
     "overviewDescription": "Browse Sovereign Tower guides for beginner tips, walkthroughs, endings, sovereign mode, demo help, and practical strategy."
   },
+  "quests": {
+    "overviewTitle": "Sovereign Tower Quests",
+    "overviewDescription": "Browse Sovereign Tower quest guides, walkthroughs, requirements, recommended knights, critical success notes, and unexpected outcomes."
+  },
+  "knights": {
+    "overviewTitle": "Sovereign Tower Knights",
+    "overviewDescription": "Browse Sovereign Tower knight guides for stats, traits, affinity, preferences, recruitment, and best quest assignments."
+  },
   "community": {
     "overviewTitle": "Sovereign Tower Community",
     "overviewDescription": "Browse Sovereign Tower community guides for Discord, social channels, fan spaces, discussion hubs, and official destinations."
@@ -442,5 +461,44 @@
   "media": {
     "overviewTitle": "Sovereign Tower Media",
     "overviewDescription": "Browse Sovereign Tower media guides for trailers, gameplay, reviews, previews, art, logo information, and coverage."
+  },
+  "database": {
+    "questHubTitle": "Sovereign Tower Quests Database",
+    "questHubDescription": "Search the first structured Sovereign Tower quest records by type, region, required stats, recommended knights, traits, and outcomes. This hub is built to expand into the full quest database without turning early entries into thin pages.",
+    "knightHubTitle": "Sovereign Tower Knights Database",
+    "knightHubDescription": "Compare knights by role, stats, traits, preferences, recruitment notes, and best quest assignments. This hub separates gameplay knight data from broader character lore.",
+    "quests": "Quests",
+    "knights": "Knights",
+    "quest": "Quest",
+    "type": "Type",
+    "types": "Types",
+    "requiredStats": "Required Stats",
+    "recommendedKnights": "Recommended Knights",
+    "outcomes": "Outcomes",
+    "trackedOutcomes": "Tracked Outcomes",
+    "trackedOutcomesLower": "tracked outcomes",
+    "allQuestRecords": "All Quest Records",
+    "browseByQuestType": "Browse by Quest Type",
+    "knightLinks": "Knight Links",
+    "questLinks": "Quest Links",
+    "focus": "Focus",
+    "traits": "Traits",
+    "bestQuests": "Best Quests",
+    "questInfo": "Quest Info",
+    "knightInfo": "Knight Info",
+    "region": "Region",
+    "difficulty": "Difficulty",
+    "unknown": "Unknown",
+    "knightDataPending": "Knight data pending",
+    "knight": "Knight",
+    "steps": "Steps",
+    "stats": "Stats",
+    "role": "Role",
+    "recruitment": "Recruitment",
+    "preferences": "Preferences",
+    "knownTraits": "Known Traits",
+    "hiddenRouteTraits": "Hidden / Route Traits",
+    "notes": "Notes",
+    "knightProfile": "Knight Profile"
   }
 }

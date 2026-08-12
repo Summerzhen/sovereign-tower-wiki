@@ -143,7 +143,12 @@ function getSlugsFromDirectory(dir: string, basePath: string[] = []): string[][]
  * 使用动态 import 获取 MDX 文件的 metadata
  */
 export async function getAllContent(contentType: string, language: Locale): Promise<ContentItem[]> {
-  const contentDir = path.join(CONTENT_ROOT, language, contentType);
+  let contentLanguage = language;
+  let contentDir = path.join(CONTENT_ROOT, contentLanguage, contentType);
+  if ((!fs.existsSync(contentDir) || getSlugsFromDirectory(contentDir).length === 0) && language !== routing.defaultLocale) {
+    contentLanguage = routing.defaultLocale;
+    contentDir = path.join(CONTENT_ROOT, contentLanguage, contentType);
+  }
   const slugPaths = getSlugsFromDirectory(contentDir);
 
   const items = await Promise.all(
@@ -151,12 +156,12 @@ export async function getAllContent(contentType: string, language: Locale): Prom
       const slug = segments.join("/");
       try {
         const realSlug = findFileBySlug(contentDir, slug) || slug;
-        const mod = await import(`../../content/${language}/${contentType}/${realSlug}.mdx`);
+        const mod = await import(`../../content/${contentLanguage}/${contentType}/${realSlug}.mdx`);
         return {
           slug,
           segments,
           contentType,
-          locale: language,
+          locale: contentLanguage,
           metadata: mod.metadata as ContentMetadata,
         } satisfies ContentItem;
       } catch {
@@ -238,6 +243,8 @@ export interface NavGroup {
 // 分组标题映射：slug → 人类可读标题（默认英文）
 const GROUP_TITLES: Record<string, string> = {
   guide: "Guide",
+  quests: "Quests",
+  knights: "Knights",
   characters: "Characters",
   romance: "Romance",
   systems: "Systems",
@@ -249,15 +256,39 @@ const GROUP_TITLES: Record<string, string> = {
 
 // locale → 分组标题映射
 const GROUP_TITLES_BY_LOCALE: Record<string, Record<string, string>> = {
+  it: {
+    guide: "Guide",
+    quests: "Quests",
+    knights: "Knights",
+    characters: "Personaggi",
+    romance: "Romance",
+    systems: "Sistemi",
+    platforms: "Piattaforme",
+    release: "Uscita",
+    community: "Community",
+    media: "Media",
+  },
+  ko: {
+    guide: "가이드",
+    characters: "캐릭터",
+    romance: "로맨스",
+    systems: "시스템",
+    platforms: "플랫폼",
+    release: "출시",
+    community: "커뮤니티",
+    media: "미디어",
+  },
 };
 
 // locale → "Overview" 翻译
 const OVERVIEW_LABEL_BY_LOCALE: Record<string, string> = {
+  it: "Panoramica",
+  ko: "개요",
 };
 
 // 分组排序顺序
 const GROUP_ORDER: string[] = [
-  "guide", "characters", "romance", "systems", "platforms", "release", "community", "media",
+  "guide", "quests", "knights", "characters", "romance", "systems", "platforms", "release", "community", "media",
 ];
 
 /**
@@ -269,15 +300,15 @@ export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
   const localeDir = path.join(CONTENT_ROOT, language);
   if (!fs.existsSync(localeDir)) return [];
 
-  const entries = fs.readdirSync(localeDir, { withFileTypes: true });
   const groups: NavGroup[] = [];
 
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-    const groupSlug = entry.name;
+  for (const groupSlug of CONTENT_TYPES) {
     // 跳过不在 CONTENT_TYPES 中的目录，避免显示会 404 的导航链接
     if (!CONTENT_TYPES.includes(groupSlug as typeof CONTENT_TYPES[number])) continue;
-    const groupDir = path.join(localeDir, groupSlug);
+    let groupDir = path.join(localeDir, groupSlug);
+    if ((!fs.existsSync(groupDir) || getSlugsFromDirectory(groupDir).length === 0) && language !== routing.defaultLocale) {
+      groupDir = path.join(CONTENT_ROOT, routing.defaultLocale, groupSlug);
+    }
     const slugPaths = getSlugsFromDirectory(groupDir);
 
     if (slugPaths.length === 0) continue;

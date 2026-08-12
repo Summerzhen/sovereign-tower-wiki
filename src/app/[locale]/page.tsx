@@ -61,11 +61,11 @@ export default async function LocaleHomePage({ params }: { params: Promise<{ loc
           <HomePageClient home={messages.home} locale={locale} articles={allArticles} recentArticles={recentArticles} />
           <AdUnitBox unit="native" className="mt-10" />
         </div>
-        <aside className="space-y-6">
+        <aside className="space-y-6 lg:self-start">
+          <WikiSidebar locale={locale} navGroups={navGroups} />
           <div className="hidden lg:block">
             <AdUnitBox unit="tower" className="lg:sticky lg:top-24" />
           </div>
-          <WikiSidebar locale={locale} navGroups={navGroups} />
         </aside>
       </div>
     </main>

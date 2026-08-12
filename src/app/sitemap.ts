@@ -2,6 +2,7 @@
 import { getAllContentPaths } from "@/lib/content";
 import { routing } from "@/i18n/routing";
 import { CONTENT_TYPES } from "@/config/navigation";
+import { KNIGHTS, QUESTS } from "@/data/sovereignTower";
 
 export const dynamic = "force-static";
 
@@ -11,14 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static paths that always exist
   const staticPaths = [
     "/",
-    "/guide",
-    "/characters",
-    "/romance",
-    "/systems",
-    "/platforms",
-    "/release",
-    "/community",
-    "/media",
+    ...CONTENT_TYPES.map((contentType) => `/${contentType}`),
     "/privacy-policy",
     "/terms-of-service",
     "/copyright",
@@ -28,8 +22,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic paths: scan actual MDX content files
   const contentPaths = await getAllContentPaths("en");
   const dynamicPaths = contentPaths.map((item) => `/${[item.contentType, ...item.slug].join("/")}`);
+  const databasePaths = [
+    ...QUESTS.map((quest) => `/quests/${quest.slug}`),
+    ...KNIGHTS.map((knight) => `/knights/${knight.slug}`),
+  ];
 
-  const paths = [...staticPaths, ...dynamicPaths];
+  const paths = Array.from(new Set([...staticPaths, ...dynamicPaths, ...databasePaths]));
 
   return routing.locales.flatMap((locale) =>
     paths.map((path) => ({

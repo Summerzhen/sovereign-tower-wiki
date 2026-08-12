@@ -8,6 +8,8 @@ import en from "@/locales/en.json";
 import de from "@/locales/de.json";
 import ja from "@/locales/ja.json";
 import fr from "@/locales/fr.json";
+import it from "@/locales/it.json";
+import ko from "@/locales/ko.json";
 
 type Messages = typeof en;
 
@@ -16,6 +18,8 @@ const messagesMap: Record<string, Partial<Messages>> = {
   de: de as unknown as Partial<Messages>,
   ja: ja as unknown as Partial<Messages>,
   fr: fr as unknown as Partial<Messages>,
+  it: it as unknown as Partial<Messages>,
+  ko: ko as unknown as Partial<Messages>,
 };
 
 /**

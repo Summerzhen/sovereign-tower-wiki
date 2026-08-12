@@ -1,0 +1,167 @@
+{
+  "site": {
+    "tagline": "Wiki della community di Sovereign Tower creata dai fan",
+    "description": "Wiki di Sovereign Tower con guide su cavalieri, missioni, scelte del regno, riavvolgimento del tempo, personaggi, finali e strategie per principianti.",
+    "legalNotice": "Wiki indipendente di Sovereign Tower creata dai fan. Non affiliata a WILD WITS GAMES o Curve Games."
+  },
+  "nav": {
+    "guide": "Guide",
+    "quests": "Missioni",
+    "knights": "Cavalieri",
+    "characters": "Personaggi",
+    "romance": "Romance",
+    "systems": "Sistemi",
+    "platforms": "Piattaforme",
+    "release": "Uscita",
+    "community": "Community",
+    "media": "Media"
+  },
+  "home": {
+    "meta": {
+      "title": "Sovereign Tower Wiki - Guide, cavalieri, missioni",
+      "description": "Wiki completa di Sovereign Tower con guide su cavalieri, missioni, scelte del regno, riavvolgimento del tempo, personaggi, finali e strategie per principianti."
+    },
+    "hero": {
+      "eyebrow": "Wiki della community creata dai fan",
+      "description": "Padroneggia Sovereign Tower, un RPG gestionale medievale ricco di storia su Steam. Recluta cavalieri eccentrici, gestisci la Tavola Rotonda, bilancia le fazioni del regno, esplora percorsi romantici e usa il riavvolgimento del tempo per riscrivere il destino.",
+      "stats": [
+        "Steam PC",
+        "Sviluppatore: WILD WITS GAMES",
+        "6 lingue supportate",
+        "RPG ricco di storia",
+        "Sistema di riavvolgimento del tempo"
+      ],
+      "primaryCta": "Inizia dalla guida per principianti",
+      "secondaryCta": "Esplora i cavalieri",
+      "tertiaryCta": "Gioca su Steam"
+    },
+    "updates": {
+      "title": "Aggiornamenti recenti",
+      "browse": "Sfoglia tutte le guide",
+      "viewAll": "Vedi tutto"
+    },
+    "start": {
+      "eyebrow": "Inizia qui",
+      "title": "Il tuo viaggio in Sovereign Tower"
+    },
+    "popular": {
+      "eyebrow": "Pagine popolari",
+      "title": "Di tendenza ora"
+    },
+    "aboutGame": {
+      "title": "Che cos'e Sovereign Tower?",
+      "cta": "Esplora tutte le guide"
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "description": "Risposte rapide alle domande piu comuni su Sovereign Tower."
+    },
+    "finalCta": {
+      "title": "Pronto a dominare Sovereign Tower?",
+      "description": "Dal primo reclutamento di un cavaliere alle decisioni leggendarie del regno, le nostre guide di Sovereign Tower ti aiutano a capire ogni scelta, gestire la corte e scoprire percorsi nascosti.",
+      "primary": "Leggi la guida per principianti",
+      "secondary": "Gioca a Sovereign Tower su Steam"
+    }
+  },
+  "shared": {
+    "wikiNavigation": "Navigazione wiki",
+    "updated": "Aggiornato",
+    "inThisSection": "In questa sezione",
+    "tableOfContents": "Indice",
+    "nextSteps": "Prossimi passi",
+    "needHelp": "Hai bisogno di aiuto?",
+    "relatedReading": "Letture correlate",
+    "relatedGuides": "Guide correlate",
+    "readMore": "Leggi di piu",
+    "officialMedia": "Media ufficiali",
+    "home": "Home",
+    "noGuidesAvailable": "Nessuna guida disponibile per ora. Torna presto!"
+  },
+  "footer": {
+    "about": "Sovereign Tower Wiki e un sito guida indipendente creato dai fan per l'RPG gestionale medievale Sovereign Tower. Copriamo cavalieri, missioni, gestione del regno, personaggi, finali, romance e strategie di gioco.",
+    "description": "Un RPG gestionale medievale ricco di storia con cavalieri, missioni, scelte del regno e manipolazione del tempo.",
+    "quickLinks": "Link rapidi",
+    "guides": "Guide",
+    "playGame": "Gioca a Sovereign Tower su Steam",
+    "officialDiscord": "Discord ufficiale",
+    "officialYoutube": "Video gameplay di Sovereign Tower",
+    "vvBuilder": "Pagina sviluppatore",
+    "beginnerGuide": "Guida per principianti",
+    "raceGuides": "Guide ai cavalieri",
+    "bossGuides": "Guide ai sistemi",
+    "buildGuide": "Consigli di gioco",
+    "privacyPolicy": "Informativa sulla privacy",
+    "termsOfService": "Termini di servizio"
+  },
+  "guide": {
+    "overviewTitle": "Guide di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide di Sovereign Tower per consigli per principianti, walkthrough, finali, modalita sovrano, demo e strategia pratica."
+  },
+  "community": {
+    "overviewTitle": "Community di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide community su Discord, canali social, spazi fan, hub di discussione e destinazioni ufficiali."
+  },
+  "characters": {
+    "overviewTitle": "Personaggi di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide sui personaggi, cavalieri, alleati, interessi romantici e relazioni importanti del regno."
+  },
+  "romance": {
+    "overviewTitle": "Romance di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide su partner, opzioni romantiche, percorsi relazionali e scelte incentrate sui personaggi."
+  },
+  "systems": {
+    "overviewTitle": "Sistemi di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide sui sistemi: forgia, fama, pasti, mappa, potere demoniaco, cuore di drago e meccaniche principali."
+  },
+  "platforms": {
+    "overviewTitle": "Piattaforme di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide per Steam, PC, Mac, Switch, PS5, Xbox, mobile, itch e dove giocare."
+  },
+  "release": {
+    "overviewTitle": "Uscita di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide su data di lancio, prezzo, demo, gioco completo e note di uscita sulle piattaforme."
+  },
+  "media": {
+    "overviewTitle": "Media di Sovereign Tower",
+    "overviewDescription": "Sfoglia guide su trailer, gameplay, recensioni, anteprime, arte, logo e copertura mediatica."
+  },
+  "database": {
+    "questHubTitle": "Database missioni di Sovereign Tower",
+    "questHubDescription": "Cerca i primi record strutturati delle missioni di Sovereign Tower per tipo, regione, statistiche richieste, cavalieri consigliati, tratti e risultati. Questo hub è pensato per crescere fino al database completo senza trasformare le prime voci in pagine sottili.",
+    "knightHubTitle": "Database cavalieri di Sovereign Tower",
+    "knightHubDescription": "Confronta i cavalieri per ruolo, statistiche, tratti, preferenze, note di reclutamento e migliori missioni assegnabili. Questo hub separa i dati di gameplay dei cavalieri dalla lore dei personaggi.",
+    "quests": "Missioni",
+    "knights": "Cavalieri",
+    "quest": "Missione",
+    "type": "Tipo",
+    "types": "Tipi",
+    "requiredStats": "Statistiche richieste",
+    "recommendedKnights": "Cavalieri consigliati",
+    "outcomes": "Risultati",
+    "trackedOutcomes": "Risultati tracciati",
+    "trackedOutcomesLower": "risultati tracciati",
+    "allQuestRecords": "Tutti i record missione",
+    "browseByQuestType": "Sfoglia per tipo di missione",
+    "knightLinks": "Link cavalieri",
+    "questLinks": "Link missioni",
+    "focus": "Focus",
+    "traits": "Tratti",
+    "bestQuests": "Migliori missioni",
+    "questInfo": "Info missione",
+    "knightInfo": "Info cavaliere",
+    "region": "Regione",
+    "difficulty": "Difficoltà",
+    "unknown": "Sconosciuto",
+    "knightDataPending": "Dati cavaliere in sospeso",
+    "knight": "Cavaliere",
+    "steps": "Passaggi",
+    "stats": "Statistiche",
+    "role": "Ruolo",
+    "recruitment": "Reclutamento",
+    "preferences": "Preferenze",
+    "knownTraits": "Tratti noti",
+    "hiddenRouteTraits": "Tratti nascosti / di percorso",
+    "notes": "Note",
+    "knightProfile": "Profilo cavaliere"
+  }
+}

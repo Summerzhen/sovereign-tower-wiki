@@ -6,6 +6,8 @@ type NavigationItem = {
 
 export const NAVIGATION_CONFIG: NavigationItem[] = [
   { key: "guide", path: "/guide", isContentType: true },
+  { key: "quests", path: "/quests", isContentType: true },
+  { key: "knights", path: "/knights", isContentType: true },
   { key: "characters", path: "/characters", isContentType: true },
   { key: "romance", path: "/romance", isContentType: true },
   { key: "systems", path: "/systems", isContentType: true },
