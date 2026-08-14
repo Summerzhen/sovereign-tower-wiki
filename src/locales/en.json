@@ -20,8 +20,8 @@
   },
   "home": {
     "meta": {
-      "title": "Sovereign Tower Wiki - Guides, Knights, Quests",
-      "description": "Complete Sovereign Tower Wiki covering knight management, quests, kingdom choices, time rewind mechanics, characters, endings and beginner strategies."
+      "title": "Sovereign Tower Wiki & Guide - Characters, Quests, Systems",
+      "description": "Sovereign Tower wiki and guide covering characters, knight recruitment, quests, meals, platforms, time rewind choices, endings, and beginner strategy."
     },
     "hero": {
       "eyebrow": "Fan-Made Community Wiki",
@@ -34,8 +34,8 @@
         "Quest Database",
         "Knight Strategy"
       ],
-      "primaryCta": "Browse All Quests",
-      "secondaryCta": "Explore Knights",
+      "primaryCta": "Start the Guide",
+      "secondaryCta": "Browse Characters",
       "tertiaryCta": "Play on Steam",
       "videoLabel": "Sovereign Tower Gameplay"
     },
