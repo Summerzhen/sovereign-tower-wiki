@@ -126,6 +126,8 @@ function readFavorites(storageKey: string) {
 
 export function KnightHubExplorer({ locale, knights, quests }: Props) {
   const labels = getLabels(locale);
+  const favoriteMealsLabel = locale === "it" ? "Pasti preferiti" : "Favorite Meals";
+  const evolutionLabel = locale === "it" ? "Evoluzione" : "Evolution";
   const favoriteLabels = {
     favorites: "Favorites",
     showFavorites: "Show favorites",
@@ -262,6 +264,8 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
               <InfoList title={labels.stats} items={[formatStats(knight.stats, labels.unknown)]} />
               <InfoList title={labels.traits} items={[...knight.traits, ...knight.hiddenTraits]} />
               <InfoList title={labels.bestQuests} items={knight.bestQuestSlugs.map((slug) => questNames.get(slug) ?? slug.replace(/-/g, " "))} />
+              <InfoList title={favoriteMealsLabel} items={knight.favoriteMeals?.length ? knight.favoriteMeals : [labels.unknown]} />
+              <InfoList title={evolutionLabel} items={knight.evolution ? [`${knight.evolution.name}: ${knight.evolution.requirements}`, knight.evolution.changes] : [labels.unknown]} />
             </div>
           </article>
         ))}

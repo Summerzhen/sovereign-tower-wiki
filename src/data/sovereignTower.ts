@@ -30,6 +30,13 @@ export type QuestRecord = {
   relatedGuideHrefs: Array<{ label: string; href: string }>;
 };
 
+export type KnightEvolutionRecord = {
+  name: string;
+  requirements: string;
+  changes: string;
+  stats?: StatBlock;
+};
+
 export type KnightRecord = {
   slug: string;
   name: string;
@@ -41,6 +48,8 @@ export type KnightRecord = {
   traits: string[];
   hiddenTraits: string[];
   preferences: string[];
+  favoriteMeals?: string[];
+  evolution?: KnightEvolutionRecord;
   bestQuestSlugs: string[];
   recruitment: string;
   notes: string[];
@@ -435,6 +444,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Kind-hearted", "Optimistic", "Animal-friendly candidate"],
     hiddenTraits: ["Animal Lover"],
     preferences: ["Social tasks", "Gentle solutions", "Assignments that avoid cruelty"],
+    favoriteMeals: ["Prefou", "Crepe"],
     bestQuestSlugs: ["sovereign-tower-goose-quest", "sovereign-tower-hammer-lost-yet-again"],
     recruitment: "Appears as an early knight and introduces the player to Round Table assignment basics.",
     notes: [
@@ -460,6 +470,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Direct", "Battle-ready", "High-pressure assignment candidate"],
     hiddenTraits: ["Route-dependent details for route notes"],
     preferences: ["Combat pressure", "Glory-facing quests"],
+    favoriteMeals: ["Galette-Saucisse", "Lion's Taco"],
     bestQuestSlugs: ["sovereign-tower-dragon-knight", "sovereign-tower-beast-hunt", "sovereign-tower-rebellion"],
     recruitment: "Keep this field updated with confirmed audience, route, or quest trigger details as player reports are documented.",
     notes: [
@@ -485,6 +496,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Unusual recruit", "Supernatural fit", "Route-sensitive"],
     hiddenTraits: ["Secret conditions for route notes"],
     preferences: ["Mystical threats", "Dangerous assignments"],
+    favoriteMeals: ["All six meals"],
     bestQuestSlugs: ["sovereign-tower-dragon-knight", "sovereign-tower-gavault", "sovereign-tower-beast-hunt", "sovereign-tower-rebellion"],
     recruitment: "Track confirmed route triggers, audience choices, or quest branches here instead of scattering them across generic guides.",
     notes: [
@@ -510,6 +522,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Flashy", "Prideful", "Court-facing"],
     hiddenTraits: ["Fear of the dark"],
     preferences: ["Glory", "Public recognition", "Social pressure"],
+    favoriteMeals: ["Crepe", "Croque-Monsieur"],
     bestQuestSlugs: ["sovereign-tower-groveshire", "sovereign-tower-rebellion"],
     recruitment: "Appears through the early audience and recruitment loop; update with exact cycle notes when documented.",
     notes: [
@@ -531,6 +544,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Route-sensitive", "Leadership-adjacent", "Unconfirmed role"],
     hiddenTraits: ["Character-specific triggers for route notes"],
     preferences: ["Political pressure", "Story branches", "Assignments with clear narrative stakes"],
+    favoriteMeals: ["Brizhian Butter Shortbread", "Crepe"],
     bestQuestSlugs: ["sovereign-tower-rebellion", "sovereign-tower-groveshire", "sovereign-tower-gavault"],
     recruitment: "Treat Gideon's unlock path as route-dependent until official profile text, in-game recruitment screenshots, or repeatable player reports confirm his role.",
     notes: [
@@ -556,6 +570,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Rare encounter candidate", "Community-report candidate", "Data pending"],
     hiddenTraits: ["Rarity or encounter conditions for route notes"],
     preferences: ["Experimental routes", "Low-risk testing", "Information-gathering loops"],
+    favoriteMeals: ["Brizhian Butter Shortbread", "Prefou"],
     bestQuestSlugs: ["sovereign-tower-gavault", "sovereign-tower-goose-quest", "sovereign-tower-hammer-lost-yet-again"],
     recruitment: "Keep recruitment wording broad until Epicrates is confirmed as a character, rarity term, or special encounter mechanic.",
     notes: [
@@ -656,6 +671,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Fiercely loyal", "Wild", "Close-range strength candidate"],
     hiddenTraits: ["Last-of-his-kind context for route notes"],
     preferences: ["Forest work", "Hunts", "Assignments that value loyalty over polish"],
+    favoriteMeals: ["Galette-Saucisse", "Croque-Monsieur"],
     bestQuestSlugs: ["sovereign-tower-beast-hunt", "sovereign-tower-groveshire", "sovereign-tower-dragon-knight"],
     recruitment: "Appears in existing character coverage as a Groveshire knight choice; confirm exact Rufus versus Silgur choice rules in-game.",
     notes: [
@@ -703,6 +719,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Low-Charisma warning case", "Specialist", "Direct problem solver"],
     hiddenTraits: ["Exact strengths and route ties for route notes"],
     preferences: ["Non-diplomatic jobs", "Combat or magical pressure", "Clear objectives"],
+    favoriteMeals: ["Prefou", "Lion's Taco"],
     bestQuestSlugs: ["sovereign-tower-dragon-knight", "sovereign-tower-gavault", "sovereign-tower-beast-hunt"],
     recruitment: "Confirm whether Ursula is a standard recruit, early roster member, or route-specific knight before publishing exact unlock steps.",
     notes: [
@@ -725,6 +742,7 @@ export const KNIGHTS: KnightRecord[] = [
     traits: ["Beast-themed candidate", "Wilderness fit", "Unconfirmed identity"],
     hiddenTraits: ["Creature, recruit, or encounter status for route notes"],
     preferences: ["Hunts", "Forests", "Fast physical assignments"],
+    favoriteMeals: ["Galette-Saucisse", "Croque-Monsieur"],
     bestQuestSlugs: ["sovereign-tower-beast-hunt", "sovereign-tower-goose-quest", "sovereign-tower-groveshire"],
     recruitment: "Keep recruitment marked unknown until Wolf is confirmed as a character, creature encounter, symbolic route element, or community shorthand.",
     notes: [

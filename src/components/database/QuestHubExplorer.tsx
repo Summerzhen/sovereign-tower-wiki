@@ -26,9 +26,11 @@ const labelsByLocale = {
     searchPlaceholder: "Search quest name or description",
     filterType: "Filter by quest type",
     filterDifficulty: "Filter by difficulty",
+    filterOutcome: "Filter by outcome",
     sort: "Sort quests",
     allTypes: "All types",
     allDifficulties: "All difficulties",
+    allOutcomes: "All outcomes",
     sortByName: "Sort by name",
     clear: "Clear",
     showingPrefix: "Showing",
@@ -46,9 +48,11 @@ const labelsByLocale = {
     searchPlaceholder: "Cerca nome o descrizione missione",
     filterType: "Filtra per tipo missione",
     filterDifficulty: "Filtra per difficolta",
+    filterOutcome: "Filtra per risultato",
     sort: "Ordina missioni",
     allTypes: "Tutti i tipi",
     allDifficulties: "Tutte le difficolta",
+    allOutcomes: "Tutti i risultati",
     sortByName: "Ordina per nome",
     clear: "Cancella",
     showingPrefix: "Mostra",
@@ -66,9 +70,11 @@ const labelsByLocale = {
     searchPlaceholder: "퀘스트 이름 또는 설명 검색",
     filterType: "퀘스트 유형 필터",
     filterDifficulty: "난이도 필터",
+    filterOutcome: "결과 필터",
     sort: "퀘스트 정렬",
     allTypes: "모든 유형",
     allDifficulties: "모든 난이도",
+    allOutcomes: "모든 결과",
     sortByName: "이름순 정렬",
     clear: "초기화",
     showingPrefix: "표시 중",
@@ -138,6 +144,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
   const [query, setQuery] = useState("");
   const [type, setType] = useState(allValue);
   const [difficulty, setDifficulty] = useState(allValue);
+  const [outcome, setOutcome] = useState(allValue);
   const [sort, setSort] = useState<QuestSort>("name");
   const [favoriteSlugs, setFavoriteSlugs] = useState<string[]>([]);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
@@ -145,6 +152,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
   const favoriteSet = useMemo(() => new Set(favoriteSlugs), [favoriteSlugs]);
   const questTypes = useMemo(() => uniqueSorted(quests.map((quest) => quest.type)), [quests]);
   const difficulties = useMemo(() => uniqueSorted(quests.map((quest) => quest.difficulty)), [quests]);
+  const outcomes = useMemo(() => uniqueSorted(quests.flatMap((quest) => quest.outcomes.map((item) => item.label))), [quests]);
   useEffect(() => {
     setFavoriteSlugs(readFavorites(questFavoritesStorageKey));
     const syncFromUrl = () => {
@@ -152,6 +160,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
       setQuery(getParam(params, "q"));
       setType(getParam(params, "type", allValue));
       setDifficulty(getParam(params, "difficulty", allValue));
+      setOutcome(getParam(params, "outcome", allValue));
       setSort(getQuestSort(params));
     };
     syncFromUrl();
@@ -169,13 +178,14 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
     setOrDelete("q", query.trim());
     setOrDelete("type", type, allValue);
     setOrDelete("difficulty", difficulty, allValue);
+    setOrDelete("outcome", outcome, allValue);
     setOrDelete("sort", sort, "name");
     const nextQuery = nextParams.toString();
     const nextUrl = nextQuery ? `${pathname}?${nextQuery}` : pathname;
     const currentQuery = window.location.search.replace(/^\?/, "");
     const currentUrl = currentQuery ? `${pathname}?${currentQuery}` : pathname;
     if (nextUrl !== currentUrl) router.replace(nextUrl, { scroll: false });
-  }, [difficulty, isQueryReady, pathname, query, router, sort, type]);
+  }, [difficulty, isQueryReady, outcome, pathname, query, router, sort, type]);
   const normalizedQuery = query.trim().toLowerCase();
   const filteredQuests = useMemo(() => {
     const filtered = quests.filter((quest) => {
@@ -194,15 +204,16 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
         normalizedQuery.length === 0 ||
         searchableText.toLowerCase().includes(normalizedQuery);
       const matchesFavorites = !showFavoritesOnly || favoriteSet.has(quest.slug);
-      return matchesQuery && matchesFavorites && (type === allValue || quest.type === type) && (difficulty === allValue || quest.difficulty === difficulty);
+      const matchesOutcome = outcome === allValue || quest.outcomes.some((item) => item.label === outcome);
+      return matchesQuery && matchesFavorites && (type === allValue || quest.type === type) && (difficulty === allValue || quest.difficulty === difficulty) && matchesOutcome;
     });
     return [...filtered].sort((a, b) => {
       if (sort === "difficulty") return compareText(a.difficulty, b.difficulty) || compareText(a.name, b.name);
       if (sort === "type") return compareText(a.type, b.type) || compareText(a.name, b.name);
       return compareText(a.name, b.name);
     });
-  }, [difficulty, favoriteSet, normalizedQuery, quests, showFavoritesOnly, sort, type]);
-  const hasFilters = query || type !== allValue || difficulty !== allValue || sort !== "name" || showFavoritesOnly;
+  }, [difficulty, favoriteSet, normalizedQuery, outcome, quests, showFavoritesOnly, sort, type]);
+  const hasFilters = query || type !== allValue || difficulty !== allValue || outcome !== allValue || sort !== "name" || showFavoritesOnly;
   const toggleFavorite = (slug: string) => {
     setFavoriteSlugs((current) => {
       const next = current.includes(slug) ? current.filter((favoriteSlug) => favoriteSlug !== slug) : [...current, slug];
@@ -214,7 +225,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
   return (
     <section className="mt-10 space-y-5">
       <div className="rounded-lg border border-border bg-card p-4">
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_180px_180px_160px_auto_auto]">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_160px_160px_180px_140px_auto_auto]">
           <label className="relative block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <span className="sr-only">{labels.searchSr}</span>
@@ -222,12 +233,13 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
           </label>
           <FilterSelect label={labels.filterType} value={type} onChange={setType} options={questTypes} placeholder={labels.allTypes} />
           <FilterSelect label={labels.filterDifficulty} value={difficulty} onChange={setDifficulty} options={difficulties} placeholder={labels.allDifficulties} />
+          <FilterSelect label={labels.filterOutcome} value={outcome} onChange={setOutcome} options={outcomes} placeholder={labels.allOutcomes} />
           <FilterSelect label={labels.sort} value={sort} onChange={(value) => setSort(value as QuestSort)} options={["difficulty", "type"]} placeholder={labels.sortByName} />
           <Button type="button" variant={showFavoritesOnly ? "default" : "outline"} onClick={() => setShowFavoritesOnly((value) => !value)} className="h-10 whitespace-nowrap">
             <Star className={showFavoritesOnly ? "h-4 w-4 fill-current" : "h-4 w-4"} />
             {favoriteLabels.favorites}
           </Button>
-          <Button type="button" variant="outline" onClick={() => { setQuery(""); setType(allValue); setDifficulty(allValue); setSort("name"); setShowFavoritesOnly(false); }} disabled={!hasFilters} className="h-10">
+          <Button type="button" variant="outline" onClick={() => { setQuery(""); setType(allValue); setDifficulty(allValue); setOutcome(allValue); setSort("name"); setShowFavoritesOnly(false); }} disabled={!hasFilters} className="h-10">
             <X className="h-4 w-4" />
             {labels.clear}
           </Button>

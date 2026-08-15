@@ -20,8 +20,8 @@
   },
   "home": {
     "meta": {
-      "title": "Sovereign Tower Wiki & Guide - Characters, Quests, Systems",
-      "description": "Sovereign Tower wiki and guide covering characters, knight recruitment, quests, meals, platforms, time rewind choices, endings, and beginner strategy."
+      "title": "Sovereign Tower Wiki & Guide - Quests, Knights, Endings",
+      "description": "Sovereign Tower wiki and complete guide covering all quests, knight recruitment, endings, True Ending choices, meals, Demon Power, and time rewind mechanics."
     },
     "hero": {
       "eyebrow": "Fan-Made Community Wiki",
@@ -46,27 +46,27 @@
     },
     "start": {
       "eyebrow": "Start Here",
-      "title": "Your Sovereign Tower Journey",
+      "title": "Your Sovereign Tower Guide",
       "cards": [
         {
           "number": "1",
-          "title": "Beginner Guide",
-          "description": "Learn core gameplay, kingdom resources, knight assignments, and the first decisions that shape your reign."
+          "title": "All Quests Database",
+          "description": "Search quests by act, type, required stats, recommended knight, success, failure, and unexpected outcomes."
         },
         {
           "number": "2",
-          "title": "Knight Management",
-          "description": "Understand knight recruitment, attributes, quest assignments, and relationship management around your Round Table."
+          "title": "All Knights Database",
+          "description": "Compare knight stats, hidden traits, favorite meals, recruitment notes, evolution, and best quest assignments."
         },
         {
           "number": "3",
-          "title": "Quest & Kingdom Guide",
-          "description": "Learn how quest choices, kingdom decisions, and route planning affect your rule."
+          "title": "All Endings Guide",
+          "description": "Track main endings, True Ending requirements, Knight endings, Demon Power, resets, and New Game Plus choices."
         },
         {
           "number": "4",
-          "title": "Time Rewind Secrets",
-          "description": "Explore time rewind mechanics, hidden events, and special story outcomes across multiple timelines."
+          "title": "Systems & Routes",
+          "description": "Connect meals, affinity, romance, time rewind, and quest outcomes into one practical route."
         }
       ]
     },
@@ -74,6 +74,9 @@
       "eyebrow": "Popular Sovereign Tower Searches",
       "title": "Trending Wiki Entries",
       "quickLinks": [
+        "All Quests",
+        "All Knights",
+        "All Endings",
         "Meals",
         "Dragon Heart",
         "Epicrates",
@@ -86,28 +89,28 @@
       ],
       "cards": [
         {
+          "badge": "Quests",
+          "title": "Sovereign Tower All Quests",
+          "description": "Search the structured quest database by act, type, stats, knight, result, and unexpected outcome.",
+          "href": "/quests"
+        },
+        {
+          "badge": "Knights",
+          "title": "Sovereign Tower All Knights",
+          "description": "Compare stats, traits, recruitment, favorite meals, evolution notes, and best quest assignments.",
+          "href": "/knights"
+        },
+        {
+          "badge": "Endings",
+          "title": "Sovereign Tower All Endings",
+          "description": "Follow main endings, True Ending questions, Knight endings, Demon Power, resets, and New Game Plus.",
+          "href": "/guide/sovereign-tower-endings"
+        },
+        {
           "badge": "Meals",
-          "title": "Sovereign Tower Meals",
-          "description": "Meal effects, favorite foods, affinity notes, and knight bonuses for cooking decisions.",
+          "title": "Sovereign Tower Meals Guide",
+          "description": "Find every knight's favorite meal and understand how meals connect to affinity and romance routes.",
           "href": "/systems/sovereign-tower-meals"
-        },
-        {
-          "badge": "System",
-          "title": "Dragon Heart",
-          "description": "Dragon Heart mechanics, build planning, survival checks, and route notes.",
-          "href": "/systems/sovereign-tower-dragon-heart"
-        },
-        {
-          "badge": "Character",
-          "title": "Epicrates",
-          "description": "Epicrates character notes, route context, knight links, and story references.",
-          "href": "/characters/sovereign-tower-epicrates"
-        },
-        {
-          "badge": "Character",
-          "title": "Roberto",
-          "description": "Roberto profile details, quest context, character role, and related knight pages.",
-          "href": "/characters/sovereign-tower-roberto"
         },
         {
           "badge": "Platform",
