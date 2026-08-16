@@ -256,6 +256,30 @@ const GROUP_TITLES: Record<string, string> = {
 
 // locale → 分组标题映射
 const GROUP_TITLES_BY_LOCALE: Record<string, Record<string, string>> = {
+  de: {
+    guide: "Guide",
+    quests: "Quests",
+    knights: "Ritter",
+    characters: "Charaktere",
+    romance: "Romance",
+    systems: "Systeme",
+    platforms: "Plattformen",
+    release: "Veröffentlichung",
+    community: "Community",
+    media: "Medien",
+  },
+  fr: {
+    guide: "Guide",
+    quests: "Quêtes",
+    knights: "Chevaliers",
+    characters: "Personnages",
+    romance: "Romance",
+    systems: "Systèmes",
+    platforms: "Plateformes",
+    release: "Sortie",
+    community: "Communauté",
+    media: "Médias",
+  },
   it: {
     guide: "Guide",
     quests: "Quests",
@@ -270,6 +294,8 @@ const GROUP_TITLES_BY_LOCALE: Record<string, Record<string, string>> = {
   },
   ko: {
     guide: "가이드",
+    quests: "퀘스트",
+    knights: "기사",
     characters: "캐릭터",
     romance: "로맨스",
     systems: "시스템",
@@ -278,11 +304,26 @@ const GROUP_TITLES_BY_LOCALE: Record<string, Record<string, string>> = {
     community: "커뮤니티",
     media: "미디어",
   },
+  ja: {
+    guide: "ガイド",
+    quests: "クエスト",
+    knights: "騎士",
+    characters: "キャラクター",
+    romance: "ロマンス",
+    systems: "システム",
+    platforms: "プラットフォーム",
+    release: "リリース",
+    community: "コミュニティ",
+    media: "メディア",
+  },
 };
 
 // locale → "Overview" 翻译
 const OVERVIEW_LABEL_BY_LOCALE: Record<string, string> = {
+  de: "Übersicht",
+  fr: "Vue d’ensemble",
   it: "Panoramica",
+  ja: "概要",
   ko: "개요",
 };
 

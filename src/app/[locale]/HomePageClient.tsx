@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TrailerButton, localizeHref } from "@/components/site";
+import { getGuideHubCopy, getHomeGuideHubLinks } from "@/data/guideHubLinks";
 import type { ContentItem } from "@/lib/content";
 import en from "@/locales/en.json";
 
@@ -17,6 +18,8 @@ const YOUTUBE_VIDEO_ID = "i4saK4C85pM";
 
 
 export default function HomePageClient({ home, locale, articles, recentArticles }: { home: Home; locale: string; articles: ContentItem[]; recentArticles: ContentItem[] }) {
+  const guideHubCopy = getGuideHubCopy(locale);
+  const hubLinks = getHomeGuideHubLinks(locale);
   return (
     <div className="space-y-16">
       {/* Hero Section */}
@@ -30,8 +33,27 @@ export default function HomePageClient({ home, locale, articles, recentArticles 
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Button asChild size="lg"><Link href={localizeHref("/guide", locale)}>{home.hero.primaryCta}<ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
           <Button asChild size="lg" variant="outline"><Link href={localizeHref("/characters", locale)}>{home.hero.secondaryCta}</Link></Button>
-          <Button asChild size="lg" variant="outline"><Link href={localizeHref("/systems", locale)}>Explore Systems</Link></Button>
+          <Button asChild size="lg" variant="outline"><Link href={localizeHref("/systems", locale)}>{guideHubCopy.systemsCta}</Link></Button>
           <Button asChild size="lg" variant="outline"><Link href="https://store.steampowered.com/app/4113940/Sovereign_Tower/">{home.hero.tertiaryCta}</Link></Button>
+        </div>
+      </section>
+
+      <section aria-labelledby="core-hubs">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-[hsl(var(--nav-theme))]">{guideHubCopy.eyebrow}</p>
+            <h2 id="core-hubs" className="mt-1 text-3xl font-bold tracking-tight text-foreground">{guideHubCopy.title}</h2>
+          </div>
+          <Link href={localizeHref("/guide", locale)} className="hidden items-center text-sm font-semibold text-[hsl(var(--nav-theme))] hover:underline sm:inline-flex">{guideHubCopy.browseAll} <ChevronRight className="ml-1 h-4 w-4" /></Link>
+        </div>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          {hubLinks.map((link) => (
+            <Link key={link.href} href={localizeHref(link.href, locale)} className="group rounded-2xl border border-border bg-card/70 p-5 transition hover:-translate-y-0.5 hover:border-[hsl(var(--nav-theme-light))]">
+              <h3 className="font-bold text-foreground group-hover:text-[hsl(var(--nav-theme))]">{link.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{link.description}</p>
+              <span className="mt-3 inline-flex items-center text-sm font-semibold text-[hsl(var(--nav-theme))]">{guideHubCopy.openGuide} <ChevronRight className="ml-1 h-4 w-4" /></span>
+            </Link>
+          ))}
         </div>
       </section>
 

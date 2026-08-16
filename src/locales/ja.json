@@ -30,19 +30,19 @@
       "stats": [
         "Steam PC",
         "開発: WILD WITS GAMES",
-        "6 Supported 言語",
-        "Story Rich RPG",
-        "Time Rewind System"
+        "6言語対応",
+        "ストーリー重視RPG",
+        "時間巻き戻しシステム"
       ],
-      "primaryCta": "Start 初心者 ガイド",
-      "secondaryCta": "探索 騎士",
+      "primaryCta": "初心者ガイドを始める",
+      "secondaryCta": "騎士を探す",
       "tertiaryCta": "Steamでプレイ",
       "videoLabel": "Sovereign Tower ゲームプレイ"
     },
     "updates": {
-      "title": "Recent 更新",
-      "browse": "見る All ガイド",
-      "viewAll": "View All"
+      "title": "最近の更新",
+      "browse": "すべてのガイドを見る",
+      "viewAll": "すべて見る"
     },
     "start": {
       "eyebrow": "ここから開始",
@@ -50,83 +50,83 @@
       "cards": [
         {
           "number": "1",
-          "title": "初心者 ガイド",
-          "description": "Learn core gameplay, 王国 resources, knight assignments, and the first decisions that shape your reign."
+          "title": "初心者ガイド",
+          "description": "基本システム、王国資源、騎士の任務、序盤の重要な選択を学びます。"
         },
         {
           "number": "2",
-          "title": "騎士 Management",
-          "description": "Understand knight recruitment, attributes, quest assignments, and relationship 管理 around your Round Table."
+          "title": "騎士管理",
+          "description": "騎士の加入、能力、クエスト配属、円卓での関係管理を理解します。"
         },
         {
           "number": "3",
-          "title": "クエスト & Kingdom ガイド",
-          "description": "Learn how quest 選択, 王国 decisions, and route planning affect your rule."
+          "title": "クエストと王国ガイド",
+          "description": "クエスト選択、王国の判断、ルート計画が統治にどう影響するかを確認します。"
         },
         {
           "number": "4",
-          "title": "Time Rewind Secrets",
-          "description": "探索 時間巻き戻し mechanics, hidden events, and special 物語 outcomes across multiple timelines."
+          "title": "時間巻き戻しの秘密",
+          "description": "時間巻き戻し、隠しイベント、複数の時間軸で変わる特別な結末を探索します。"
         }
       ]
     },
     "popular": {
-      "eyebrow": "Popular Pages",
-      "title": "Trending Now",
+      "eyebrow": "人気ページ",
+      "title": "注目のガイド",
       "quickLinks": [
-        "初心者 ガイド",
-        "騎士 Management",
-        "クエスト Choices",
-        "Time Rewind"
+        "初心者ガイド",
+        "騎士管理",
+        "クエスト選択",
+        "時間巻き戻し"
       ],
       "cards": [
         {
           "badge": "初心者",
-          "title": "初心者 ガイド",
-          "description": "Learn 王国 resources, first assignments, Round Table basics, and the early decisions that shape your reign.",
-          "href": "/beginner-guide"
+          "title": "初心者ガイド",
+          "description": "王国資源、最初の任務、円卓の基本、序盤の選択を確認します。",
+          "href": "/guide/sovereign-tower-beginner-guide"
         },
         {
           "badge": "ガイド",
-          "title": "騎士 Management",
-          "description": "Understand knight recruitment, roles, relationships, and quest assignments before expanding your court.",
+          "title": "騎士管理",
+          "description": "宮廷を広げる前に、騎士の加入、役割、関係、クエスト配属を理解します。",
           "href": "/knights"
         },
         {
           "badge": "ガイド",
-          "title": "クエスト Choices",
-          "description": "Plan 王国 quests, evaluate 物語 decisions, and track how outcomes change across your rule.",
+          "title": "クエスト選択",
+          "description": "王国のクエストを計画し、物語の選択と結果の変化を追跡します。",
           "href": "/quests"
         },
         {
           "badge": "System",
-          "title": "Time Rewind",
-          "description": "Use timeline knowledge to revise decisions, reveal secrets, and unlock stronger long-term outcomes.",
-          "href": "/time-rewind"
+          "title": "時間巻き戻し",
+          "description": "時間軸の知識を使って選択を変え、秘密を明かし、より良い結果を目指します。",
+          "href": "/systems/sovereign-tower-demon-power"
         },
         {
           "badge": "Feature",
-          "title": "ゲームプレイ Features",
-          "description": "Review the 管理 RPG systems, fantasy setting, character focus, and branching 選択.",
-          "href": "/features"
+          "title": "ゲームプレイシステム",
+          "description": "管理RPGシステム、ファンタジー世界、キャラクター、分岐選択を確認します。",
+          "href": "/guide/sovereign-tower-guide"
         },
         {
           "badge": "キャラクター",
-          "title": "キャラクター ガイド",
-          "description": "Follow important figures, knight interactions, relationship paths, and 物語 events.",
+          "title": "キャラクターガイド",
+          "description": "重要人物、騎士との交流、関係ルート、物語イベントを追います。",
           "href": "/characters"
         },
         {
           "badge": "Steam",
-          "title": "System Requirements",
-          "description": "Check the Steam PC platform details, genre, release window, and practical setup notes.",
-          "href": "/system-requirements"
+          "title": "Steam・PC情報",
+          "description": "Steam版PC情報、ジャンル、リリース、実用的な確認事項をまとめます。",
+          "href": "/platforms/sovereign-tower-steam"
         },
         {
           "badge": "ニュース",
-          "title": "更新 & ニュース",
-          "description": "Follow official announcements, developer updates, and community information for Sovereign Tower.",
-          "href": "/news"
+          "title": "更新とニュース",
+          "description": "公式発表、開発者アップデート、コミュニティ情報を確認します。",
+          "href": "/release/sovereign-tower-release-date"
         }
       ]
     },
@@ -147,7 +147,7 @@
         },
         {
           "label": "ジャンル",
-          "value": "Management RPG"
+          "value": "管理RPG"
         },
         {
           "label": "リリース",
@@ -163,19 +163,19 @@
         },
         {
           "label": "ゲームプレイ",
-          "value": "Time Rewind Choices"
+          "value": "時間巻き戻しの選択"
         }
       ],
-      "cta": "探索 All ガイド"
+          "cta": "すべてのガイドを見る"
     },
     "explore": {
       "title": "Sovereign Tower ホームpage Modules",
-      "description": "Jump into the main Sovereign Tower ガイド sections for beginner basics, knights, quests, 時間巻き戻し 選択, characters, system requirements, and official news.",
+      "description": "Sovereign Tower の主要ガイドへ移動できます。初心者向け情報、騎士、クエスト、時間巻き戻しの選択、キャラクター、動作環境、公式ニュースを確認できます。",
       "modules": [
         {
           "order": 1,
           "name": "Sovereign Tower 初心者 ガイド",
-          "description": "A complete beginner ガイド covering the first steps in Sovereign Tower, including 王国 管理, knight recruitment, and core gameplay decisions. Help new プレイヤー understand the main systems before progressing further.",
+          "description": "Sovereign Tower の序盤を理解するための初心者ガイドです。王国管理、騎士の加入、重要なゲームプレイ上の選択を扱います。",
           "href": "/guide/sovereign-tower-beginner-guide",
           "displayType": "step-by-step",
           "highlights": [
@@ -196,7 +196,7 @@
         {
           "order": 2,
           "name": "Sovereign Tower 騎士 ガイド",
-          "description": "探索 knight-related gameplay information including recruitment, character roles, and quest 管理. This ガイド helps プレイヤー understand how to build an effective Round Table.",
+          "description": "騎士の加入、キャラクターの役割、クエスト管理など、騎士に関するゲームプレイ情報を確認できます。",
           "href": "/characters/sovereign-tower-knights",
           "displayType": "card-list",
           "highlights": [
@@ -222,7 +222,7 @@
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Story Choices",
+              "label": "物語の選択",
               "detail": "Make decisions that shape the direction of your 王国."
             },
             {
@@ -237,8 +237,8 @@
         },
         {
           "order": 4,
-          "name": "Sovereign Tower Time Rewind ガイド",
-          "description": "Learn how the 時間巻き戻し system works and how it changes the way プレイヤー approach decisions. This section explains the unique timeline mechanic of Sovereign Tower.",
+          "name": "Sovereign Tower 時間巻き戻しガイド",
+          "description": "時間巻き戻しシステムの仕組みと、選択への影響を解説します。Sovereign Tower 独自のタイムライン要素を確認できます。",
           "href": "/guide/sovereign-tower-sovereign-mode",
           "displayType": "step-by-step",
           "highlights": [
@@ -258,21 +258,21 @@
         },
         {
           "order": 5,
-          "name": "Sovereign Tower ゲームプレイ Features",
+          "name": "Sovereign Tower ゲームプレイ機能",
           "description": "A feature overview covering the main systems プレイヤー search for when learning about Sovereign Tower. Discover the game 管理, RPG, and fantasy elements.",
           "href": "/systems",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Management RPG",
+              "label": "管理RPG",
               "detail": "Manage a magical 塔 and lead your 王国."
             },
             {
-              "label": "Fantasy World",
+              "label": "ファンタジー世界",
               "detail": "Experience a medieval fantasy setting with knights and quests."
             },
             {
-              "label": "Multiple Choices",
+              "label": "複数の選択",
               "detail": "Create different outcomes through player decisions."
             }
           ]
@@ -300,14 +300,14 @@
         },
         {
           "order": 7,
-          "name": "Sovereign Tower System Requirements",
+          "name": "Sovereign Tower 動作環境",
           "description": "A practical reference page covering supported platforms and PC requirements. Help プレイヤー check whether their system can run Sovereign Tower.",
           "href": "/platforms/sovereign-tower-steam",
           "displayType": "card-list",
           "highlights": [
             {
               "label": "プラットフォーム",
-              "detail": "Available on Steam for PC."
+              "detail": "PC版はSteamで利用できます。"
             },
             {
               "label": "ジャンル",
@@ -322,7 +322,7 @@
         {
           "order": 8,
           "name": "Sovereign Tower 更新 & ニュース",
-          "description": "Follow official announcements, development updates, and community news for Sovereign Tower. Keep track of new information directly from official sources.",
+          "description": "Sovereign Tower の公式発表、開発アップデート、コミュニティニュースを確認できます。",
           "href": "/media/sovereign-tower-trailer",
           "displayType": "card-list",
           "highlights": [

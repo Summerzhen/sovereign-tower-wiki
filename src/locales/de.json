@@ -30,19 +30,19 @@
       "stats": [
         "Steam PC",
         "Entwickler: WILD WITS GAMES",
-        "6 Supported Sprachen",
-        "Story Rich RPG",
-        "Time Rewind System"
+        "6 unterstützte Sprachen",
+        "Story-RPG",
+        "Zeitrücklauf-System"
       ],
-      "primaryCta": "Start Einsteiger Guide",
-      "secondaryCta": "Erkunden Ritter",
+      "primaryCta": "Einsteiger-Guide starten",
+      "secondaryCta": "Ritter erkunden",
       "tertiaryCta": "Auf Steam spielen",
       "videoLabel": "Sovereign Tower Gameplay"
     },
     "updates": {
       "title": "Neueste Updates",
-      "browse": "Durchsuche All Guides",
-      "viewAll": "View All"
+      "browse": "Alle Guides durchsuchen",
+      "viewAll": "Alle anzeigen"
     },
     "start": {
       "eyebrow": "Hier starten",
@@ -50,83 +50,83 @@
       "cards": [
         {
           "number": "1",
-          "title": "Einsteiger Guide",
-          "description": "Learn core gameplay, Königreich resources, knight assignments, and the first decisions that shape your reign."
+          "title": "Einsteiger-Guide",
+          "description": "Lerne Kernsysteme, Königreichsressourcen, Rittereinsätze und die ersten Entscheidungen deiner Herrschaft."
         },
         {
           "number": "2",
-          "title": "Ritter Management",
-          "description": "Understand knight recruitment, attributes, quest assignments, and relationship Verwaltung around your Round Table."
+          "title": "Ritterverwaltung",
+          "description": "Verstehe Rekrutierung, Attribute, Quest-Zuweisungen und Beziehungen am Runden Tisch."
         },
         {
           "number": "3",
-          "title": "Quest & Kingdom Guide",
-          "description": "Learn how quest Entscheidungen, Königreich decisions, and route planning affect your rule."
+          "title": "Quest- und Königreichs-Guide",
+          "description": "Lerne, wie Quests, Königreichsentscheidungen und Routenplanung deine Herrschaft beeinflussen."
         },
         {
           "number": "4",
-          "title": "Time Rewind Secrets",
-          "description": "Erkunden Zeitrücklauf mechanics, hidden events, and special Geschichte outcomes across multiple timelines."
+          "title": "Zeitrücklauf-Geheimnisse",
+          "description": "Erkunde Zeitrücklauf, versteckte Ereignisse und besondere Story-Ausgänge über mehrere Zeitlinien."
         }
       ]
     },
     "popular": {
-      "eyebrow": "Popular Pages",
-      "title": "Trending Now",
+      "eyebrow": "Beliebte Seiten",
+      "title": "Gerade gefragt",
       "quickLinks": [
-        "Einsteiger Guide",
-        "Ritter Management",
-        "Quest Choices",
-        "Time Rewind"
+        "Einsteiger-Guide",
+        "Ritterverwaltung",
+        "Quest-Entscheidungen",
+        "Zeitrücklauf"
       ],
       "cards": [
         {
           "badge": "Einsteiger",
-          "title": "Einsteiger Guide",
-          "description": "Learn Königreich resources, first assignments, Round Table basics, and the early decisions that shape your reign.",
-          "href": "/beginner-guide"
+          "title": "Einsteiger-Guide",
+          "description": "Lerne Ressourcen, erste Einsätze, Grundlagen des Runden Tischs und frühe Herrschaftsentscheidungen.",
+          "href": "/guide/sovereign-tower-beginner-guide"
         },
         {
           "badge": "Guide",
-          "title": "Ritter Management",
-          "description": "Understand knight recruitment, roles, relationships, and quest assignments before expanding your court.",
+          "title": "Ritterverwaltung",
+          "description": "Verstehe Rekrutierung, Rollen, Beziehungen und Quest-Zuweisungen, bevor du den Hof erweiterst.",
           "href": "/knights"
         },
         {
           "badge": "Guide",
-          "title": "Quest Choices",
-          "description": "Plan Königreich quests, evaluate Geschichte decisions, and track how outcomes change across your rule.",
+          "title": "Quest-Entscheidungen",
+          "description": "Plane Quests, bewerte Story-Entscheidungen und verfolge, wie sich Ergebnisse ändern.",
           "href": "/quests"
         },
         {
           "badge": "System",
-          "title": "Time Rewind",
-          "description": "Use timeline knowledge to revise decisions, reveal secrets, and unlock stronger long-term outcomes.",
-          "href": "/time-rewind"
+          "title": "Zeitrücklauf",
+          "description": "Nutze Wissen aus Zeitlinien, um Entscheidungen zu ändern, Geheimnisse zu entdecken und bessere Ausgänge zu erreichen.",
+          "href": "/systems/sovereign-tower-demon-power"
         },
         {
           "badge": "Feature",
-          "title": "Gameplay Features",
-          "description": "Review the Verwaltung RPG systems, fantasy setting, character focus, and branching Entscheidungen.",
-          "href": "/features"
+          "title": "Gameplay-Systeme",
+          "description": "Überblicke Management-RPG-Systeme, Fantasy-Setting, Charakterfokus und verzweigte Entscheidungen.",
+          "href": "/guide/sovereign-tower-guide"
         },
         {
           "badge": "Charaktere",
-          "title": "Charakter Guide",
-          "description": "Follow important figures, knight interactions, relationship paths, and Geschichte events.",
+          "title": "Charakter-Guide",
+          "description": "Verfolge wichtige Figuren, Ritterinteraktionen, Beziehungspfade und Story-Ereignisse.",
           "href": "/characters"
         },
         {
           "badge": "Steam",
-          "title": "System Requirements",
-          "description": "Check the Steam PC platform details, genre, release window, and practical setup notes.",
-          "href": "/system-requirements"
+          "title": "Steam- und PC-Details",
+          "description": "Prüfe Steam-PC-Details, Genre, Veröffentlichung und praktische Hinweise.",
+          "href": "/platforms/sovereign-tower-steam"
         },
         {
           "badge": "News",
-          "title": "Updates & News",
-          "description": "Follow official announcements, developer updates, and community information for Sovereign Tower.",
-          "href": "/news"
+          "title": "Updates und News",
+          "description": "Folge offiziellen Ankündigungen, Entwickler-Updates und Community-Informationen.",
+          "href": "/release/sovereign-tower-release-date"
         }
       ]
     },
@@ -147,7 +147,7 @@
         },
         {
           "label": "Genre",
-          "value": "Management RPG"
+          "value": "Management-RPG"
         },
         {
           "label": "Release",
@@ -163,19 +163,19 @@
         },
         {
           "label": "Gameplay",
-          "value": "Time Rewind Choices"
+          "value": "Zeitrücklauf-Entscheidungen"
         }
       ],
-      "cta": "Erkunden All Guides"
+      "cta": "Alle Guides erkunden"
     },
     "explore": {
       "title": "Sovereign Tower Startseitepage Modules",
-      "description": "Jump into the main Sovereign Tower Guide sections for beginner basics, knights, quests, Zeitrücklauf Entscheidungen, characters, system requirements, and official news.",
+      "description": "Springe zu den wichtigsten Sovereign Tower Guide-Bereichen für Einstieg, Ritter, Quests, Zeitrücklauf-Entscheidungen, Charaktere, Systemanforderungen und offizielle Neuigkeiten.",
       "modules": [
         {
           "order": 1,
           "name": "Sovereign Tower Einsteiger Guide",
-          "description": "A complete beginner Guide covering the first steps in Sovereign Tower, including Königreich Verwaltung, knight recruitment, and core gameplay decisions. Help new Spieler understand the main systems before progressing further.",
+          "description": "Ein vollständiger Einsteiger-Guide zu den ersten Schritten in Sovereign Tower, inklusive Königreich-Verwaltung, Ritter-Rekrutierung und zentralen Gameplay-Entscheidungen.",
           "href": "/guide/sovereign-tower-beginner-guide",
           "displayType": "step-by-step",
           "highlights": [
@@ -196,7 +196,7 @@
         {
           "order": 2,
           "name": "Sovereign Tower Ritter Guide",
-          "description": "Erkunden knight-related gameplay information including recruitment, character roles, and quest Verwaltung. This Guide helps Spieler understand how to build an effective Round Table.",
+          "description": "Erkunde Gameplay-Informationen zu Rittern, Rekrutierung, Charakterrollen und Quest-Verwaltung. Dieser Guide hilft Spielern, einen effektiven Runden Tisch aufzubauen.",
           "href": "/characters/sovereign-tower-knights",
           "displayType": "card-list",
           "highlights": [
@@ -222,7 +222,7 @@
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Story Choices",
+              "label": "Story-Entscheidungen",
               "detail": "Make decisions that shape the direction of your Königreich."
             },
             {
@@ -237,8 +237,8 @@
         },
         {
           "order": 4,
-          "name": "Sovereign Tower Time Rewind Guide",
-          "description": "Learn how the Zeitrücklauf system works and how it changes the way Spieler approach decisions. This section explains the unique timeline mechanic of Sovereign Tower.",
+          "name": "Sovereign Tower Zeitrücklauf Guide",
+          "description": "Lerne, wie das Zeitrücklauf-System funktioniert und wie es Entscheidungen verändert. Dieser Bereich erklärt die besondere Zeitlinien-Mechanik von Sovereign Tower.",
           "href": "/guide/sovereign-tower-sovereign-mode",
           "displayType": "step-by-step",
           "highlights": [
@@ -258,21 +258,21 @@
         },
         {
           "order": 5,
-          "name": "Sovereign Tower Gameplay Features",
+          "name": "Sovereign Tower Gameplay-Features",
           "description": "A feature overview covering the main systems Spieler search for when learning about Sovereign Tower. Discover the game Verwaltung, RPG, and fantasy elements.",
           "href": "/systems",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Management RPG",
+              "label": "Management-RPG",
               "detail": "Manage a magical Turm and lead your Königreich."
             },
             {
-              "label": "Fantasy World",
+              "label": "Fantasy-Welt",
               "detail": "Experience a medieval fantasy setting with knights and quests."
             },
             {
-              "label": "Multiple Choices",
+              "label": "Mehrere Entscheidungen",
               "detail": "Create different outcomes through player decisions."
             }
           ]
@@ -300,14 +300,14 @@
         },
         {
           "order": 7,
-          "name": "Sovereign Tower System Requirements",
+          "name": "Sovereign Tower Systemanforderungen",
           "description": "A practical reference page covering supported platforms and PC requirements. Help Spieler check whether their system can run Sovereign Tower.",
           "href": "/platforms/sovereign-tower-steam",
           "displayType": "card-list",
           "highlights": [
             {
               "label": "Plattform",
-              "detail": "Available on Steam for PC."
+              "detail": "Auf Steam für PC verfügbar."
             },
             {
               "label": "Genre",
@@ -322,7 +322,7 @@
         {
           "order": 8,
           "name": "Sovereign Tower Updates & News",
-          "description": "Follow official announcements, development updates, and community news for Sovereign Tower. Keep track of new information directly from official sources.",
+          "description": "Verfolge offizielle Ankündigungen, Entwicklungsupdates und Community-Neuigkeiten zu Sovereign Tower direkt aus offiziellen Quellen.",
           "href": "/media/sovereign-tower-trailer",
           "displayType": "card-list",
           "highlights": [

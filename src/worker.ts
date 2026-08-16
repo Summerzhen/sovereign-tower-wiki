@@ -25,7 +25,7 @@ const unprefixedContentPaths = [
 function redirect(url: URL, pathname: string) {
   url.pathname = pathname;
   return new Response(null, {
-    status: 302,
+    status: 301,
     headers: {
       Location: url.toString(),
       "Cache-Control": "no-store",
@@ -47,6 +47,13 @@ const worker = {
       if (target) {
         return redirect(url, `/en${pathname}`);
       }
+    }
+
+    // Keep one crawlable URL for every route. Next's exported pages and
+    // metadata use slashless paths, so redirect directory-style requests
+    // before they reach the asset handler.
+    if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
+      return redirect(url, pathname);
     }
 
     const assetRequest = new Request(request, {

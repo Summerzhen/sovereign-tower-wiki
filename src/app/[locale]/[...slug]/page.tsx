@@ -11,6 +11,7 @@ import { MobileTOC, SidebarTOC } from "@/components/table-of-contents";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CONTENT_TYPES } from "@/config/navigation";
+import { getCoreGuideLinks, getGuideHubCopy } from "@/data/guideHubLinks";
 import {
   type KnightRecord,
   KNIGHTS,
@@ -953,6 +954,11 @@ async function DetailPage({
           <div className="prose-invert mt-8 max-w-none">
             <MDXContent components={mdxComponents} />
           </div>
+          <CoreGuideLinks
+            locale={locale}
+            contentType={contentType}
+            currentPathname={pathname}
+          />
           <ArticleCards
             locale={locale}
             contentType={contentType}
@@ -1011,6 +1017,56 @@ function ArticleSideInfo({
         )}
       </dl>
     </div>
+  );
+}
+
+function CoreGuideLinks({
+  locale,
+  contentType,
+  currentPathname,
+}: {
+  locale: string;
+  contentType: string;
+  currentPathname: string;
+}) {
+  const copy = getGuideHubCopy(locale);
+  const links = getCoreGuideLinks(locale, contentType, currentPathname);
+
+  if (links.length === 0) return null;
+
+  return (
+    <section aria-labelledby="essential-guide-paths" className="mt-12">
+      <div className="flex items-center justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold text-[hsl(var(--nav-theme))]">
+            {copy.eyebrow}
+          </p>
+          <h3
+            id="essential-guide-paths"
+            className="mt-1 text-xl font-bold text-foreground"
+          >
+            {copy.title}
+          </h3>
+        </div>
+        <Button asChild variant="outline" size="sm" className="hidden sm:inline-flex">
+          <Link href={localizeHref("/guide", locale)}>
+            {copy.browseAll}
+            <ChevronRight className="ml-1 h-4 w-4" />
+          </Link>
+        </Button>
+      </div>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        {links.map((link) => (
+          <SmallCard
+            key={link.href}
+            icon={<BookOpen className="h-5 w-5" />}
+            title={link.title}
+            description={link.description}
+            href={localizeHref(link.href, locale)}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 
