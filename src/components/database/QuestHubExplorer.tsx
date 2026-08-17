@@ -42,6 +42,19 @@ const labelsByLocale = {
     unknown: "Unknown",
     emptyTitle: "No quests match these filters.",
     emptyDescription: "Try a broader search term or clear one filter.",
+    snapshotTitle: "Quest Database Snapshot",
+    totalQuests: "Tracked quests",
+    routeGuides: "Route guides",
+    statChecks: "Stat checks",
+    outcomeChecks: "Outcome checks",
+    quickRoutes: "Quick route index",
+    finderTitle: "Quest Finder",
+    finderDescription: "Pick a quest to see required stats, recommended knights, outcomes, and related guides before assigning anyone.",
+    finderSelect: "Select a quest",
+    finderPlaceholder: "Choose quest",
+    finderBestChoice: "Best assignment check",
+    finderRelated: "Related guides",
+    finderOpenQuest: "Open quest page",
   },
   it: {
     searchSr: "Cerca missioni",
@@ -64,6 +77,19 @@ const labelsByLocale = {
     unknown: "Sconosciuto",
     emptyTitle: "Nessuna missione corrisponde ai filtri.",
     emptyDescription: "Prova una ricerca piu ampia o cancella un filtro.",
+    snapshotTitle: "Riepilogo database missioni",
+    totalQuests: "Missioni tracciate",
+    routeGuides: "Guide percorso",
+    statChecks: "Controlli statistiche",
+    outcomeChecks: "Controlli risultati",
+    quickRoutes: "Indice percorsi",
+    finderTitle: "Trova missione",
+    finderDescription: "Scegli una missione per vedere statistiche richieste, cavalieri consigliati, risultati e guide collegate.",
+    finderSelect: "Seleziona missione",
+    finderPlaceholder: "Scegli missione",
+    finderBestChoice: "Controllo assegnazione",
+    finderRelated: "Guide collegate",
+    finderOpenQuest: "Apri pagina missione",
   },
   ko: {
     searchSr: "퀘스트 검색",
@@ -86,8 +112,32 @@ const labelsByLocale = {
     unknown: "미확인",
     emptyTitle: "필터와 일치하는 퀘스트가 없습니다.",
     emptyDescription: "검색어를 넓히거나 필터를 초기화해 보세요.",
+    snapshotTitle: "퀘스트 데이터베이스 요약",
+    totalQuests: "추적 퀘스트",
+    routeGuides: "루트 가이드",
+    statChecks: "능력치 체크",
+    outcomeChecks: "결과 체크",
+    quickRoutes: "빠른 루트 색인",
+    finderTitle: "퀘스트 파인더",
+    finderDescription: "퀘스트를 선택해 필요 능력치, 추천 기사, 결과, 관련 가이드를 확인하세요.",
+    finderSelect: "퀘스트 선택",
+    finderPlaceholder: "퀘스트 선택",
+    finderBestChoice: "배정 체크",
+    finderRelated: "관련 가이드",
+    finderOpenQuest: "퀘스트 페이지 열기",
   },
 } as const;
+
+const priorityQuestSlugs = [
+  "sovereign-tower-act-0-walkthrough",
+  "sovereign-tower-gavault",
+  "sovereign-tower-groveshire",
+  "sovereign-tower-beast-hunt",
+  "sovereign-tower-goose-quest",
+  "sovereign-tower-rebellion",
+  "sovereign-tower-dragon-knight",
+  "sovereign-tower-act-2-murder-investigation",
+] as const;
 
 function localized(href: string, locale: string) {
   return `/${locale}${href === "/" ? "" : href}`;
@@ -148,11 +198,32 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
   const [sort, setSort] = useState<QuestSort>("name");
   const [favoriteSlugs, setFavoriteSlugs] = useState<string[]>([]);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [finderSlug, setFinderSlug] = useState("");
   const knightNames = useMemo(() => new Map(knights.map((knight) => [knight.slug, knight.name])), [knights]);
+  const knightsBySlug = useMemo(() => new Map(knights.map((knight) => [knight.slug, knight])), [knights]);
   const favoriteSet = useMemo(() => new Set(favoriteSlugs), [favoriteSlugs]);
   const questTypes = useMemo(() => uniqueSorted(quests.map((quest) => quest.type)), [quests]);
   const difficulties = useMemo(() => uniqueSorted(quests.map((quest) => quest.difficulty)), [quests]);
   const outcomes = useMemo(() => uniqueSorted(quests.flatMap((quest) => quest.outcomes.map((item) => item.label))), [quests]);
+  const snapshot = useMemo(() => {
+    const routeCount = quests.filter((quest) => quest.type.toLowerCase().includes("route") || quest.type.toLowerCase().includes("walkthrough")).length;
+    const statCount = quests.filter((quest) => Object.keys(quest.requiredStats).length > 0).length;
+    const outcomeCount = quests.filter((quest) => quest.outcomes.length > 0).length;
+    return [
+      { label: labels.totalQuests, value: quests.length },
+      { label: labels.routeGuides, value: routeCount },
+      { label: labels.statChecks, value: statCount },
+      { label: labels.outcomeChecks, value: outcomeCount },
+    ];
+  }, [labels.outcomeChecks, labels.routeGuides, labels.statChecks, labels.totalQuests, quests]);
+  const priorityQuests = useMemo(() => {
+    const bySlug = new Map(quests.map((quest) => [quest.slug, quest]));
+    return priorityQuestSlugs.map((slug) => bySlug.get(slug)).filter((quest): quest is QuestRecord => Boolean(quest));
+  }, [quests]);
+  const finderQuest = useMemo(() => {
+    const selectedSlug = finderSlug || priorityQuests[0]?.slug || quests[0]?.slug;
+    return quests.find((quest) => quest.slug === selectedSlug) ?? quests[0];
+  }, [finderSlug, priorityQuests, quests]);
   useEffect(() => {
     setFavoriteSlugs(readFavorites(questFavoritesStorageKey));
     const syncFromUrl = () => {
@@ -223,8 +294,93 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
   };
 
   return (
-    <section className="mt-10 space-y-5">
-      <div className="rounded-lg border border-border bg-card p-4">
+    <section className="mt-10 flex flex-col gap-5">
+      <div className="order-2 rounded-lg border border-border bg-card p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-lg font-bold text-foreground">{labels.snapshotTitle}</h2>
+          <span className="text-sm font-medium text-muted-foreground">{labels.quickRoutes}</span>
+        </div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {snapshot.map((item) => (
+            <div key={item.label} className="rounded-md border border-border bg-background p-3">
+              <div className="text-2xl font-bold text-foreground">{item.value}</div>
+              <div className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {priorityQuests.map((quest) => (
+            <Button key={quest.slug} asChild variant="outline" size="sm">
+              <Link href={localized(`/quests/${quest.slug}`, locale)}>{quest.name}</Link>
+            </Button>
+          ))}
+        </div>
+      </div>
+
+      {finderQuest && (
+        <div className="order-1 rounded-lg border border-[hsl(var(--nav-theme)/0.35)] bg-card p-4">
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_260px]">
+            <div>
+              <h2 className="text-lg font-bold text-foreground">{labels.finderTitle}</h2>
+              <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{labels.finderDescription}</p>
+            </div>
+            <label>
+              <span className="sr-only">{labels.finderSelect}</span>
+              <select value={finderQuest.slug} onChange={(event) => setFinderSlug(event.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition focus:border-[hsl(var(--nav-theme))] focus:ring-1 focus:ring-[hsl(var(--nav-theme))]">
+                <option value="" disabled>{labels.finderPlaceholder}</option>
+                {quests.map((quest) => <option key={quest.slug} value={quest.slug}>{quest.name}</option>)}
+              </select>
+            </label>
+          </div>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+            <div className="rounded-md border border-border bg-background p-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge>{finderQuest.type}</Badge>
+                    <Badge variant="outline">{finderQuest.difficulty}</Badge>
+                    {finderQuest.region && <Badge variant="secondary">{finderQuest.region}</Badge>}
+                  </div>
+                  <h3 className="mt-3 text-xl font-bold text-foreground">{finderQuest.name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{finderQuest.description}</p>
+                </div>
+                <Button asChild size="sm">
+                  <Link href={localized(`/quests/${finderQuest.slug}`, locale)}>{labels.finderOpenQuest}</Link>
+                </Button>
+              </div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <InfoList title={labels.requiredStats} items={[formatStats(finderQuest.requiredStats, labels.unknown)]} />
+                <InfoList title={labels.outcomes} items={finderQuest.outcomes.map((outcome) => `${outcome.label}: ${outcome.description}`)} />
+              </div>
+            </div>
+
+            <div className="rounded-md border border-border bg-background p-4">
+              <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-muted-foreground">{labels.finderBestChoice}</h3>
+              <div className="mt-3 grid gap-2">
+                {finderQuest.recommendedKnightSlugs.map((slug) => {
+                  const knight = knightsBySlug.get(slug);
+                  return (
+                    <Link key={slug} href={localized(`/knights/${slug}`, locale)} className="rounded-md border border-border bg-card p-3 transition hover:border-[hsl(var(--nav-theme-light))]">
+                      <div className="font-semibold text-foreground">{knight?.name ?? slug.replace(/-/g, " ")}</div>
+                      <div className="mt-1 text-xs leading-5 text-muted-foreground">{knight ? `${knight.role} | ${formatStats(knight.stats, labels.unknown)}` : labels.unknown}</div>
+                    </Link>
+                  );
+                })}
+              </div>
+              <h3 className="mt-5 text-sm font-bold uppercase tracking-[0.16em] text-muted-foreground">{labels.finderRelated}</h3>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {finderQuest.relatedGuideHrefs.map((guide) => (
+                  <Button key={`${finderQuest.slug}-${guide.href}`} asChild variant="outline" size="sm">
+                    <Link href={localized(guide.href, locale)}>{guide.label}</Link>
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      <div className="order-3 rounded-lg border border-border bg-card p-4">
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_160px_160px_180px_140px_auto_auto]">
           <label className="relative block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -251,7 +407,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
         </div>
       </div>
 
-      <div className="grid gap-4">
+      <div className="order-4 grid gap-4">
         {filteredQuests.map((quest) => (
           <article key={quest.slug} className="rounded-lg border border-border bg-card p-5">
             <div className="flex flex-wrap items-start justify-between gap-4">
@@ -282,7 +438,7 @@ export function QuestHubExplorer({ locale, quests, knights }: Props) {
           </article>
         ))}
       </div>
-      {filteredQuests.length === 0 && <EmptyState title={labels.emptyTitle} description={labels.emptyDescription} />}
+      {filteredQuests.length === 0 && <div className="order-5"><EmptyState title={labels.emptyTitle} description={labels.emptyDescription} /></div>}
     </section>
   );
 }

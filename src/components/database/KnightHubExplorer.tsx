@@ -40,6 +40,12 @@ const labelsByLocale = {
     unknown: "Unknown",
     emptyTitle: "No knights match these filters.",
     emptyDescription: "Try a broader search term or clear one filter.",
+    snapshotTitle: "Knights Database Snapshot",
+    totalKnights: "Tracked knights",
+    rolesTracked: "Roles tracked",
+    mealMatches: "Meal matches",
+    evolutionNotes: "Evolution notes",
+    quickKnights: "Quick knight index",
   },
   it: {
     searchSr: "Cerca cavalieri",
@@ -60,6 +66,12 @@ const labelsByLocale = {
     unknown: "Sconosciuto",
     emptyTitle: "Nessun cavaliere corrisponde ai filtri.",
     emptyDescription: "Prova una ricerca piu ampia o cancella un filtro.",
+    snapshotTitle: "Riepilogo database cavalieri",
+    totalKnights: "Cavalieri tracciati",
+    rolesTracked: "Ruoli tracciati",
+    mealMatches: "Abbinamenti pasti",
+    evolutionNotes: "Note evoluzione",
+    quickKnights: "Indice cavalieri",
   },
   ko: {
     searchSr: "기사 검색",
@@ -80,8 +92,24 @@ const labelsByLocale = {
     unknown: "미확인",
     emptyTitle: "필터와 일치하는 기사가 없습니다.",
     emptyDescription: "검색어를 넓히거나 필터를 초기화해 보세요.",
+    snapshotTitle: "기사 데이터베이스 요약",
+    totalKnights: "추적 기사",
+    rolesTracked: "추적 역할",
+    mealMatches: "식사 매칭",
+    evolutionNotes: "진화 메모",
+    quickKnights: "빠른 기사 색인",
   },
 } as const;
+
+const priorityKnightSlugs = [
+  "angelica",
+  "gwendan",
+  "brunhilda",
+  "dullahan",
+  "epicrates",
+  "roberto",
+  "rufus",
+] as const;
 
 function localized(href: string, locale: string) {
   return `/${locale}${href === "/" ? "" : href}`;
@@ -147,6 +175,20 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
   const favoriteSet = useMemo(() => new Set(favoriteSlugs), [favoriteSlugs]);
   const roles = useMemo(() => uniqueSorted(knights.map((knight) => knight.role)), [knights]);
   const traits = useMemo(() => uniqueSorted(knights.flatMap((knight) => [...knight.traits, ...knight.hiddenTraits])), [knights]);
+  const snapshot = useMemo(() => {
+    const mealCount = knights.filter((knight) => knight.favoriteMeals && knight.favoriteMeals.length > 0).length;
+    const evolutionCount = knights.filter((knight) => Boolean(knight.evolution)).length;
+    return [
+      { label: labels.totalKnights, value: knights.length },
+      { label: labels.rolesTracked, value: roles.length },
+      { label: labels.mealMatches, value: mealCount },
+      { label: labels.evolutionNotes, value: evolutionCount },
+    ];
+  }, [knights, labels.evolutionNotes, labels.mealMatches, labels.rolesTracked, labels.totalKnights, roles.length]);
+  const priorityKnights = useMemo(() => {
+    const bySlug = new Map(knights.map((knight) => [knight.slug, knight]));
+    return priorityKnightSlugs.map((slug) => bySlug.get(slug)).filter((knight): knight is KnightRecord => Boolean(knight));
+  }, [knights]);
   useEffect(() => {
     setFavoriteSlugs(readFavorites(knightFavoritesStorageKey));
     const syncFromUrl = () => {
@@ -215,6 +257,27 @@ export function KnightHubExplorer({ locale, knights, quests }: Props) {
 
   return (
     <section className="mt-10 space-y-5">
+      <div className="rounded-lg border border-border bg-card p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-lg font-bold text-foreground">{labels.snapshotTitle}</h2>
+          <span className="text-sm font-medium text-muted-foreground">{labels.quickKnights}</span>
+        </div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {snapshot.map((item) => (
+            <div key={item.label} className="rounded-md border border-border bg-background p-3">
+              <div className="text-2xl font-bold text-foreground">{item.value}</div>
+              <div className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {priorityKnights.map((knight) => (
+            <Button key={knight.slug} asChild variant="outline" size="sm">
+              <Link href={localized(`/knights/${knight.slug}`, locale)}>{knight.name}</Link>
+            </Button>
+          ))}
+        </div>
+      </div>
       <div className="rounded-lg border border-border bg-card p-4">
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_190px_220px_160px_auto_auto]">
           <label className="relative block">

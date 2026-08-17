@@ -50,8 +50,8 @@
       "cards": [
         {
           "number": "1",
-          "title": "All Quests Database",
-          "description": "Search quests by act, type, required stats, recommended knight, success, failure, and unexpected outcomes."
+          "title": "Quest Finder & Database",
+          "description": "Pick a quest to see required stats, recommended knights, outcomes, related guides, act, type, success, failure, and unexpected outcomes."
         },
         {
           "number": "2",
@@ -90,8 +90,8 @@
       "cards": [
         {
           "badge": "Quests",
-          "title": "Sovereign Tower All Quests",
-          "description": "Search the structured quest database by act, type, stats, knight, result, and unexpected outcome.",
+          "title": "Sovereign Tower Quest Finder",
+          "description": "Choose a quest and compare required stats, recommended knights, outcomes, and related route guides.",
           "href": "/quests"
         },
         {
@@ -182,8 +182,8 @@
       "modules": [
         {
           "order": 1,
-          "name": "Sovereign Tower All Quests",
-          "description": "A searchable quest hub for Sovereign Tower covering main quests, regional walkthroughs, required stats, recommended knights, and outcomes.",
+          "name": "Sovereign Tower Quest Finder",
+          "description": "A searchable quest hub and finder for Sovereign Tower covering main quests, regional walkthroughs, required stats, recommended knights, outcomes, and related guides.",
           "href": "/quests",
           "displayType": "step-by-step",
           "highlights": [

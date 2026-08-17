@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, ExternalLink, Moon, Play, Sun, Menu } from "lucide-react";
+import { Castle, ChevronRight, ExternalLink, Moon, Play, Sun, Menu } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { NAVIGATION_CONFIG } from "@/config/navigation";
 import type { NavGroup } from "@/lib/content";
@@ -27,7 +27,9 @@ export async function SiteHeader({ locale }: { locale: string }) {
   const header = (
     <div className="flex items-center justify-between gap-4">
       <Link href={localizeHref("/", locale)} className="flex items-center gap-3">
-        <span className="grid h-9 w-9 place-items-center rounded-xl border border-border bg-muted text-sm font-black text-foreground">ST</span>
+        <span className="grid h-10 w-10 place-items-center rounded-xl border border-amber-400/35 bg-gradient-to-br from-zinc-950 via-zinc-900 to-amber-950 text-amber-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_18px_rgba(212,175,55,0.18)]">
+          <Castle className="h-5 w-5" strokeWidth={2.4} />
+        </span>
         <span className="text-sm font-bold tracking-wide text-foreground">Sovereign Tower</span>
       </Link>
       <nav className="hidden items-center gap-1 md:flex">

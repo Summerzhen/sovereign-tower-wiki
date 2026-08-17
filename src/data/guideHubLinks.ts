@@ -73,6 +73,42 @@ const DEFAULT_LINKS: GuideHubLink[] = [
     contentTypes: ["guide", "quests", "knights", "characters", "romance", "systems"],
   },
   {
+    href: "/guide/sovereign-tower-walkthrough",
+    title: "Complete Walkthrough",
+    description: "Jump into Act 0, Gavault, Groveshire, Beast Hunt, Goose Quest, Rebellion, and Dragon Knight routes.",
+    contentTypes: ["guide", "quests", "knights", "characters", "romance", "systems"],
+  },
+  {
+    href: "/guide/sovereign-tower-recruit-knights",
+    title: "Recruit All Knights",
+    description: "Track recruitment access, missable choices, route locks, loyalty, and confirmed unlock notes.",
+    contentTypes: ["guide", "quests", "knights", "characters", "romance", "systems"],
+  },
+  {
+    href: "/guide/sovereign-tower-all-24-knights-checklist",
+    title: "All 24 Knights Checklist",
+    description: "Track confirmed knight profiles, missing roster slots, stats, traits, meals, recruitment, and evolution data.",
+    contentTypes: ["guide", "quests", "knights", "characters", "romance", "systems"],
+  },
+  {
+    href: "/guide/sovereign-tower-unexpected-outcomes",
+    title: "Unexpected Outcomes",
+    description: "Compare critical success, failure, hidden traits, rewind tests, and route-changing quest results.",
+    contentTypes: ["guide", "quests", "knights", "characters", "romance", "systems"],
+  },
+  {
+    href: "/guide/sovereign-tower-best-opening-strategy",
+    title: "Best Opening Strategy",
+    description: "Plan the first cycles around safe assignments, faction balance, armor, money, and route notes.",
+    contentTypes: ["guide", "quests", "knights", "characters", "systems"],
+  },
+  {
+    href: "/guide/sovereign-tower-quest-outcomes-explained",
+    title: "Quest Outcomes Explained",
+    description: "Understand success, failure, critical results, damage, rewards, affinity, and route consequences.",
+    contentTypes: ["guide", "quests", "knights", "characters", "systems"],
+  },
+  {
     href: "/systems/sovereign-tower-meals",
     title: "Meals Guide",
     description: "Connect favorite foods, cooking choices, servant support, and affinity tracking.",
@@ -83,6 +119,30 @@ const DEFAULT_LINKS: GuideHubLink[] = [
     title: "Demon Power Guide",
     description: "Understand rewind choices, power costs, route impact, and ending consequences.",
     contentTypes: ["guide", "quests", "characters", "romance", "systems"],
+  },
+  {
+    href: "/systems/sovereign-tower-round-table",
+    title: "Round Table System",
+    description: "Plan knight assignment, stats, traits, armor, loyalty, and route-risk decisions.",
+    contentTypes: ["guide", "quests", "knights", "characters", "systems"],
+  },
+  {
+    href: "/systems/sovereign-tower-annexes-buildings",
+    title: "Annexes & Buildings",
+    description: "Track room unlocks, court capacity, crafting support, repairs, map access, and route tools.",
+    contentTypes: ["guide", "quests", "knights", "characters", "systems"],
+  },
+  {
+    href: "/systems/sovereign-tower-audience-morning-court",
+    title: "Audience & Morning Court",
+    description: "Record petitions, faction changes, costs, accepted quests, route flags, and follow-up risks.",
+    contentTypes: ["guide", "quests", "characters", "romance", "systems"],
+  },
+  {
+    href: "/systems/sovereign-tower-crafting-gear",
+    title: "Crafting & Gear",
+    description: "Use forge items, repairs, potions, and annex support to cover stat gaps and reduce quest risk.",
+    contentTypes: ["guide", "quests", "knights", "characters", "systems"],
   },
   {
     href: "/romance/sovereign-tower-romance-options",
@@ -102,12 +162,6 @@ const DEFAULT_LINKS: GuideHubLink[] = [
     description: "Find the documented choices and consequences around Angelica's death.",
     contentTypes: ["guide", "quests", "characters", "romance", "systems"],
   },
-  {
-    href: "/guide/sovereign-tower-walkthrough",
-    title: "Walkthrough",
-    description: "Follow the main route map, early assignments, act notes, and progression checks.",
-    contentTypes: ["quests", "knights", "characters", "romance", "systems"],
-  },
 ];
 
 const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>> = {
@@ -119,6 +173,10 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
     "/knights": {
       title: "Ritter-Datenbank",
       description: "Vergleiche Werte, Eigenschaften, Mahlzeiten, Rekrutierung und beste Einsätze.",
+    },
+    "/guide/sovereign-tower-walkthrough": {
+      title: "Kompletter Walkthrough",
+      description: "Springe zu Act 0, Gavault, Groveshire, Beast Hunt, Goose Quest, Rebellion und Dragon Knight.",
     },
     "/systems/sovereign-tower-meals": {
       title: "Mahlzeiten-Guide",
@@ -140,10 +198,6 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
       title: "Angelica-Tod-Guide",
       description: "Prüfe dokumentierte Entscheidungen und Folgen rund um Angelicas Tod.",
     },
-    "/guide/sovereign-tower-walkthrough": {
-      title: "Walkthrough",
-      description: "Folge Routenkarte, frühen Einsätzen, Akt-Notizen und Fortschrittschecks.",
-    },
   },
   fr: {
     "/quests": {
@@ -153,6 +207,10 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
     "/knights": {
       title: "Base de chevaliers",
       description: "Comparer stats, traits, repas, recrutement et meilleures affectations.",
+    },
+    "/guide/sovereign-tower-walkthrough": {
+      title: "Soluce complète",
+      description: "Aller vers Act 0, Gavault, Groveshire, Beast Hunt, Goose Quest, Rebellion et Dragon Knight.",
     },
     "/systems/sovereign-tower-meals": {
       title: "Guide des repas",
@@ -174,10 +232,6 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
       title: "Guide de la mort d'Angelica",
       description: "Retrouver les choix documentés et les conséquences autour de la mort d'Angelica.",
     },
-    "/guide/sovereign-tower-walkthrough": {
-      title: "Soluce",
-      description: "Suivre carte de route, premières missions, actes et progression.",
-    },
   },
   it: {
     "/quests": {
@@ -187,6 +241,10 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
     "/knights": {
       title: "Database cavalieri",
       description: "Confronta statistiche, tratti, pasti, reclutamento e migliori incarichi.",
+    },
+    "/guide/sovereign-tower-walkthrough": {
+      title: "Walkthrough completo",
+      description: "Vai ad Act 0, Gavault, Groveshire, Beast Hunt, Goose Quest, Rebellion e Dragon Knight.",
     },
     "/systems/sovereign-tower-meals": {
       title: "Guida pasti",
@@ -208,10 +266,6 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
       title: "Guida morte di Angelica",
       description: "Trova scelte documentate e conseguenze legate alla morte di Angelica.",
     },
-    "/guide/sovereign-tower-walkthrough": {
-      title: "Walkthrough",
-      description: "Segui mappa della rotta, incarichi iniziali, atti e progressi.",
-    },
   },
   ja: {
     "/quests": {
@@ -221,6 +275,10 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
     "/knights": {
       title: "ナイトデータベース",
       description: "ステータス、特性、食事、加入メモ、最適な任務を比較する。",
+    },
+    "/guide/sovereign-tower-walkthrough": {
+      title: "完全攻略チャート",
+      description: "Act 0、Gavault、Groveshire、Beast Hunt、Goose Quest、Rebellion、Dragon Knight へ移動する。",
     },
     "/systems/sovereign-tower-meals": {
       title: "食事ガイド",
@@ -242,10 +300,6 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
       title: "Angelica 死亡ガイド",
       description: "Angelica の死亡に関わる選択と結果を確認する。",
     },
-    "/guide/sovereign-tower-walkthrough": {
-      title: "攻略チャート",
-      description: "ルートマップ、序盤任務、章メモ、進行チェックを追う。",
-    },
   },
   ko: {
     "/quests": {
@@ -255,6 +309,10 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
     "/knights": {
       title: "기사 데이터베이스",
       description: "기사 스탯, 특성, 식사, 모집 메모, 최적 배정을 비교합니다.",
+    },
+    "/guide/sovereign-tower-walkthrough": {
+      title: "전체 공략",
+      description: "Act 0, Gavault, Groveshire, Beast Hunt, Goose Quest, Rebellion, Dragon Knight로 이동합니다.",
     },
     "/systems/sovereign-tower-meals": {
       title: "식사 가이드",
@@ -276,10 +334,6 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
       title: "Angelica 사망 가이드",
       description: "Angelica 사망과 관련된 선택과 결과를 확인합니다.",
     },
-    "/guide/sovereign-tower-walkthrough": {
-      title: "공략",
-      description: "주요 루트, 초반 배정, 막별 메모, 진행 체크를 따라갑니다.",
-    },
   },
 };
 
@@ -297,8 +351,11 @@ export function getGuideHubLinks(locale: string): GuideHubLink[] {
 
 export function getHomeGuideHubLinks(locale: string): GuideHubLink[] {
   const homeHrefs = [
+    "/guide/sovereign-tower-walkthrough",
     "/quests",
     "/knights",
+    "/guide/sovereign-tower-recruit-knights",
+    "/guide/sovereign-tower-unexpected-outcomes",
     "/romance/sovereign-tower-romance-options",
     "/guide/sovereign-tower-endings",
     "/systems/sovereign-tower-demon-power",
