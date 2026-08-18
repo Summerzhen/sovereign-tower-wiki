@@ -4,7 +4,7 @@ interface Env {
   };
 }
 
-const locales = ["en", "de", "ja", "fr", "it", "ko"];
+const locales = ["en", "zh-cn", "de", "ja", "fr", "it", "ko"];
 const unprefixedContentPaths = [
   "/guide",
   "/quests",

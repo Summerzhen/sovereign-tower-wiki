@@ -15,9 +15,13 @@ function localizedPath(pathname: string, locale: string) {
   return `/${locale}${pathname === "/" ? "" : pathname}`;
 }
 
+function hreflangCode(locale: string) {
+  return locale === "zh-cn" ? "zh-CN" : locale;
+}
+
 function languageAlternates(pathname: string) {
   return {
-    ...Object.fromEntries(routing.locales.map((locale) => [locale, localizedPath(pathname, locale)])),
+    ...Object.fromEntries(routing.locales.map((locale) => [hreflangCode(locale), localizedPath(pathname, locale)])),
     "x-default": localizedPath(pathname, routing.defaultLocale),
   };
 }

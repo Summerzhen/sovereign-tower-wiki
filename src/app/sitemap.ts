@@ -16,11 +16,15 @@ function latestDate(dates: Date[]) {
   return dates.reduce((latest, date) => (date > latest ? date : latest), dates[0]);
 }
 
+function hreflangCode(locale: string) {
+  return locale === "zh-cn" ? "zh-CN" : locale;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sovereigntower.org";
   const localizedUrl = (path: string, locale: string) => `${siteUrl}/${locale}${path === "/" ? "" : path}`;
   const languageAlternates = (path: string) => ({
-    ...Object.fromEntries(routing.locales.map((locale) => [locale, localizedUrl(path, locale)])),
+    ...Object.fromEntries(routing.locales.map((locale) => [hreflangCode(locale), localizedUrl(path, locale)])),
     "x-default": localizedUrl(path, routing.defaultLocale),
   });
 

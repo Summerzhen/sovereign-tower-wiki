@@ -70,7 +70,7 @@ export default function HomePageClient({ home, locale, articles, recentArticles 
             </div>
             {home.popular.quickLinks && home.popular.quickLinks.length > 0 && (
               <div className="hidden max-w-2xl flex-wrap justify-end gap-2 lg:flex">
-                {home.popular.quickLinks.map((link) => <Badge key={link} variant="outline" className="border-border px-3 py-1 text-muted-foreground">{link}</Badge>)}
+                {home.popular.quickLinks.map((link, index) => <Badge key={`${link}-${index}`} variant="outline" className="border-border px-3 py-1 text-muted-foreground">{link}</Badge>)}
               </div>
             )}
           </div>
@@ -78,7 +78,7 @@ export default function HomePageClient({ home, locale, articles, recentArticles 
             {home.popular.cards.map((card, index) => {
               const Icon = icons[index % icons.length];
               return (
-                <Link key={card.href} href={localizeHref(card.href, locale)} className="group rounded-2xl border border-border bg-card/70 p-5 transition hover:border-[hsl(var(--nav-theme-light))]">
+                <Link key={`${card.href}-${index}`} href={localizeHref(card.href, locale)} className="group rounded-2xl border border-border bg-card/70 p-5 transition hover:border-[hsl(var(--nav-theme-light))]">
                   <div className="flex items-center justify-between gap-3">
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-muted text-[hsl(var(--nav-theme))]"><Icon className="h-5 w-5" /></span>
                     <Badge variant="secondary">{card.badge}</Badge>

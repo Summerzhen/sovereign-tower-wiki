@@ -57,6 +57,13 @@ const COPY_BY_LOCALE: Record<string, GuideHubCopy> = {
     openGuide: "가이드 열기",
     systemsCta: "시스템 살펴보기",
   },
+  "zh-cn": {
+    eyebrow: "快速答案",
+    title: "Sovereign Tower 攻略中心",
+    browseAll: "浏览全部攻略",
+    openGuide: "打开攻略",
+    systemsCta: "查看系统",
+  },
 };
 
 const DEFAULT_LINKS: GuideHubLink[] = [
@@ -333,6 +340,76 @@ const LINK_COPY_BY_LOCALE: Record<string, Record<string, Partial<GuideHubLink>>>
     "/characters/sovereign-tower-angelica-death": {
       title: "Angelica 사망 가이드",
       description: "Angelica 사망과 관련된 선택과 결과를 확인합니다.",
+    },
+  },
+  "zh-cn": {
+    "/quests": {
+      title: "任务数据库",
+      description: "按属性、类型、推荐骑士和结果查询任务。",
+    },
+    "/knights": {
+      title: "骑士数据库",
+      description: "比较骑士属性、特质、餐食、招募条件和最佳派遣。",
+    },
+    "/guide/sovereign-tower-walkthrough": {
+      title: "完整流程攻略",
+      description: "跳转到 Act 0、Gavault、Groveshire、Beast Hunt、Goose Quest、Rebellion 和 Dragon Knight 路线。",
+    },
+    "/guide/sovereign-tower-recruit-knights": {
+      title: "全骑士招募",
+      description: "追踪招募入口、易错选择、路线锁定、忠诚度和已确认解锁线索。",
+    },
+    "/guide/sovereign-tower-all-24-knights-checklist": {
+      title: "24 名骑士清单",
+      description: "核对骑士档案、缺失名额、属性、特质、餐食、招募和进化信息。",
+    },
+    "/guide/sovereign-tower-unexpected-outcomes": {
+      title: "意外结果",
+      description: "比较大成功、失败、隐藏特质、回溯测试和会改变路线的任务结果。",
+    },
+    "/guide/sovereign-tower-best-opening-strategy": {
+      title: "最佳开局策略",
+      description: "围绕安全派遣、阵营平衡、护甲、金钱和路线记录规划前几个循环。",
+    },
+    "/guide/sovereign-tower-quest-outcomes-explained": {
+      title: "任务结果解析",
+      description: "理解成功、失败、暴击结果、伤害、奖励、好感和路线后果。",
+    },
+    "/systems/sovereign-tower-meals": {
+      title: "餐食攻略",
+      description: "串联喜爱食物、烹饪选择、仆从支援和好感追踪。",
+    },
+    "/systems/sovereign-tower-demon-power": {
+      title: "恶魔之力攻略",
+      description: "理解时间回溯选择、代价、路线影响和结局后果。",
+    },
+    "/systems/sovereign-tower-round-table": {
+      title: "圆桌系统",
+      description: "规划骑士派遣、属性、特质、护甲、忠诚度和路线风险。",
+    },
+    "/systems/sovereign-tower-annexes-buildings": {
+      title: "附属建筑",
+      description: "追踪房间解锁、宫廷容量、锻造支援、维修、地图入口和路线工具。",
+    },
+    "/systems/sovereign-tower-audience-morning-court": {
+      title: "接见与晨廷",
+      description: "记录请愿、阵营变化、花费、接取任务、路线标记和后续风险。",
+    },
+    "/systems/sovereign-tower-crafting-gear": {
+      title: "制作与装备",
+      description: "用锻造物品、修理、药水和附属建筑支援弥补属性缺口并降低任务风险。",
+    },
+    "/romance/sovereign-tower-romance-options": {
+      title: "恋爱选项",
+      description: "查看恋爱路线、伴侣选择、好感风险和角色结局。",
+    },
+    "/guide/sovereign-tower-endings": {
+      title: "结局攻略",
+      description: "追踪结局条件、关键选择、路线锁定和后果。",
+    },
+    "/characters/sovereign-tower-angelica-death": {
+      title: "Angelica 死亡攻略",
+      description: "查看围绕 Angelica 死亡的已记录选择和后果。",
     },
   },
 };

@@ -1,0 +1,499 @@
+{
+  "site": {
+    "tagline": "玩家自制 Sovereign Tower 中文 Wiki",
+    "description": "Sovereign Tower 攻略站，覆盖骑士管理、任务路线、王国选择、时间回溯、角色、结局和新手策略。",
+    "legalNotice": "独立玩家自制 Sovereign Tower Wiki，与 WILD WITS GAMES 或 Curve Games 无隶属关系。"
+  },
+  "nav": {
+    "guide": "攻略",
+    "quests": "任务",
+    "knights": "骑士",
+    "characters": "角色",
+    "romance": "恋爱",
+    "systems": "系统",
+    "platforms": "平台",
+    "release": "发售",
+    "community": "社区",
+    "media": "媒体"
+  },
+  "home": {
+    "meta": {
+      "title": "Sovereign Tower 攻略｜君王之塔 Wiki、任务、骑士与结局",
+      "description": "Sovereign Tower 中文攻略和君王之塔 Wiki，整理任务路线、骑士招募、结局、True Ending、餐食、恶魔之力和时间回溯机制。"
+    },
+    "hero": {
+      "eyebrow": "玩家自制中文 Wiki",
+      "title": "Sovereign Tower 攻略",
+      "description": "掌握 Sovereign Tower（君王之塔）这款中世纪王国管理 RPG：招募独特骑士，管理圆桌，平衡阵营，推进恋爱路线，并用时间回溯改写命运。",
+      "stats": [
+        "Steam PC",
+        "开发商：WILD WITS GAMES",
+        "中文攻略",
+        "任务数据库",
+        "骑士策略"
+      ],
+      "primaryCta": "开始看攻略",
+      "secondaryCta": "浏览角色",
+      "tertiaryCta": "Steam 页面",
+      "videoLabel": "Sovereign Tower 实机演示"
+    },
+    "updates": {
+      "title": "最近更新",
+      "browse": "浏览全部攻略",
+      "viewAll": "查看全部"
+    },
+    "start": {
+      "eyebrow": "从这里开始",
+      "title": "你的 Sovereign Tower 中文攻略",
+      "cards": [
+        {
+          "number": "1",
+          "title": "任务查找与数据库",
+          "description": "选择任务后查看所需属性、推荐骑士、任务结果、相关攻略、章节、类型、成功、失败和意外结果。"
+        },
+        {
+          "number": "2",
+          "title": "全骑士数据库",
+          "description": "比较骑士属性、隐藏特质、喜爱餐食、招募说明、进化信息和最佳任务派遣。"
+        },
+        {
+          "number": "3",
+          "title": "全结局攻略",
+          "description": "追踪主线结局、True Ending 条件、骑士结局、恶魔之力、重置和 New Game Plus 选择。"
+        },
+        {
+          "number": "4",
+          "title": "系统与路线",
+          "description": "把餐食、好感、恋爱、时间回溯和任务结果串成一条可执行路线。"
+        }
+      ]
+    },
+    "popular": {
+      "eyebrow": "热门 Sovereign Tower 搜索",
+      "title": "热门 Wiki 条目",
+      "quickLinks": [
+        "全部任务",
+        "全部骑士",
+        "全部结局",
+        "餐食",
+        "Dragon Heart",
+        "Epicrates",
+        "Roberto",
+        "平台",
+        "Discord",
+        "最佳骑士",
+        "全部任务",
+        "Sovereign Tower Wiki"
+      ],
+      "cards": [
+        {
+          "badge": "任务",
+          "title": "Sovereign Tower 任务查找器",
+          "description": "选择任务并比较所需属性、推荐骑士、结果和相关路线攻略。",
+          "href": "/quests"
+        },
+        {
+          "badge": "骑士",
+          "title": "Sovereign Tower 全骑士",
+          "description": "比较属性、特质、招募、喜爱餐食、进化说明和最佳任务派遣。",
+          "href": "/knights"
+        },
+        {
+          "badge": "结局",
+          "title": "Sovereign Tower 全结局",
+          "description": "追踪主线结局、True Ending、骑士结局、恶魔之力、重置和 New Game Plus。",
+          "href": "/guide/sovereign-tower-endings"
+        },
+        {
+          "badge": "餐食",
+          "title": "Sovereign Tower 餐食攻略",
+          "description": "查找每位骑士喜爱的餐食，并理解餐食如何影响好感与恋爱路线。",
+          "href": "/systems/sovereign-tower-meals"
+        },
+        {
+          "badge": "平台",
+          "title": "在哪里玩",
+          "description": "Steam、PC、主机、手机、Switch、Xbox、PS5、Mac 和 itch 平台页面。",
+          "href": "/platforms"
+        },
+        {
+          "badge": "社区",
+          "title": "Sovereign Tower Discord",
+          "description": "官方 Discord、社区频道、更新来源和玩家讨论入口。",
+          "href": "/community/sovereign-tower-discord"
+        },
+        {
+          "badge": "骑士",
+          "title": "最佳骑士强度榜",
+          "description": "按定位、特质、属性、好感和任务价值比较最强骑士选择。",
+          "href": "/guide/sovereign-tower-best-knights-tier-list"
+        },
+        {
+          "badge": "任务",
+          "title": "全部任务",
+          "description": "按地区、要求、推荐骑士、结果和后续策略搜索任务。",
+          "href": "/quests"
+        }
+      ]
+    },
+    "aboutGame": {
+      "title": "Sovereign Tower 是什么游戏？",
+      "paragraphs": [
+        "Sovereign Tower 是一款剧情驱动的中世纪管理 RPG，玩家将成为魔法高塔的统治者，招募独特骑士、派遣任务，并通过选择改变王国走向。",
+        "游戏结合了王国管理、角色关系和时间操控机制。玩家可以重写决策、发现秘密，并在多条时间线中创造不同结果。"
+      ],
+      "stats": [
+        {
+          "label": "开发商",
+          "value": "WILD WITS GAMES"
+        },
+        {
+          "label": "平台",
+          "value": "Steam PC"
+        },
+        {
+          "label": "类型",
+          "value": "管理 RPG"
+        },
+        {
+          "label": "发售",
+          "value": "2026 年 8 月"
+        },
+        {
+          "label": "语言",
+          "value": "支持多语言"
+        },
+        {
+          "label": "核心系统",
+          "value": "骑士任务管理"
+        },
+        {
+          "label": "玩法",
+          "value": "时间回溯选择"
+        }
+      ],
+      "cta": "查看全部攻略"
+    },
+    "explore": {
+      "title": "Sovereign Tower 攻略与流程",
+      "description": "进入最有价值的 Sovereign Tower 攻略分区，查看任务、骑士、结果、属性、时间回溯选择和玩家常见问题。",
+      "modules": [
+        {
+          "order": 1,
+          "name": "Sovereign Tower 任务查找器",
+          "description": "可搜索的任务中心，覆盖主线任务、地区流程、所需属性、推荐骑士、任务结果和相关路线攻略。",
+          "href": "/quests",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "按地区、类型、属性要求和结果查找关键任务。"
+            },
+            {
+              "label": "2",
+              "detail": "派遣骑士前比较所需属性和潜在风险。"
+            },
+            {
+              "label": "3",
+              "detail": "从任务页继续查看骑士、属性、特质和结果攻略。"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Sovereign Tower 骑士攻略",
+          "description": "查看骑士招募、角色定位和任务管理信息，帮助玩家搭建更有效的圆桌阵容。",
+          "href": "/knights",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "骑士",
+              "detail": "招募独特骑士并管理他们在王国任务中的参与。"
+            },
+            {
+              "label": "圆桌",
+              "detail": "经营关系并做出影响王国的决策。"
+            },
+            {
+              "label": "任务",
+              "detail": "派遣角色执行任务并发现剧情事件。"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Dragon Knight 攻略",
+          "description": "针对早期高价值搜索问题：如何准备并击败 Dragon Knight 任务。",
+          "href": "/quests/sovereign-tower-dragon-knight",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "属性",
+              "detail": "围绕力量、敏捷、魔法、智慧、魅力和幸运需求规划。"
+            },
+            {
+              "label": "骑士",
+              "detail": "先按能力选骑士，再用对话修复好感。"
+            },
+            {
+              "label": "结果",
+              "detail": "追踪成功、失败和意外分支。"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "name": "时间回溯攻略",
+          "description": "理解时间回溯系统如何运作，以及它如何改变玩家处理决策的方式。",
+          "href": "/guide/sovereign-tower-sovereign-mode",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "理解时间线变化何时会影响进度。"
+            },
+            {
+              "label": "2",
+              "detail": "回看过去决策并探索替代剧情。"
+            },
+            {
+              "label": "3",
+              "detail": "利用已发现信息改进后续王国选择。"
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "name": "玩法系统",
+          "description": "概览玩家学习 Sovereign Tower 时最常搜索的管理、RPG 和奇幻玩法元素。",
+          "href": "/systems",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "管理 RPG",
+              "detail": "管理魔法高塔并统治你的王国。"
+            },
+            {
+              "label": "奇幻世界",
+              "detail": "体验包含骑士与任务的中世纪奇幻设定。"
+            },
+            {
+              "label": "多重选择",
+              "detail": "通过玩家决策创造不同结果。"
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "name": "角色攻略",
+          "description": "聚焦重要人物、骑士互动和剧情信息，适合搜索角色细节和关系的玩家。",
+          "href": "/characters",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "角色",
+              "detail": "了解王国剧情中的重要人物。"
+            },
+            {
+              "label": "关系",
+              "detail": "理解角色联系和选择影响。"
+            },
+            {
+              "label": "故事",
+              "detail": "追踪角色事件和叙事发展。"
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "name": "配置与平台",
+          "description": "实用参考页，覆盖支持平台和 PC 运行信息。",
+          "href": "/platforms/sovereign-tower-steam",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "平台",
+              "detail": "可在 Steam PC 游玩。"
+            },
+            {
+              "label": "类型",
+              "detail": "剧情驱动的中世纪管理 RPG。"
+            },
+            {
+              "label": "发售",
+              "detail": "2026 年 8 月登陆 Steam。"
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "name": "更新与新闻",
+          "description": "追踪官方公告、开发更新和社区消息。",
+          "href": "/media/sovereign-tower-trailer",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Steam 新闻",
+              "detail": "查看官方游戏公告和更新。"
+            },
+            {
+              "label": "开发商",
+              "detail": "关注 WILD WITS GAMES 开发信息。"
+            },
+            {
+              "label": "社区",
+              "detail": "通过官方渠道连接玩家。"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "常见问题",
+      "description": "关于 Sovereign Tower 的常见问题快速解答。",
+      "items": [
+        {
+          "question": "Sovereign Tower 是什么？",
+          "answer": "Sovereign Tower 是一款中世纪管理 RPG，围绕统治魔法高塔、招募骑士、派遣任务，并通过剧情选择改变王国结局展开。"
+        },
+        {
+          "question": "新手在 Sovereign Tower 里应该先做什么？",
+          "answer": "新手应先理解 Sovereign 的职责、招募早期骑士、学习任务派遣，并观察每个选择如何改变王国进度。"
+        },
+        {
+          "question": "Sovereign Tower 的骑士系统怎么运作？",
+          "answer": "骑士是被招募的角色，会参与王国任务、剧情事件和圆桌决策。管理他们的定位与关系是推进游戏的核心。"
+        },
+        {
+          "question": "任务会如何影响 Sovereign Tower？",
+          "answer": "任务会推动剧情、王国管理和角色结果。任务中的选择可能打开不同路线并揭示新事件。"
+        },
+        {
+          "question": "Sovereign Tower 有时间回溯机制吗？",
+          "answer": "有。Sovereign Tower 使用时间回溯选择，让玩家重访决策，利用前一条时间线的信息追求更好的王国结果。"
+        },
+        {
+          "question": "在哪里可以玩 Sovereign Tower？",
+          "answer": "Sovereign Tower 可在 Steam PC 获取，官方游戏信息和更新会通过 Steam 页面与 WILD WITS GAMES 渠道发布。"
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "准备掌握 Sovereign Tower 了吗？",
+      "description": "从第一次骑士招募到关键王国决策，我们的 Sovereign Tower 攻略会帮你理解每个选择、管理宫廷，并发现隐藏路线。",
+      "primary": "阅读新手攻略",
+      "secondary": "在 Steam 游玩 Sovereign Tower"
+    }
+  },
+  "shared": {
+    "wikiNavigation": "Wiki 导航",
+    "updated": "更新",
+    "inThisSection": "本节内容",
+    "tableOfContents": "目录",
+    "nextSteps": "下一步",
+    "needHelp": "需要帮助？",
+    "relatedReading": "相关阅读",
+    "relatedGuides": "相关攻略",
+    "readMore": "阅读更多",
+    "officialMedia": "官方媒体",
+    "home": "首页",
+    "noGuidesAvailable": "暂无攻略，请稍后再来查看。"
+  },
+  "footer": {
+    "aboutTitle": "Sovereign Tower Wiki",
+    "about": "Sovereign Tower Wiki 是一个独立玩家自制攻略站，服务于中世纪管理 RPG Sovereign Tower。我们整理骑士、任务、王国管理、角色信息、结局、恋爱路线和玩法策略。本网站与 WILD WITS GAMES 或 Curve Games 无隶属关系。",
+    "description": "一款包含骑士、任务、王国选择和时间操控的剧情中世纪管理 RPG。",
+    "quickLinks": "快速链接",
+    "guides": "攻略",
+    "copyright": "2026 Sovereign Tower Wiki。与 WILD WITS GAMES 或 Curve Games 无隶属关系。",
+    "playGame": "在 Steam 游玩 Sovereign Tower",
+    "officialDiscord": "官方 Discord",
+    "officialYoutube": "Sovereign Tower 实机视频",
+    "vvBuilder": "开发者页面",
+    "beginnerGuide": "新手攻略",
+    "raceGuides": "骑士攻略",
+    "bossGuides": "系统攻略",
+    "buildGuide": "游戏技巧",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款"
+  },
+  "guide": {
+    "overviewTitle": "Sovereign Tower 攻略",
+    "overviewDescription": "浏览 Sovereign Tower 新手技巧、流程、结局、Sovereign Mode、试玩版帮助和实用策略。"
+  },
+  "quests": {
+    "overviewTitle": "Sovereign Tower 任务",
+    "overviewDescription": "浏览 Sovereign Tower 任务攻略、流程、要求、推荐骑士、大成功提示和意外结果。"
+  },
+  "knights": {
+    "overviewTitle": "Sovereign Tower 骑士",
+    "overviewDescription": "浏览 Sovereign Tower 骑士攻略，包括属性、特质、好感、偏好、招募和最佳任务派遣。"
+  },
+  "community": {
+    "overviewTitle": "Sovereign Tower 社区",
+    "overviewDescription": "浏览 Sovereign Tower 社区攻略，包括 Discord、社交频道、同人空间、讨论中心和官方入口。"
+  },
+  "characters": {
+    "overviewTitle": "Sovereign Tower 角色",
+    "overviewDescription": "浏览 Sovereign Tower 角色攻略，包括骑士、盟友、恋爱对象、剧情人物和重要王国关系。"
+  },
+  "romance": {
+    "overviewTitle": "Sovereign Tower 恋爱",
+    "overviewDescription": "浏览 Sovereign Tower 恋爱攻略，覆盖伴侣、恋爱选项、关系路线和角色相关选择。"
+  },
+  "systems": {
+    "overviewTitle": "Sovereign Tower 系统",
+    "overviewDescription": "浏览 Sovereign Tower 系统攻略，包括铁匠、名望、餐食、地图、恶魔之力、Dragon Heart 和主要机制。"
+  },
+  "platforms": {
+    "overviewTitle": "Sovereign Tower 平台",
+    "overviewDescription": "浏览 Sovereign Tower 平台攻略，包括 Steam、PC、Mac、Switch、PS5、Xbox、移动端、itch 和游玩方式。"
+  },
+  "release": {
+    "overviewTitle": "Sovereign Tower 发售",
+    "overviewDescription": "浏览 Sovereign Tower 发售攻略，包括发售日、价格、试玩版、完整版信息和平台发售说明。"
+  },
+  "media": {
+    "overviewTitle": "Sovereign Tower 媒体",
+    "overviewDescription": "浏览 Sovereign Tower 媒体攻略，包括预告片、实机演示、评测、前瞻、美术、Logo 信息和相关报道。"
+  },
+  "database": {
+    "questHubTitle": "Sovereign Tower 任务数据库",
+    "questHubDescription": "按类型、地区、所需属性、推荐骑士、特质和结果搜索结构化 Sovereign Tower 任务记录。这个中心会逐步扩展为完整任务数据库。",
+    "knightHubTitle": "Sovereign Tower 骑士数据库",
+    "knightHubDescription": "按定位、属性、特质、偏好、招募说明和最佳任务派遣比较骑士。这里把玩法数据和角色背景拆开整理。",
+    "quests": "任务",
+    "knights": "骑士",
+    "quest": "任务",
+    "type": "类型",
+    "types": "类型",
+    "requiredStats": "所需属性",
+    "recommendedKnights": "推荐骑士",
+    "outcomes": "结果",
+    "trackedOutcomes": "已追踪结果",
+    "trackedOutcomesLower": "个已追踪结果",
+    "allQuestRecords": "全部任务记录",
+    "browseByQuestType": "按任务类型浏览",
+    "knightLinks": "骑士链接",
+    "questLinks": "任务链接",
+    "focus": "重点",
+    "traits": "特质",
+    "bestQuests": "最佳任务",
+    "questInfo": "任务信息",
+    "knightInfo": "骑士信息",
+    "region": "地区",
+    "difficulty": "难度",
+    "unknown": "未知",
+    "knightDataPending": "骑士数据待补充",
+    "knight": "骑士",
+    "steps": "步骤",
+    "stats": "属性",
+    "role": "定位",
+    "recruitment": "招募",
+    "preferences": "偏好",
+    "knownTraits": "已知特质",
+    "hiddenRouteTraits": "隐藏/路线特质",
+    "notes": "备注",
+    "knightProfile": "骑士档案"
+  }
+}

@@ -46,7 +46,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   };
 
   return (
-    <html lang={locale} className={`${inter.variable}`} suppressHydrationWarning>
+    <html lang={locale === "zh-cn" ? "zh-CN" : locale} className={`${inter.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-background pb-16 pt-0 font-sans text-foreground antialiased">
         <Script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

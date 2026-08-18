@@ -316,6 +316,18 @@ const GROUP_TITLES_BY_LOCALE: Record<string, Record<string, string>> = {
     community: "コミュニティ",
     media: "メディア",
   },
+  "zh-cn": {
+    guide: "攻略",
+    quests: "任务",
+    knights: "骑士",
+    characters: "角色",
+    romance: "恋爱",
+    systems: "系统",
+    platforms: "平台",
+    release: "发售",
+    community: "社区",
+    media: "媒体",
+  },
 };
 
 // locale → "Overview" 翻译
@@ -325,6 +337,7 @@ const OVERVIEW_LABEL_BY_LOCALE: Record<string, string> = {
   it: "Panoramica",
   ja: "概要",
   ko: "개요",
+  "zh-cn": "总览",
 };
 
 // 分组排序顺序

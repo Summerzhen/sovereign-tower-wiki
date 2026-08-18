@@ -54,7 +54,10 @@ type Messages = typeof en;
 function languageAlternates(pathname: string) {
   return {
     ...Object.fromEntries(
-      routing.locales.map((locale) => [locale, `/${locale}${pathname}`]),
+      routing.locales.map((locale) => [
+        locale === "zh-cn" ? "zh-CN" : locale,
+        `/${locale}${pathname}`,
+      ]),
     ),
     "x-default": `/${routing.defaultLocale}${pathname}`,
   };
