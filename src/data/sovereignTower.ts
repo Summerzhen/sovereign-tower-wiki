@@ -1920,7 +1920,140 @@ function isDatabaseLocale(locale: string): locale is DatabaseLocale {
   return locale === "it" || locale === "ko";
 }
 
+const ZH_LINK_LABELS: Record<string, string> = {
+  "/guide/sovereign-tower-walkthrough": "完整流程攻略",
+  "/guide/sovereign-tower-beginner-guide": "新手攻略",
+  "/guide/sovereign-tower-quest-requirements": "任务要求攻略",
+  "/guide/sovereign-tower-quest-outcomes-explained": "任务结果解析",
+  "/guide/sovereign-tower-unexpected-outcomes": "意外结果攻略",
+  "/guide/sovereign-tower-knight-affinity": "骑士好感攻略",
+  "/guide/sovereign-tower-knight-loyalty": "骑士忠诚攻略",
+  "/guide/sovereign-tower-knight-traits": "骑士特质攻略",
+  "/guide/sovereign-tower-stats": "属性攻略",
+  "/guide/sovereign-tower-true-ending": "True Ending 攻略",
+  "/guide/sovereign-tower-best-knights-tier-list": "最佳骑士强度榜",
+  "/guide/sovereign-tower-recruit-knights": "骑士招募攻略",
+  "/guide/sovereign-tower-omniscient-dialogue": "全知对话攻略",
+  "/quests": "全部任务",
+  "/knights": "全部骑士",
+  "/systems/sovereign-tower-meals": "餐食攻略",
+  "/systems/sovereign-tower-dragon-heart": "Dragon Heart 攻略",
+  "/quests/sovereign-tower-full-campaign-route": "完整战役路线",
+};
+
+const ZH_QUEST_TYPES: Record<string, string> = {
+  Challenge: "挑战",
+  Main: "主线",
+  Special: "特殊",
+  System: "系统",
+  Walkthrough: "流程",
+  Romance: "恋爱",
+  Recruitment: "招募",
+};
+
+const ZH_DIFFICULTIES: Record<string, string> = {
+  Easy: "简单",
+  Medium: "中等",
+  Hard: "困难",
+  High: "高",
+  Unknown: "未知",
+  Early: "前期",
+};
+
+function zhTitle(value: string) {
+  return value
+    .replaceAll("Sovereign Tower", "君王之塔")
+    .replaceAll("Knight Affinity", "骑士好感")
+    .replaceAll("Knight Loyalty", "骑士忠诚")
+    .replaceAll("Knight Traits", "骑士特质")
+    .replaceAll("Quest Requirements", "任务要求")
+    .replaceAll("Quest Outcomes Explained", "任务结果解析")
+    .replaceAll("Unexpected Outcomes", "意外结果")
+    .replaceAll("Complete Walkthrough", "完整流程")
+    .replaceAll("Walkthrough Route Map", "流程路线图")
+    .replaceAll("Walkthrough", "流程攻略")
+    .replaceAll("Beginner Guide", "新手攻略")
+    .replaceAll("Guide", "攻略")
+    .replaceAll("Knight Profile", "骑士档案")
+    .replaceAll("Knight", "骑士")
+    .replaceAll("All Quests", "全部任务")
+    .replaceAll("All Endings", "全结局")
+    .replaceAll("Full Campaign", "完整战役")
+    .replaceAll("Route", "路线")
+    .replaceAll("Questline", "任务线")
+    .replaceAll("Stats", "属性")
+    .replaceAll("How to Get", "如何招募")
+    .replaceAll("How to Beat", "如何击败");
+}
+
+function zhPhrase(value: string) {
+  return zhTitle(value)
+    .replaceAll("Reliable early assignment", "可靠的前期派遣")
+    .replaceAll("Stable loyalty", "稳定忠诚")
+    .replaceAll("Route knowledge", "路线知识")
+    .replaceAll("Problem solving", "问题解决")
+    .replaceAll("High Luck", "高幸运")
+    .replaceAll("Investigation", "调查")
+    .replaceAll("Combat pressure", "战斗压力")
+    .replaceAll("Public reputation", "公众声望")
+    .replaceAll("Secret conditions for route notes", "路线备注中的秘密条件")
+    .replaceAll("Success", "成功")
+    .replaceAll("Failure", "失败")
+    .replaceAll("Unexpected Outcome", "意外结果")
+    .replaceAll("Case Solved", "案件解决")
+    .replaceAll("False Lead", "错误线索")
+    .replaceAll("Clear Player Path", "清晰玩家路线")
+    .replaceAll("Needs Documentation", "需要补充记录");
+}
+
+function localizeRelatedGuideHrefsForZh(
+  links: Array<{ label: string; href: string }>,
+) {
+  return links.map((link) => ({
+    ...link,
+    label: ZH_LINK_LABELS[link.href] ?? zhTitle(link.label),
+  }));
+}
+
+function localizeQuestForZh(quest: QuestRecord): QuestRecord {
+  const type = ZH_QUEST_TYPES[quest.type] ?? zhTitle(quest.type);
+  const region = quest.region ? zhTitle(quest.region) : quest.region;
+  return {
+    ...quest,
+    name: zhTitle(quest.name),
+    title: zhTitle(quest.title),
+    description: `君王之塔 ${zhTitle(quest.name)} 任务数据库，整理${type}任务的地区、难度、所需属性、推荐骑士、关键步骤、可能结果和相关攻略。`,
+    type,
+    region,
+    difficulty: ZH_DIFFICULTIES[quest.difficulty] ?? zhTitle(quest.difficulty),
+    bestTraits: quest.bestTraits.map(zhPhrase),
+    steps: quest.steps.map(zhPhrase),
+    outcomes: quest.outcomes.map((outcome) => ({
+      label: zhPhrase(outcome.label),
+      description: zhPhrase(outcome.description),
+    })),
+    relatedGuideHrefs: localizeRelatedGuideHrefsForZh(quest.relatedGuideHrefs),
+  };
+}
+
+function localizeKnightForZh(knight: KnightRecord): KnightRecord {
+  return {
+    ...knight,
+    name: zhTitle(knight.name),
+    title: zhTitle(knight.title),
+    description: `君王之塔 ${zhTitle(knight.name)} 骑士资料，整理定位、属性、特质、隐藏偏好、招募方式、最佳任务派遣和相关攻略。`,
+    role: zhTitle(knight.role),
+    traits: knight.traits.map(zhPhrase),
+    hiddenTraits: knight.hiddenTraits.map(zhPhrase),
+    preferences: knight.preferences.map(zhPhrase),
+    recruitment: zhPhrase(knight.recruitment),
+    notes: knight.notes.map(zhPhrase),
+    relatedGuideHrefs: localizeRelatedGuideHrefsForZh(knight.relatedGuideHrefs),
+  };
+}
+
 function localizeQuest(quest: QuestRecord, locale: string): QuestRecord {
+  if (locale === "zh-cn") return localizeQuestForZh(quest);
   if (!isDatabaseLocale(locale)) return quest;
   const baseOverlay = LOCALIZED_QUEST_OVERLAYS[locale][quest.slug];
   const supplementalOverlay = SUPPLEMENTAL_QUEST_OVERLAYS[locale][quest.slug];
@@ -1929,6 +2062,7 @@ function localizeQuest(quest: QuestRecord, locale: string): QuestRecord {
 }
 
 function localizeKnight(knight: KnightRecord, locale: string): KnightRecord {
+  if (locale === "zh-cn") return localizeKnightForZh(knight);
   if (!isDatabaseLocale(locale)) return knight;
   const baseOverlay = LOCALIZED_KNIGHT_OVERLAYS[locale][knight.slug];
   const supplementalOverlay = SUPPLEMENTAL_KNIGHT_OVERLAYS[locale][knight.slug];
